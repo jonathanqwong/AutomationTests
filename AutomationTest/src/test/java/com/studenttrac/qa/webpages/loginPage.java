@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 public class loginPage {
     WebDriver selenium;
@@ -13,16 +14,16 @@ public class loginPage {
 
     // Locators
     @FindBy(how = How.ID, using = "submit")
-    private WebElement loginBtn;
+    public WebElement loginBtn;
 
     @FindBy(how = How.ID, using = "createAccount")
-    private WebElement createAccountBtn;
+    public WebElement createAccountBtn;
 
     // Constructor
     public loginPage(WebDriver selenium) {
         this.selenium = selenium;
         selenium.get(HOMEPAGE_URL);
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(selenium, this);
     }
 
     public void clickLoginButton() {

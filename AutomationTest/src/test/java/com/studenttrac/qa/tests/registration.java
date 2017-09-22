@@ -37,18 +37,19 @@ public class registration {
     }
 
     @Test
-    public void createAccount() {
+    public void startRegistration() {
 
-        // Step 1) Go to the login page
+        // Step 1) Go to the login page and click create account
         loginPage login = new loginPage(selenium);
-        login.clickCreateAccountButton;
+        login.clickCreateAccountButton();
 
         // Step 2) Create an account
-        accountCreationPage accountCreate = new accountCreationPage(selenium);
-        accountCreate.fillOutCreateAccoutnForm();
-        accountCreate.isCreateAccountButtonPresent
-        accountCreate.clickCreateAccountButton();
+        accountCreationPage createAccount = new accountCreationPage(selenium);
+        createAccount.fillOutCreateAccountForm();
+        createAccount.isCreateAccountButtonPresent();
+        createAccount.clickCreateAccountButton();
 
+        // Step 3) Validate the account is created
         WebElement getStartedText = selenium.findElement(By.className("getStarted"));
         assertTrue(getStartedText != null);
         System.out.println("Student Account Creation Confirmed");
@@ -56,10 +57,16 @@ public class registration {
 
     @Test
     public void createAccountDuplicateException() throws Exception {
-        accountCreationPage accountCreate = new accountCreationPage(selenium);
-        assertTrue(accountCreate.isCreateAccountButtonPresent("createAccount"));
-        fillOutCreateAccoutnForm();
-        accountCreate.clickButton("createAccount");
+
+        // Step 1) Go to the login page and click create account
+        loginPage login = new loginPage(selenium);
+        login.clickCreateAccountButton();
+
+        // Step 2) Create an account
+        accountCreationPage createAccount = new accountCreationPage(selenium);
+        createAccount.fillOutCreateAccountForm();
+        createAccount.isCreateAccountButtonPresent();
+        createAccount.clickCreateAccountButton();
 
         WebElement usernameTakenText = selenium.findElement(By.id("dialogContent_131"));
         assertTrue(usernameTakenText != null);
