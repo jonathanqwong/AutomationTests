@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import com.studenttrac.qa.webpages.accountCreationPage;
+import com.studenttrac.qa.webpages.addGuardianPage;
+import com.studenttrac.qa.webpages.landingPage;
 import com.studenttrac.qa.webpages.loginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -49,10 +51,25 @@ public class registration {
         createAccount.isCreateAccountButtonPresent();
         createAccount.clickCreateAccountButton();
 
-        // Step 3) Validate the account is created
+
+        // Step 3) Validate the account is created on Landing Page
         WebElement getStartedText = selenium.findElement(By.className("getStarted"));
         assertTrue(getStartedText != null);
         System.out.println("Student Account Creation Confirmed");
+        landingPage landing = new landingPage(selenium);
+        landing.clickLetsGetStartButton();
+
+        // Step 4) Add a Guardian
+        addGuardianPage guardian = new addGuardianPage(selenium);
+        guardian.clickAddGuardianButton();
+        guardian.fillOutGuardianInfo();
+        guardian.clickSaveButton();
+        guardian.clickDoneButton();
+
+        // Step 5)
+
+
+
     }
 
     @Test
@@ -68,6 +85,7 @@ public class registration {
         createAccount.isCreateAccountButtonPresent();
         createAccount.clickCreateAccountButton();
 
+        // Step 3) Assert Username UNQ Exception
         WebElement usernameTakenText = selenium.findElement(By.id("dialogContent_131"));
         assertTrue(usernameTakenText != null);
         System.out.println("Student Account Creation Duplication Exception");

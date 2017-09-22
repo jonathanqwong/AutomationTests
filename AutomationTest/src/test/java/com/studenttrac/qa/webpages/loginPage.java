@@ -14,10 +14,9 @@ public class loginPage {
 
     // Locators
     @FindBy(how = How.ID, using = "submit")
-    public WebElement loginBtn;
-
+    WebElement loginBtn;
     @FindBy(how = How.ID, using = "createAccount")
-    public WebElement createAccountBtn;
+    WebElement createAccountBtn;
 
     // Constructor
     public loginPage(WebDriver selenium) {

@@ -1,5 +1,6 @@
 package com.studenttrac.qa.webpages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,14 +15,18 @@ public class landingPage {
     // Landing Page URL
     private static String LANDING_PAGE = "https://qa.studenttrac.com/#/registration/student/landing";
 
-    // Locators
-//    @FindBy(how = How.ID, using = "getStarted");
-    private WebElement getStartedBtn;
-
     // Constructor
-//    public loginPage(WebDriver selenium) {
-//        this.selenium = selenium;
-//        PageFactory.
-//    }
+    public landingPage(WebDriver selenium) {
+        this.selenium = selenium;
+        if (!"LandingPage".equalsIgnoreCase(this.selenium.getTitle())){
+            selenium.get(LANDING_PAGE);
+        }
+    }
+
+    public void clickLetsGetStartButton() {
+        selenium.findElement(By.id("getStarted")).click();
+    }
+
+
 
 }
