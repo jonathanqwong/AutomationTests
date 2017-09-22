@@ -22,8 +22,15 @@ public class loginPage {
     public loginPage(WebDriver selenium) {
         this.selenium = selenium;
         selenium.get(HOMEPAGE_URL);
+        PageFactory.initElements(driver, this);
     }
 
+    public void clickLoginButton() {
+        loginBtn.click();
+    }
 
+    public void clickCreateAccountButton() {
+        createAccountBtn.click();
+    }
 
 }

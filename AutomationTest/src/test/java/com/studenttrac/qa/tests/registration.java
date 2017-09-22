@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import com.studenttrac.qa.webpages.accountCreationPage;
+import com.studenttrac.qa.webpages.loginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,21 +16,9 @@ import org.junit.*;
 
 public class registration {
     WebDriver selenium;
-    static String time_Stamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 
     private void loadCreateAccountPage() {
         selenium.get("https://qa.studenttrac.com/#/registration/create/21");
-    }
-
-    private void fillOutCreateAccoutnForm() {
-        selenium.findElement(By.id("input_3")).sendKeys("Selenium");
-        selenium.findElement(By.id("input_5")).sendKeys("Test_" + time_Stamp.toString());
-        selenium.findElement(By.id("input_6")).sendKeys("cufomuhe@kekita.com");
-        selenium.findElement(By.id("input_7")).sendKeys("(333)333-3333");
-        selenium.findElement(By.id("input_8")).sendKeys("10/10/2010");
-        selenium.findElement(By.id("input_9")).sendKeys("Sel_Test_" + time_Stamp.toString());
-        selenium.findElement(By.id("input_10")).sendKeys("edi");
-        selenium.findElement(By.id("input_11")).sendKeys("edi");
     }
 
     @Before
@@ -49,10 +38,16 @@ public class registration {
 
     @Test
     public void createAccount() {
+
+        // Step 1) Go to the login page
+        loginPage login = new loginPage(selenium);
+        login.clickCreateAccountButton;
+
+        // Step 2) Create an account
         accountCreationPage accountCreate = new accountCreationPage(selenium);
-        assertTrue(accountCreate.isCreateAccountButtonPresent("createAccount"));
-        fillOutCreateAccoutnForm();
-        accountCreate.clickButton("createAccount");
+        accountCreate.fillOutCreateAccoutnForm();
+        accountCreate.isCreateAccountButtonPresent
+        accountCreate.clickCreateAccountButton();
 
         WebElement getStartedText = selenium.findElement(By.className("getStarted"));
         assertTrue(getStartedText != null);
