@@ -4,10 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-import com.studenttrac.qa.webpages.accountCreationPage;
-import com.studenttrac.qa.webpages.addGuardianPage;
-import com.studenttrac.qa.webpages.landingPage;
-import com.studenttrac.qa.webpages.loginPage;
+import com.studenttrac.qa.webpages.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,7 +36,7 @@ public class registration {
     }
 
     @Test
-    public void startRegistration() {
+    public void startRegistration() throws Exception {
 
         // Step 1) Go to the login page and click create account
         loginPage login = new loginPage(selenium);
@@ -50,14 +47,15 @@ public class registration {
         createAccount.fillOutCreateAccountForm();
         createAccount.isCreateAccountButtonPresent();
         createAccount.clickCreateAccountButton();
-
+        System.out.println("Student Account Creation Confirmed");
 
         // Step 3) Validate the account is created on Landing Page
         WebElement getStartedText = selenium.findElement(By.className("getStarted"));
         assertTrue(getStartedText != null);
-        System.out.println("Student Account Creation Confirmed");
+
         landingPage landing = new landingPage(selenium);
         landing.clickLetsGetStartButton();
+        System.out.println("Landing Page Confirmed");
 
         // Step 4) Add a Guardian
         addGuardianPage guardian = new addGuardianPage(selenium);
@@ -65,11 +63,12 @@ public class registration {
         guardian.fillOutGuardianInfo();
         guardian.clickSaveButton();
         guardian.clickDoneButton();
+        System.out.println("Guardian Added Confirmed");
 
-        // Step 5)
-
-
-
+        // Step 5) Select Enrollment Period
+        enrollmentPage enrollment = new enrollmentPage(selenium);
+        enrollment.clickRegisterButton();
+        System.out.println("Registration Started Confirmed");
     }
 
     @Test

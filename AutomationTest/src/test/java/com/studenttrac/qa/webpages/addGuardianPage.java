@@ -9,9 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 public class addGuardianPage {
     WebDriver selenium;
 
-    // Landing Page URL
-    //String personid;
-    //private static String LANDING_PAGE = "https://qa.studenttrac.com/" + personid +"/registration/student/landing";
+    // Add Guardian Page URL (EX: https://qa.studenttrac.com/#/registration/student/#/guardians)
+    private static String LANDING_PAGE = null;
 
     // Locators
     @FindBy(how = How.CLASS_NAME, using = "addGuardian")
@@ -20,37 +19,44 @@ public class addGuardianPage {
     WebElement saveBtn;
     @FindBy(how = How.XPATH, using = "//*[@id='guardiansList']/div[3]/div[2]/button")
     WebElement doneBtn;
-    @FindBy(how = How.ID, using = "input_31")
+    @FindBy(how = How.ID, using = "input_5")
     WebElement guardianFirstName;
-    @FindBy(how = How.ID, using = "input_32")
+    @FindBy(how = How.ID, using = "input_6")
     WebElement guardianLastName;
-    @FindBy(how = How.ID, using = "input_33")
+    @FindBy(how = How.ID, using = "input_7")
     WebElement guardianEmail;
-    @FindBy(how = How.ID, using = "input_34")
+    @FindBy(how = How.ID, using = "input_8")
     WebElement guardianPhone;
-    @FindBy(how = How.XPATH, using = "//*[@id=\'select_35\']")
+    @FindBy(how = How.XPATH, using = "//*[@id=\'select_9\']")
     WebElement relationshipSelect;
-    @FindBy(how = How.XPATH, using = "//*[@id=\'select_option_40\']")
+    @FindBy(how = How.XPATH, using = "//*[@id=\'select_option_14\']")
     WebElement relationshipId;
-    @FindBy(how = How.ID, using = "input_37")
+    @FindBy(how = How.ID, using = "input_11")
     WebElement guardianDateOfBirth;
 
     // Constructor
-    public addGuardianPage(WebDriver selenium) {
+    public addGuardianPage(WebDriver selenium) throws Exception {
         this.selenium = selenium;
         PageFactory.initElements(selenium, this);
+//        LANDING_PAGE = selenium.getCurrentUrl();
+//        if (!"Parent / Legal Guardians / Emergency Contacts".equalsIgnoreCase(this.selenium.getTitle())){
+//            selenium.get(LANDING_PAGE);
+//        }
     }
 
-    public void clickAddGuardianButton() {
+    public void clickAddGuardianButton() throws Exception {
         addGuardianBtn.click();
+        Thread.sleep(2000);
     }
 
-    public void clickSaveButton() {
+    public void clickSaveButton() throws Exception {
         saveBtn.click();
+        Thread.sleep(2000);
     }
 
-    public void clickDoneButton() {
+    public void clickDoneButton() throws Exception {
         doneBtn.click();
+        Thread.sleep(2000);
     }
 
     public void fillOutGuardianInfo() {
@@ -60,7 +66,7 @@ public class addGuardianPage {
         guardianPhone.sendKeys("(333)333-3333");
         relationshipSelect.click();
         relationshipId.click();
-        guardianDateOfBirth.sendKeys("10/10/2010");
+        guardianDateOfBirth.sendKeys("10/10/1970");
     }
 
 

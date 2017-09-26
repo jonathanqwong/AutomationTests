@@ -1,12 +1,10 @@
 package com.studenttrac.qa.webpages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -66,8 +64,9 @@ public class accountCreationPage {
 //        selenium.findElement(By.id("input_11")).sendKeys("edi");
     }
 
-    public void clickCreateAccountButton() {
+    public void clickCreateAccountButton() throws Exception {
         createAccountBtn.click();
+        Thread.sleep(3000);
     }
 
     public boolean isCreateAccountButtonPresent() {
