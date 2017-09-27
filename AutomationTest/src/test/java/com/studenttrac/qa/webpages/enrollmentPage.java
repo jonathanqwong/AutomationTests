@@ -20,10 +20,11 @@ public class enrollmentPage {
     public enrollmentPage(WebDriver selenium) throws Exception{
         this.selenium = selenium;
         PageFactory.initElements(selenium, this);
-//        ENROLLMENT_PAGE = selenium.getCurrentUrl();
-//        if (!"Registration".equalsIgnoreCase(this.selenium.getTitle())){
-//            selenium.get(ENROLLMENT_PAGE);
-//        }
+        ENROLLMENT_PAGE = selenium.getCurrentUrl();
+        if (!"Enrollments".equalsIgnoreCase(this.selenium.getTitle())){
+            selenium.get(ENROLLMENT_PAGE);
+            Thread.sleep(10000);
+        }
     }
 
     public void clickRegisterButton() throws Exception {

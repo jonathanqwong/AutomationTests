@@ -67,6 +67,7 @@ public class accountCreationPage {
     public void clickCreateAccountButton() throws Exception {
         createAccountBtn.click();
         Thread.sleep(3000);
+
     }
 
     public boolean isCreateAccountButtonPresent() {

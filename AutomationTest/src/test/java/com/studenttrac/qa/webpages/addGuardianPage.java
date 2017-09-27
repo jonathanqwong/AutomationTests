@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.concurrent.TimeUnit;
+
 public class addGuardianPage {
     WebDriver selenium;
 
@@ -38,10 +40,11 @@ public class addGuardianPage {
     public addGuardianPage(WebDriver selenium) throws Exception {
         this.selenium = selenium;
         PageFactory.initElements(selenium, this);
-//        LANDING_PAGE = selenium.getCurrentUrl();
-//        if (!"Parent / Legal Guardians / Emergency Contacts".equalsIgnoreCase(this.selenium.getTitle())){
-//            selenium.get(LANDING_PAGE);
-//        }
+        if (!"Parent / Legal Guardians / Emergency Contacts".equalsIgnoreCase(this.selenium.getTitle())){
+            LANDING_PAGE = selenium.getCurrentUrl();
+            selenium.get(LANDING_PAGE);
+            Thread.sleep(3000);
+        }
     }
 
     public void clickAddGuardianButton() throws Exception {
@@ -55,6 +58,7 @@ public class addGuardianPage {
     }
 
     public void clickDoneButton() throws Exception {
+
         doneBtn.click();
         Thread.sleep(2000);
     }

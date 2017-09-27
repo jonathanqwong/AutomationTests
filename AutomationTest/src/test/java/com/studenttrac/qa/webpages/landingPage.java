@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.concurrent.TimeUnit;
+
 public class landingPage {
     WebDriver selenium;
 
@@ -21,9 +23,9 @@ public class landingPage {
     public landingPage(WebDriver selenium) {
         this.selenium = selenium;
         PageFactory.initElements(selenium, this);
-        if (!"LandingPage".equalsIgnoreCase(this.selenium.getTitle())){
-            selenium.get(LANDING_PAGE);
-        }
+//        if (!"LandingPage".equalsIgnoreCase(this.selenium.getTitle())){
+//            selenium.get(LANDING_PAGE);
+//        }
     }
 
     public void clickLetsGetStartButton() throws Exception {

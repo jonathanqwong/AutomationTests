@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.studenttrac.qa.webpages.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.*;
@@ -25,15 +26,15 @@ public class registration {
         System.setProperty("webdriver.chrome.driver", "browser//chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
-        selenium = new ChromeDriver();
+        selenium = new ChromeDriver(chromeOptions);
         loadCreateAccountPage();
         selenium.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @After
-    public void tearDown() throws Exception {
-        selenium.quit();
-    }
+//    @After
+//    public void tearDown() throws Exception {
+//        selenium.quit();
+//    }
 
     @Test
     public void startRegistration() throws Exception {
@@ -50,12 +51,11 @@ public class registration {
         System.out.println("Student Account Creation Confirmed");
 
         // Step 3) Validate the account is created on Landing Page
-        WebElement getStartedText = selenium.findElement(By.className("getStarted"));
-        assertTrue(getStartedText != null);
-
         landingPage landing = new landingPage(selenium);
         landing.clickLetsGetStartButton();
         System.out.println("Landing Page Confirmed");
+//        WebElement getStartedText = selenium.findElement(By.className("getStarted"));
+//        assertTrue(getStartedText != null);
 
         // Step 4) Add a Guardian
         addGuardianPage guardian = new addGuardianPage(selenium);
@@ -69,6 +69,11 @@ public class registration {
         enrollmentPage enrollment = new enrollmentPage(selenium);
         enrollment.clickRegisterButton();
         System.out.println("Registration Started Confirmed");
+
+        // Step 6) Fill Out Registration Forms
+        registrationFormPage registration = new registrationFormPage(selenium);
+        registration.fillOutStudentApplicationForm();
+
     }
 
     @Test
