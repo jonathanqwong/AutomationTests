@@ -13,7 +13,7 @@ public class registration {
     WebDriver selenium;
 
     private void loadCreateAccountPage() {
-        selenium.get("https://qa.studenttrac.com/#/registration/create/21");
+        selenium.get("https://stage.studenttrac.com/#/registration/create/21");
     }
 
     @Before
@@ -68,6 +68,7 @@ public class registration {
         // Step 6) Fill Out Registration Forms
         registrationFormPage registration = new registrationFormPage(selenium);
         registration.fillOutStudentApplicationForm();
+        registration.fillOutHouseHoldInfoForm();
 
     }
 

@@ -23,8 +23,8 @@
           <file leaf-file-name="registration.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/java/com/studenttrac/qa/tests/registration.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="29" column="36" lean-forward="true" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+                <state relative-caret-position="85">
+                  <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -98,8 +98,8 @@
           <file leaf-file-name="registrationFormPage.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/java/com/studenttrac/qa/webpages/registrationFormPage.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="392">
-                  <caret line="117" column="25" lean-forward="false" selection-start-line="117" selection-start-column="25" selection-end-line="117" selection-end-column="25" />
+                <state relative-caret-position="-626">
+                  <caret line="51" column="44" lean-forward="true" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="45" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -135,8 +135,8 @@
         <option value="$PROJECT_DIR$/src/test/java/com/studenttrac/qa/webpages/addGuardianPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/studenttrac/qa/webpages/enrollmentPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/studenttrac/qa/webpages/landingPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/studenttrac/qa/tests/registration.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/studenttrac/qa/webpages/accountCreationPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/studenttrac/qa/tests/registration.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/studenttrac/qa/webpages/registrationFormPage.java" />
       </list>
     </option>
@@ -160,10 +160,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1672" />
-    <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="x" value="1732" />
+    <option name="y" value="146" />
+    <option name="width" value="1518" />
+    <option name="height" value="791" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -245,7 +245,7 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.19593999" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -491,44 +491,44 @@
       <updated>1506030853814</updated>
       <workItem from="1506030857743" duration="5245000" />
       <workItem from="1506038354544" duration="15056000" />
-      <workItem from="1506359589874" duration="28880000" />
+      <workItem from="1506359589874" duration="39227000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="registration - 2017.09.29 at 09h 51m 42s.xml">
+    <history-entry file="registration - 2017.09.29 at 15h 55m 13s.xml">
       <configuration name="registration" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="registration_startRegistration - 2017.09.29 at 08h 25m 13s.xml">
+    <history-entry file="registration_startRegistration - 2017.09.29 at 10h 12m 27s.xml">
       <configuration name="registration.startRegistration" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="registration_startRegistration - 2017.09.29 at 08h 25m 42s.xml">
+    <history-entry file="registration_startRegistration - 2017.09.29 at 10h 14m 09s.xml">
       <configuration name="registration.startRegistration" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="registration_startRegistration - 2017.09.29 at 08h 25m 56s.xml">
+    <history-entry file="registration_startRegistration - 2017.09.29 at 12h 29m 47s.xml">
       <configuration name="registration.startRegistration" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="registration_startRegistration - 2017.09.29 at 08h 26m 22s.xml">
+    <history-entry file="registration_startRegistration - 2017.09.29 at 13h 47m 33s.xml">
       <configuration name="registration.startRegistration" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="registration_startRegistration - 2017.09.29 at 08h 26m 43s.xml">
+    <history-entry file="registration_startRegistration - 2017.09.29 at 13h 49m 16s.xml">
       <configuration name="registration.startRegistration" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="registration_startRegistration - 2017.09.29 at 08h 26m 45s.xml">
+    <history-entry file="registration_startRegistration - 2017.09.29 at 15h 25m 22s.xml">
       <configuration name="registration.startRegistration" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="registration_startRegistration - 2017.09.29 at 08h 29m 06s.xml">
+    <history-entry file="registration_startRegistration - 2017.09.29 at 15h 56m 04s.xml">
       <configuration name="registration.startRegistration" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="registration_startRegistration - 2017.09.29 at 09h 52m 37s.xml">
+    <history-entry file="registration_startRegistration - 2017.09.29 at 16h 19m 56s.xml">
       <configuration name="registration.startRegistration" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="registration_startRegistration - 2017.09.29 at 09h 53m 47s.xml">
+    <history-entry file="registration_startRegistration - 2017.09.29 at 16h 46m 52s.xml">
       <configuration name="registration.startRegistration" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49181000" />
+    <option name="totallyTimeSpent" value="59528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1672" y="-8" width="1696" height="1026" extended-state="6" />
@@ -536,14 +536,14 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3242059" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32092005" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22343922" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22343922" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297619" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -602,7 +602,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -761,8 +761,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/studenttrac/qa/tests/registration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="29" column="36" lean-forward="true" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+        <state relative-caret-position="85">
+          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -771,8 +771,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/studenttrac/qa/webpages/registrationFormPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="117" column="25" lean-forward="false" selection-start-line="117" selection-start-column="25" selection-end-line="117" selection-end-column="25" />
+        <state relative-caret-position="-626">
+          <caret line="51" column="44" lean-forward="true" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -843,7 +843,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>AutomationTest</last-edited>
+          <last-edited>NewTest</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
