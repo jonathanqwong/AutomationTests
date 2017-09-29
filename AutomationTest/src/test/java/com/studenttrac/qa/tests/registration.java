@@ -1,18 +1,13 @@
 package com.studenttrac.qa.tests;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
-
 import com.studenttrac.qa.webpages.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.*;
 import static org.junit.Assert.*;
 import org.junit.*;
-
 
 public class registration {
     WebDriver selenium;
