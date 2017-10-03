@@ -54,6 +54,7 @@ public class registrationFormPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\'tabular_section_0\']/form-section/div/div/div/div[2]/form-grid[2]/div/table/tbody/tr[5]/td[2]/div/div/magic-field/div/div/div/div/md-input-container/select/option[7]")
     WebElement birthStateOption;
 
+
     // Contact
     @FindBy(how = How.XPATH, using = "//*[@id=\"dialogContent_73\"]/div/div/md-input-container[2]/select/option[6]")
     WebElement studentAddressStateOption;

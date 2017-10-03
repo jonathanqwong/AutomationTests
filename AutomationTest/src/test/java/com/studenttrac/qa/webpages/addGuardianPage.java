@@ -12,7 +12,7 @@ public class addGuardianPage {
     WebDriver selenium;
 
     // Add Guardian Page URL (EX: https://qa.studenttrac.com/#/registration/student/#/guardians)
-    private static String LANDING_PAGE = null;
+    private static String GUARDIAN_PAGE = null;
 
     // Locators
     @FindBy(how = How.CLASS_NAME, using = "addGuardian")
@@ -41,8 +41,8 @@ public class addGuardianPage {
         this.selenium = selenium;
         PageFactory.initElements(selenium, this);
         if (!"Parent / Legal Guardians / Emergency Contacts".equalsIgnoreCase(this.selenium.getTitle())){
-            LANDING_PAGE = selenium.getCurrentUrl();
-            selenium.get(LANDING_PAGE);
+            GUARDIAN_PAGE = selenium.getCurrentUrl();
+            selenium.get(GUARDIAN_PAGE);
             Thread.sleep(3000);
         }
     }

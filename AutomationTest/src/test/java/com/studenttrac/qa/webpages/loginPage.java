@@ -10,7 +10,7 @@ public class loginPage {
     WebDriver selenium;
 
     // Home Page URL
-    private static String HOMEPAGE_URL = "https://qa.studenttrac.com/#/registration/21";
+    private static String HOMEPAGE_URL = "https://stage.studenttrac.com/#/registration/21";
 
     // Locators
     @FindBy(how = How.ID, using = "submit")

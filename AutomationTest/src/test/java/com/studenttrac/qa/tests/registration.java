@@ -12,17 +12,12 @@ import org.junit.*;
 public class registration {
     WebDriver selenium;
 
-    private void loadCreateAccountPage() {
-        selenium.get("https://stage.studenttrac.com/#/registration/create/21");
-    }
-
     @Before
     public void setUp() throws Exception {
         System.setProperty("webdriver.chrome.driver", "browser//chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
         selenium = new ChromeDriver(chromeOptions);
-        loadCreateAccountPage();
         selenium.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
