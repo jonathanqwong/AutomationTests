@@ -1,4 +1,4 @@
-package com.studenttrac.qa.webpages;
+package com.studenttrac.qa.generators;
 
 public class generalMethods {
 
