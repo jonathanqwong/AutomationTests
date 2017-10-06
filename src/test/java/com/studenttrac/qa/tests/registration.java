@@ -10,8 +10,8 @@ import static org.junit.Assert.*;
 import org.junit.*;
 
 public class registration {
-    WebDriver selenium;
 
+    WebDriver selenium;
     @Before
     public void setUp() throws Exception {
         System.setProperty("webdriver.chrome.driver", "browser//chromedriver.exe");
@@ -44,8 +44,6 @@ public class registration {
         landingPage landing = new landingPage(selenium);
         landing.clickLetsGetStartButton();
         System.out.println("Landing Page Confirmed");
-//        WebElement getStartedText = selenium.findElement(By.className("getStarted"));
-//        assertTrue(getStartedText != null);
 
         // Step 4) Add a Guardian
         addGuardianPage guardian = new addGuardianPage(selenium);
