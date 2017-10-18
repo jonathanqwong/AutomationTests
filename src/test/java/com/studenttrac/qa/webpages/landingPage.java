@@ -10,7 +10,7 @@ public class landingPage {
     WebDriver selenium;
 
     // Landing Page URL
-    private static String LANDING_PAGE = "https://stage.studenttrac.com/#/registration/student/landing";
+    private static String LANDING_PAGE = "https://qa.studenttrac.com/#/registration/student/landing";
 
     // Locators
     @FindBy(how = How.ID, using = "getStarted")
