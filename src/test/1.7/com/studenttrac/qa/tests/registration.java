@@ -62,7 +62,7 @@ public class registration {
         registrationFormPage registration = new registrationFormPage(selenium);
         registration.fillOutStudentApplicationForm();
         registration.fillOutHouseHoldInfoForm();
-
+        registration.fillOutEmergencyHealthForm();
     }
 
     @Test
