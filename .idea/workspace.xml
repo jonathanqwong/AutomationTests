@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f3c9bc3-f1b3-4119-b309-8cf1dfff3f7c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/studenttrac/qa/generators/generalMethods.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/studenttrac/stage/webpages_v1_6/accountCreationPage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/studenttrac/stage/webpages_v1_6/landingPage.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NewTest.iml" afterPath="$PROJECT_DIR$/NewTest.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/regression_test/tests/RegistrationTests.java" afterPath="$PROJECT_DIR$/src/regression_test/tests/RegistrationTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/regression_test/webpages/AccountCreationPage.java" afterPath="$PROJECT_DIR$/src/regression_test/webpages/AccountCreationPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/regression_test/webpages/AddGuardianPage.java" afterPath="$PROJECT_DIR$/src/regression_test/webpages/AddGuardianPage.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,14 +30,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegistrationTests.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RegistrationTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/regression_test/tests/RegistrationTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+              <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -53,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/src/regression_test/webpages/AddGuardianPage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="17" lean-forward="true" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -126,6 +139,7 @@
         <option value="$PROJECT_DIR$/src/regression_test/tests/RegistrationTests.java" />
         <option value="$PROJECT_DIR$/src/regression_test/webpages/AccountCreationPage.java" />
         <option value="$PROJECT_DIR$/src/regression_test/webpages/AddGuardianPage.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -172,6 +186,11 @@
             <path>
               <item name="AutomationTests" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutomationTests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AutomationTests" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AutomationTests" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AutomationTests" type="b2602c69:ProjectViewProjectNode" />
@@ -573,7 +592,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76332000" />
+    <option name="totallyTimeSpent" value="76382000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1688" y="-8" width="1696" height="1026" extended-state="6" />
@@ -588,7 +607,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22343922" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22343922" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -675,8 +694,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_144/src.zip!/java/lang/Thread.java" />
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_144/src.zip!/java/util/List.java" />
     <entry file="jar://$USER_HOME$/Desktop/AutomationLib/selenium-java-3.5.0/client-combined-3.5.0-nodeps.jar!/org/openqa/selenium/PageLoadStrategy.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -707,7 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
           <caret line="39" column="19" lean-forward="false" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -715,29 +731,14 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/studenttrac/qa/webpages/addGuardianPage.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/com/studenttrac/qa/webpages/registrationFormPage.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/com/studenttrac/qa/tests/registration.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/1.7/com/studenttrac/qa/generators/test.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/regression_test/1.6/com/studenttrac/stage/tests/registration_v1_6.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/1.7/com/studenttrac/qa/generators/test.kt" />
+    <entry file="file://$PROJECT_DIR$/src/regression_test/1.6/com/studenttrac/stage/tests/registration_v1_6.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/com/studenttrac/qa/tests/registration.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/com/studenttrac/qa/webpages/addGuardianPage.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="39" column="19" lean-forward="false" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -782,7 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
           <caret line="39" column="19" lean-forward="false" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,7 +810,7 @@
     <entry file="file://$PROJECT_DIR$/src/regression_test/webpages/AddGuardianPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="true" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -834,10 +834,26 @@
     <entry file="file://$PROJECT_DIR$/src/regression_test/tests/RegistrationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
