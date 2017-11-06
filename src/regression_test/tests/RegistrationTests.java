@@ -1,13 +1,17 @@
-package com.studenttrac.qa.tests;
+package tests;
 
-import java.util.concurrent.TimeUnit;
-import com.studenttrac.qa.webpages.*;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.*;
-import static org.junit.Assert.*;
-import org.junit.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import webpages.*;
+
+import java.util.concurrent.TimeUnit;
+
+import static org.junit.Assert.assertTrue;
 
 public class registration {
 
@@ -63,6 +67,12 @@ public class registration {
         registration.fillOutStudentApplicationForm();
         registration.fillOutHouseHoldInfoForm();
         registration.fillOutEmergencyHealthForm();
+        registration.fillOutPhotographicConsent();
+        registration.fillOutInternetAccessConsent();
+        registration.fillOutPhysicalEducationConsent();
+        registration.fillOutTransportationConsent();
+        registration.fillOutAffidavitConsent();
+        registration.fillOutMAConsent();
     }
 
     @Test
