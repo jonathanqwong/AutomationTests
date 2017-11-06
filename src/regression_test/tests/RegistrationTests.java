@@ -38,7 +38,7 @@ public class RegistrationTests {
         login.clickCreateAccountButton();
 
         // Step 2) Create an account
-        accountCreationPage createAccount = new accountCreationPage(selenium);
+        AccountCreationPage createAccount = new AccountCreationPage(selenium);
         createAccount.fillOutCreateAccountForm();
         createAccount.isCreateAccountButtonPresent();
         createAccount.clickCreateAccountButton();
@@ -83,7 +83,7 @@ public class RegistrationTests {
         login.clickCreateAccountButton();
 
         // Step 2) Create an account
-        accountCreationPage createAccount = new accountCreationPage(selenium);
+        AccountCreationPage createAccount = new AccountCreationPage(selenium);
         createAccount.fillOutCreateAccountForm();
         createAccount.isCreateAccountButtonPresent();
         createAccount.clickCreateAccountButton();

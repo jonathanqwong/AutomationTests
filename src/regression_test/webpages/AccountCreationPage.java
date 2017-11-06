@@ -51,7 +51,7 @@ public class AccountCreationPage {
         lastName.sendKeys("Test_" + time_Stamp.toString());
         email.sendKeys("cufomuhe@kekita.com");
         phone.sendKeys("(333)333-3333");
-        birthdate.sendKeys("10/10/2010");
+        birthdate.sendKeys("10/10/1999");
         username.sendKeys("Sel_Test_" + time_Stamp.toString());
         password.sendKeys("edi");
         password_confirmation.sendKeys("edi");

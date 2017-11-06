@@ -62,7 +62,7 @@ public class AddGuardianPage {
 
     public void fillOutGuardianInfo() {
         guardianFirstName.sendKeys("Dad");
-        guardianLastName.sendKeys("Test_" + accountCreationPage.time_Stamp.toString());
+        guardianLastName.sendKeys("Test_" + AccountCreationPage.time_Stamp.toString());
         guardianEmail.sendKeys("cufomuhe@kekita.com");
         guardianPhone.sendKeys("(333)333-3333");
         relationshipSelect.click();
