@@ -1,4 +1,4 @@
-package com.studenttrac.stage.webpages_v1_6;
+package webpages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-public class addGuardianPage_v1_6 {
+public class AddGuardianPage {
     WebDriver selenium;
 
     // Add Guardian Page URL (EX: https://qa.studenttrac.com/#/registration/student/#/guardians)
@@ -35,7 +35,7 @@ public class addGuardianPage_v1_6 {
     WebElement guardianDateOfBirth;
 
     // Constructor
-    public addGuardianPage_v1_6(WebDriver selenium) throws Exception {
+    public AddGuardianPage(WebDriver selenium) throws Exception {
         this.selenium = selenium;
         PageFactory.initElements(selenium, this);
         if (!"Parent / Legal Guardians / Emergency Contacts".equalsIgnoreCase(this.selenium.getTitle())){
@@ -62,7 +62,7 @@ public class addGuardianPage_v1_6 {
 
     public void fillOutGuardianInfo() {
         guardianFirstName.sendKeys("Dad");
-        guardianLastName.sendKeys("Test_" + accountCreationPage_v1_6.time_Stamp.toString());
+        guardianLastName.sendKeys("Test_" + accountCreationPage.time_Stamp.toString());
         guardianEmail.sendKeys("cufomuhe@kekita.com");
         guardianPhone.sendKeys("(333)333-3333");
         relationshipSelect.click();

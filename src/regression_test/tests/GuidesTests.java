@@ -1,4 +1,4 @@
 package tests;
 
-public class guides {
+public class GuidesTests {
 }

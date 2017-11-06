@@ -1,4 +1,4 @@
-package com.studenttrac.stage.webpages_v1_6;
+package webpages;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-public class registrationFormPage_v1_6 {
+public class RegistrationFormPage {
     WebDriver selenium;
 
     // Registration Form Page URL
@@ -172,7 +172,7 @@ public class registrationFormPage_v1_6 {
     WebElement MAAgreement;
 
     // Constructor
-    public registrationFormPage_v1_6(WebDriver selenium) throws Exception {
+    public RegistrationFormPage(WebDriver selenium) throws Exception {
         this.selenium = selenium;
         PageFactory.initElements(selenium, this);
         REGISTRATION_FORM_PAGE = selenium.getCurrentUrl();

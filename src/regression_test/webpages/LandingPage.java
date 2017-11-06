@@ -1,4 +1,4 @@
-package com.studenttrac.stage.webpages_v1_6;
+package webpages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-public class landingPage_v1_6 {
+public class LandingPage {
     WebDriver selenium;
     //WebDriverWait wait = new WebDriverWait(selenium, 10);
 
@@ -18,7 +18,7 @@ public class landingPage_v1_6 {
     WebElement getStartedBtn;
 
     // Constructor
-    public landingPage_v1_6(WebDriver selenium) throws Exception {
+    public LandingPage(WebDriver selenium) throws Exception {
         this.selenium = selenium;
         PageFactory.initElements(selenium, this);
         if (!"LandingPage".equalsIgnoreCase(this.selenium.getTitle())){

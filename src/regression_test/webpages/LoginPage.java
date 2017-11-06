@@ -1,4 +1,4 @@
-package com.studenttrac.stage.webpages_v1_6;
+package webpages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-public class loginPage_v1_6 {
+public class LoginPage {
     WebDriver selenium;
 
     // Home Page URL
@@ -19,7 +19,7 @@ public class loginPage_v1_6 {
     WebElement createAccountBtn;
 
     // Constructor
-    public loginPage_v1_6(WebDriver selenium) {
+    public LoginPage(WebDriver selenium) {
         this.selenium = selenium;
         selenium.get(HOMEPAGE_URL);
         PageFactory.initElements(selenium, this);

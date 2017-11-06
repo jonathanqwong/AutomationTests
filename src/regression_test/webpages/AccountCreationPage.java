@@ -1,4 +1,4 @@
-package com.studenttrac.stage.webpages_v1_6;
+package webpages;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class accountCreationPage_v1_6 {
+public class AccountCreationPage {
     WebDriver selenium;
 
     // Home Page URL
@@ -38,7 +38,7 @@ public class accountCreationPage_v1_6 {
     WebElement password_confirmation;
 
     // Constructor
-    public accountCreationPage_v1_6(WebDriver selenium) {
+    public AccountCreationPage(WebDriver selenium) {
         this.selenium = selenium;
         PageFactory.initElements(selenium, this);
         if (!"CreateAccount".equalsIgnoreCase(this.selenium.getTitle())){

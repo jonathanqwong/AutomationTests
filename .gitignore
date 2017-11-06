@@ -1,6 +1,8 @@
 #################
 ## IntelliJ
 #################
+.idea/workspace.xml
+browser/chromedriver.exe
 
 #################
 ## Eclipse

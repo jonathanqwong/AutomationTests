@@ -1,4 +1,4 @@
-package com.studenttrac.stage.webpages_v1_6;
+package webpages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-public class enrollmentPage_v1_6 {
+public class EnrollmentPage {
     WebDriver selenium;
 
     // Select Enrollment Page URL
@@ -17,7 +17,7 @@ public class enrollmentPage_v1_6 {
     WebElement registerBtn;
 
     // Constructor
-    public enrollmentPage_v1_6(WebDriver selenium) throws Exception{
+    public EnrollmentPage(WebDriver selenium) throws Exception{
         this.selenium = selenium;
         PageFactory.initElements(selenium, this);
         ENROLLMENT_PAGE = selenium.getCurrentUrl();

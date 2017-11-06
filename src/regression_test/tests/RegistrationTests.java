@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertTrue;
 
-public class registration {
+public class RegistrationTests {
 
     WebDriver selenium;
     @Before
@@ -34,7 +34,7 @@ public class registration {
     public void startRegistration() throws Exception {
 
         // Step 1) Go to the login page and click create account
-        loginPage login = new loginPage(selenium);
+        LoginPage login = new LoginPage(selenium);
         login.clickCreateAccountButton();
 
         // Step 2) Create an account
@@ -45,12 +45,12 @@ public class registration {
         System.out.println("Student Account Creation Confirmed");
 
         // Step 3) Validate the account is created on Landing Page
-        landingPage landing = new landingPage(selenium);
+        LandingPage landing = new LandingPage(selenium);
         landing.clickLetsGetStartButton();
         System.out.println("Landing Page Confirmed");
 
         // Step 4) Add a Guardian
-        addGuardianPage guardian = new addGuardianPage(selenium);
+        AddGuardianPage guardian = new AddGuardianPage(selenium);
         guardian.clickAddGuardianButton();
         guardian.fillOutGuardianInfo();
         guardian.clickSaveButton();
@@ -58,12 +58,12 @@ public class registration {
         System.out.println("Guardian Added Confirmed");
 
         // Step 5) Select Enrollment Period
-        enrollmentPage enrollment = new enrollmentPage(selenium);
+        EnrollmentPage enrollment = new EnrollmentPage(selenium);
         enrollment.clickRegisterButton();
         System.out.println("Registration Started Confirmed");
 
         // Step 6) Fill Out Registration Forms
-        registrationFormPage registration = new registrationFormPage(selenium);
+        RegistrationFormPage registration = new RegistrationFormPage(selenium);
         registration.fillOutStudentApplicationForm();
         registration.fillOutHouseHoldInfoForm();
         registration.fillOutEmergencyHealthForm();
@@ -79,7 +79,7 @@ public class registration {
     public void createAccountDuplicateException() throws Exception {
 
         // Step 1) Go to the login page and click create account
-        loginPage login = new loginPage(selenium);
+        LoginPage login = new LoginPage(selenium);
         login.clickCreateAccountButton();
 
         // Step 2) Create an account

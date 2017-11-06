@@ -1,6 +1,6 @@
-package com.studenttrac.qa.generators;
+package generators;
 
-public class generalMethods {
+public class GeneralMethods {
 
 //    TO-DO
 //    signature
