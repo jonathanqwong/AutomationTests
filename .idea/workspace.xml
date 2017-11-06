@@ -2,16 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f3c9bc3-f1b3-4119-b309-8cf1dfff3f7c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/regression_test/objects/Report.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/regression_test/tests/GuidesTests.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/regression_test/1.6/com/studenttrac/stage/tests/registration_v1_6.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/1.7/com/studenttrac/qa/tests/guides.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/1.7/com/studenttrac/qa/webpages/accountCreationPage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/1.7/com/studenttrac/qa/webpages/addGuardianPage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/1.7/com/studenttrac/qa/webpages/enrollmentPage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/1.7/com/studenttrac/qa/webpages/landingPage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/1.7/com/studenttrac/qa/webpages/loginPage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/1.7/com/studenttrac/qa/webpages/registrationFormPage.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/studenttrac/qa/tests/guides.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/studenttrac/qa/tests/registration.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/studenttrac/qa/webpages/accountCreationPage.class" afterPath="" />
@@ -27,17 +17,19 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/studenttrac/stage/webpages_v1_6/landingPage_v1_6.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/studenttrac/stage/webpages_v1_6/loginPage_v1_6.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/studenttrac/stage/webpages_v1_6/registrationFormPage_v1_6.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/regression_test/1.6/com/studenttrac/stage/webpages_v1_6/accountCreationPage_v1_6.java" afterPath="$PROJECT_DIR$/src/regression_test/webpages/AccountCreationPage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/regression_test/1.6/com/studenttrac/stage/webpages_v1_6/addGuardianPage_v1_6.java" afterPath="$PROJECT_DIR$/src/regression_test/webpages/AddGuardianPage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/regression_test/1.6/com/studenttrac/stage/webpages_v1_6/enrollmentPage_v1_6.java" afterPath="$PROJECT_DIR$/src/regression_test/webpages/EnrollmentPage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/regression_test/1.6/com/studenttrac/stage/webpages_v1_6/landingPage_v1_6.java" afterPath="$PROJECT_DIR$/src/regression_test/webpages/LandingPage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/regression_test/1.6/com/studenttrac/stage/webpages_v1_6/loginPage_v1_6.java" afterPath="$PROJECT_DIR$/src/regression_test/webpages/LoginPage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/regression_test/1.6/com/studenttrac/stage/webpages_v1_6/registrationFormPage_v1_6.java" afterPath="$PROJECT_DIR$/src/regression_test/webpages/RegistrationFormPage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/1.7/com/studenttrac/qa/generators/generalMethods.java" afterPath="$PROJECT_DIR$/src/regression_test/generators/GeneralMethods.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/1.7/com/studenttrac/qa/tests/registration.java" afterPath="$PROJECT_DIR$/src/regression_test/tests/RegistrationTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/regression_test/generators/GeneralMethods.java" afterPath="$PROJECT_DIR$/src/regression_test/generators/GeneralMethods.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/regression_test/objects/Report.java" afterPath="$PROJECT_DIR$/src/regression_test/objects/Report.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/regression_test/tests/GuidesTests.java" afterPath="$PROJECT_DIR$/src/regression_test/tests/GuidesTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/regression_test/tests/RegistrationTests.java" afterPath="$PROJECT_DIR$/src/regression_test/tests/RegistrationTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/regression_test/webpages/AccountCreationPage.java" afterPath="$PROJECT_DIR$/src/regression_test/webpages/AccountCreationPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/regression_test/webpages/AddGuardianPage.java" afterPath="$PROJECT_DIR$/src/regression_test/webpages/AddGuardianPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/regression_test/webpages/EnrollmentPage.java" afterPath="$PROJECT_DIR$/src/regression_test/webpages/EnrollmentPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/regression_test/webpages/LandingPage.java" afterPath="$PROJECT_DIR$/src/regression_test/webpages/LandingPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/regression_test/webpages/LoginPage.java" afterPath="$PROJECT_DIR$/src/regression_test/webpages/LoginPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/regression_test/webpages/RegistrationFormPage.java" afterPath="$PROJECT_DIR$/src/regression_test/webpages/RegistrationFormPage.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -109,10 +101,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountCreationPage.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AccountCreationPage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/regression_test/webpages/AccountCreationPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="-221">
               <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -121,7 +113,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -631,7 +623,7 @@
       <workItem from="1508351061680" duration="1006000" />
       <workItem from="1509990431071" duration="827000" />
       <workItem from="1509992457163" duration="1647000" />
-      <workItem from="1509994125981" duration="1097000" />
+      <workItem from="1509994125981" duration="1468000" />
     </task>
     <servers />
   </component>
@@ -668,7 +660,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78855000" />
+    <option name="totallyTimeSpent" value="79226000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -919,21 +911,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/regression_test/webpages/AccountCreationPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/regression_test/webpages/AccountCreationPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-221">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
