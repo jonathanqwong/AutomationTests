@@ -17,7 +17,9 @@ public class RegistrationFormPage {
 
     // Locators
     @FindBy(how = How.CLASS_NAME, using = "instanceSaveBtn")
-    WebElement SaveNContinueBtn ;
+    WebElement SaveNContinueBtn;
+    @FindBy(how = How.CLASS_NAME, using = "finalize-submit-btn")
+    WebElement finalizeNSubmitBtn;
 
     // Widgets
     @FindBy(how = How.CLASS_NAME, using = "addAddress")
@@ -50,30 +52,37 @@ public class RegistrationFormPage {
     WebElement saveSignature;
     @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_5\"]/form-section/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
     WebElement signatureNameInStudentApplication;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_3\"]/form-section/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
-    WebElement guardianSignatureNameInHouseholdInfo;
     @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_5\"]/form-section/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
     WebElement studentSignatureNameInEmergencyHealth;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_6\"]/form-section/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
-    WebElement guardianSignatureNameInEmergencyHealth;
     @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
     WebElement studentSignatureNameInPhotographicConsent;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[4]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
-    WebElement guardianSignatureNameInPhotographicConsent;
     @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
     WebElement studentSignatureNameInternetAccessPolicy;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[4]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
-    WebElement guardianSignatureNameInternetAccessPolicy;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[4]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
-    WebElement guardianSignatureNamePhysicalEducationConsent;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[4]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
-    WebElement guardianSignatureNameTransportationConsent;
     @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
-    WebElement guardianSignatureNameAffidavitConsent;
+    WebElement studentSignatureNamePhysicalEducationConsent;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
+    WebElement studentSignatureNameTransportationConsent;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[2]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
+    WebElement studentSignatureNameAffidavitConsent;
     @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[4]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
     WebElement studentSignatureNameMA;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[5]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
-    WebElement guardianSignatureNameMA;
+    // Not In-Use Guaridan Signatures
+//    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_3\"]/form-section/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
+//    WebElement guardianSignatureNameInHouseholdInfo;
+//    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_6\"]/form-section/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
+//    WebElement guardianSignatureNameInEmergencyHealth;
+//    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[4]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
+//    WebElement guardianSignatureNameInPhotographicConsent;
+//    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
+//    WebElement guardianSignatureNameInternetAccessPolicy;
+//    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[4]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
+//    WebElement guardianSignatureNamePhysicalEducationConsent;
+//    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
+//    WebElement guardianSignatureNameTransportationConsent;
+//    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[4]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
+//    WebElement guardianSignatureNameAffidavitConsent;
+//    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[5]/div/div/div/div[2]/widget-signature/div/div/div[4]/div[2]/span/input")
+//    WebElement guardianSignatureNameMA;
 
     // Student Info
     @FindBy(how = How.ID, using = "radio_16")
@@ -86,7 +95,7 @@ public class RegistrationFormPage {
     // Contact
     @FindBy(how = How.XPATH, using = "//*[@id=\"dialogContent_72\"]/div/div/md-input-container[2]/select/option[6]")
     WebElement studentAddressStateOption;
-    @FindBy(how = How.ID, using = "radio_19")
+    @FindBy(how = How.ID, using = "radio_20")
     WebElement studentNighttimeResidency;
 
     // Language
@@ -114,9 +123,9 @@ public class RegistrationFormPage {
     WebElement preferredCommunicationLanguageOption;
 
     // Education
-    @FindBy(how = How.ID, using = "radio_37")
+    @FindBy(how = How.ID, using = "radio_38")
     WebElement previousSchool;
-    @FindBy(how = How.ID, using = "input_38")
+    @FindBy(how = How.ID, using = "input_39")
     WebElement lastSchoolAttended;
 
     // Guardian Contact Info
@@ -132,43 +141,43 @@ public class RegistrationFormPage {
     WebElement guardianEducationMilitaryStatus;
 
     // Emergency/Health
-    @FindBy(how = How.ID, using = "radio_243")
+    @FindBy(how = How.ID, using = "radio_241")
     WebElement releaseQuestion1;
-    @FindBy(how = How.ID, using = "radio_245")
+    @FindBy(how = How.ID, using = "radio_242")
     WebElement releaseQuestion2;
-    @FindBy(how = How.ID, using = "radio_250")
+    @FindBy(how = How.ID, using = "radio_247")
     WebElement healthQuestion1;
-    @FindBy(how = How.ID, using = "radio_278")
+    @FindBy(how = How.ID, using = "radio_275")
     WebElement medicalQuestion1;
     @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_4\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]")
     WebElement medicalQuestion2;
-    @FindBy(how = How.ID, using = "radio_281")
+    @FindBy(how = How.ID, using = "radio_278")
     WebElement medicalQuestion3;
 
     // Photographic Consent
-    @FindBy(how = How.ID, using = "radio_306")
+    @FindBy(how = How.ID, using = "radio_301")
     WebElement photographicConsent;
 
     // Internet Access
-    @FindBy(how = How.ID, using = "//*[@id=\"instanceBody\"]/form-section[2]/div/div/div/div[2]/form-grid/div/table/tbody/tr/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[2]/div/div/div/div[2]/form-grid/div/table/tbody/tr/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]")
     WebElement internetAccessConsent;
 
     // Physical Education
-    @FindBy(how = How.ID, using = "radio_349")
+    @FindBy(how = How.ID, using = "radio_325")
     WebElement physicalEducationConsent;
 
     // Transportation Consent
-    @FindBy(how = How.ID, using = "radio_362")
+    @FindBy(how = How.ID, using = "radio_339")
     WebElement transportationConsent;
 
     // Affidavit of Non-Attendance
-    @FindBy(how = How.ID, using = "//*[@id=\"instanceBody\"]/form-section[1]/div/div/div/div[2]/form-grid[3]/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[1]/div/div/div/div[2]/form-grid[3]/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]")
     WebElement affidavitConsent;
 
     // Master Agreement
-    @FindBy(how = How.ID, using = "input_408")
+    @FindBy(how = How.ID, using = "input_385")
     WebElement MAInput;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]/div[1]")
     WebElement MAAgreement;
 
     // Constructor
@@ -212,6 +221,11 @@ public class RegistrationFormPage {
         SignGuardianSignature.perform();
     }
 
+    public void clickFinalizeNSubmitBtn() throws Exception {
+        finalizeNSubmitBtn.click();
+        Thread.sleep(3000);
+    }
+
     public void fillOutStudentApplicationForm() throws Exception {
 
         // Student Information Tabular
@@ -225,6 +239,7 @@ public class RegistrationFormPage {
         // Contact Tabular
         scrollDownToElement();
         addAddressWidgetBtn.click();
+        Thread.sleep(2000);
         addressLabel.sendKeys("Home");
         addressInput.sendKeys("3400 E Foothill Blvd.");
         addressCity.sendKeys("Pasadena");
@@ -234,7 +249,7 @@ public class RegistrationFormPage {
         validateBtn.click();
         Thread.sleep(2000);
         looksGoodBtn.click();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         scrollDownToElement();
         studentNighttimeResidency.click();
         SaveNContinueBtn.click();
@@ -284,6 +299,7 @@ public class RegistrationFormPage {
         // Parents/Guardians/Emergency Contact
         scrollDownToElement();
         addAddressWidgetBtn.click();
+        Thread.sleep(2000);
         addressLabel.sendKeys("Home");
         addressInput.sendKeys("3400 E Foothill Blvd.");
         addressCity.sendKeys("Pasadena");
@@ -312,13 +328,13 @@ public class RegistrationFormPage {
         SaveNContinueBtn.click();
         Thread.sleep(2000);
 
-        // Signature Tabular
-        signSignature();
-        guardianSignatureNameInHouseholdInfo.sendKeys("Guardian Test Signature");
-        saveSignature.click();
-        Thread.sleep(3000);
-        SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        // Guardian Signature
+//        signSignature();
+//        guardianSignatureNameInHouseholdInfo.sendKeys("Guardian Test Signature");
+//        saveSignature.click();
+//        Thread.sleep(3000);
+//        SaveNContinueBtn.click();
+//        Thread.sleep(2000);
     }
 
     public void fillOutEmergencyHealthForm() throws Exception {
@@ -357,10 +373,10 @@ public class RegistrationFormPage {
         Thread.sleep(3000);
 
         // Guardian Signature
-        guardianSignatureNameInEmergencyHealth.sendKeys("Guardian Test Signature");
-        signGuardianSignature();
-        Thread.sleep(3000);
-        saveSignature.click();
+//        guardianSignatureNameInEmergencyHealth.sendKeys("Guardian Test Signature");
+//        signGuardianSignature();
+//        Thread.sleep(3000);
+//        saveSignature.click();
         Thread.sleep(3000);
         SaveNContinueBtn.click();
         Thread.sleep(3000);
@@ -370,72 +386,61 @@ public class RegistrationFormPage {
         scrollDownToElement();
         photographicConsent.click();
         signSignature();
-        studentSignatureNameInPhotographicConsent.sendKeys("Test Signature");
-        saveSignature.click();
-        scrollDownToElement();
-        signGuardianSignature();
-        guardianSignatureNameInPhotographicConsent.sendKeys("Guardian Test Signature");
+        studentSignatureNameInPhotographicConsent.sendKeys("Test Signature ");
         saveSignature.click();
         SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
     }
 
     public void fillOutInternetAccessConsent() throws Exception {
         scrollDownToElement();
         internetAccessConsent.click();
         signSignature();
-        studentSignatureNameInternetAccessPolicy.sendKeys("Test Signature");
-        saveSignature.click();
-        scrollDownToElement();
-        signGuardianSignature();
-        guardianSignatureNameInternetAccessPolicy.sendKeys("Guardian Test Signature");
+        studentSignatureNameInternetAccessPolicy.sendKeys("Test Signature   ");
         saveSignature.click();
         SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
     }
 
     public void fillOutPhysicalEducationConsent() throws Exception {
         scrollDownToElement();
         physicalEducationConsent.click();
-        signGuardianSignature();
-        guardianSignatureNameInternetAccessPolicy.sendKeys("Guardian Test Signature");
+        signSignature();
+        studentSignatureNamePhysicalEducationConsent.sendKeys(" Test Signature");
         saveSignature.click();
         SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
     }
 
     public void fillOutTransportationConsent() throws Exception {
-        transportationConsent.click();
         scrollDownToElement();
-        signGuardianSignature();
-        guardianSignatureNameTransportationConsent.sendKeys("Guardian Test Signature");
+        transportationConsent.click();
+        signSignature();
+        studentSignatureNameTransportationConsent.sendKeys("Test Signature");
         saveSignature.click();
         SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
     }
 
     public void fillOutAffidavitConsent() throws Exception {
-        affidavitConsent.click();
         scrollDownToElement();
-        signGuardianSignature();
-        guardianSignatureNameAffidavitConsent.sendKeys("Guardian Test Signature");
+        affidavitConsent.click();
+        signSignature();
+        studentSignatureNameAffidavitConsent.sendKeys("Test Signature  ");
         saveSignature.click();
         SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
     }
 
     public void fillOutMAConsent() throws Exception {
-        MAInput.sendKeys("Dad");
-        MAAgreement.click();
+//        MAInput.sendKeys("Dad");
         scrollDownToElement();
+        MAAgreement.click();
         signSignature();
         studentSignatureNameMA.sendKeys("Test Signature");
         saveSignature.click();
-        signGuardianSignature();
-        guardianSignatureNameMA.sendKeys("Guardian Test Signature");
-        saveSignature.click();
         SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
     }
 
 }
