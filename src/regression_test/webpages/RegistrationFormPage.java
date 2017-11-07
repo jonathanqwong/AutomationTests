@@ -20,6 +20,8 @@ public class RegistrationFormPage {
     WebElement SaveNContinueBtn;
     @FindBy(how = How.CLASS_NAME, using = "finalize-submit-btn")
     WebElement finalizeNSubmitBtn;
+    @FindBy(how = How.ID, using = "backToMainUrl")
+    WebElement gotItBtn;
 
     // Widgets
     @FindBy(how = How.CLASS_NAME, using = "addAddress")
@@ -177,7 +179,7 @@ public class RegistrationFormPage {
     // Master Agreement
     @FindBy(how = How.ID, using = "input_385")
     WebElement MAInput;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]/div[1]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox")
     WebElement MAAgreement;
 
     // Constructor
@@ -221,8 +223,13 @@ public class RegistrationFormPage {
         SignGuardianSignature.perform();
     }
 
-    public void clickFinalizeNSubmitBtn() throws Exception {
+    public void clickFinalizeNSubmitButton() throws Exception {
         finalizeNSubmitBtn.click();
+        Thread.sleep(3000);
+    }
+
+    public void clickGotItButton() throws Exception {
+        gotItBtn.click();
         Thread.sleep(3000);
     }
 
@@ -424,6 +431,7 @@ public class RegistrationFormPage {
 
     public void fillOutAffidavitConsent() throws Exception {
         scrollDownToElement();
+        Thread.sleep(3000);
         affidavitConsent.click();
         signSignature();
         studentSignatureNameAffidavitConsent.sendKeys("Test Signature  ");
@@ -435,6 +443,7 @@ public class RegistrationFormPage {
     public void fillOutMAConsent() throws Exception {
 //        MAInput.sendKeys("Dad");
         scrollDownToElement();
+        Thread.sleep(3000);
         MAAgreement.click();
         signSignature();
         studentSignatureNameMA.sendKeys("Test Signature");

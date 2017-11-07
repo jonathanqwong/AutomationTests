@@ -73,7 +73,8 @@ public class RegistrationTests {
         registration.fillOutTransportationConsent();
         registration.fillOutAffidavitConsent();
         registration.fillOutMAConsent();
-        registration.clickFinalizeNSubmitBtn();
+        registration.clickFinalizeNSubmitButton();
+        registration.clickGotItButton();
     }
 
     @Test
