@@ -3,6 +3,7 @@
 #################
 .idea/workspace.xml
 browser/chromedriver.exe
+target/
 
 #################
 ## Eclipse
