@@ -14,8 +14,8 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertTrue;
 
 public class RegistrationTests {
-
     WebDriver selenium;
+
     @Before
     public void setUp() throws Exception {
         System.setProperty("webdriver.chrome.driver", "browser//chromedriver.exe");
@@ -95,7 +95,5 @@ public class RegistrationTests {
         assertTrue(usernameTakenText != null);
         System.out.println("Student Account Creation Duplication Exception");
     }
-
-
 
 }

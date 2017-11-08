@@ -1,5 +1,6 @@
 package webpages;
 
+import generators.GeneralMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,11 +11,13 @@ import org.openqa.selenium.support.PageFactory;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static generators.GeneralMethods.ENV;
+
 public class AccountCreationPage {
     WebDriver selenium;
 
     // Home Page URL
-    private static String ACCOUNT_CREATION_PAGE = "https://stage.studenttrac.com/#/registration/create/21";
+    private static String ACCOUNT_CREATION_PAGE = "https://" + ENV +".studenttrac.com/#/registration/create/21";
     static String time_Stamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 
     // Locators
@@ -46,6 +49,11 @@ public class AccountCreationPage {
         }
     }
 
+    public void scrollDownToElement() {
+        JavascriptExecutor jse = (JavascriptExecutor) selenium;
+        jse.executeScript("window.scrollBy(0,600)", "");
+    }
+
     public void fillOutCreateAccountForm() {
         firstName.sendKeys("Selenium");
         lastName.sendKeys("Test_" + time_Stamp.toString());
@@ -57,16 +65,10 @@ public class AccountCreationPage {
         password_confirmation.sendKeys("edi");
     }
 
-    public void scrollDownToElement() {
-        JavascriptExecutor jse = (JavascriptExecutor)selenium;
-        jse.executeScript("window.scrollBy(0,600)", "");
-    }
-
     public void clickCreateAccountButton() throws Exception {
         scrollDownToElement();
         createAccountBtn.click();
         Thread.sleep(3000);
-
     }
 
     public boolean isCreateAccountButtonPresent() {

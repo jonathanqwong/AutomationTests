@@ -6,11 +6,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import static generators.GeneralMethods.ENV;
+
 public class LoginPage {
     WebDriver selenium;
 
     // Home Page URL
-    private static String HOMEPAGE_URL = "https://stage.studenttrac.com/#/registration/21";
+    private static String HOMEPAGE_URL = "https://" + ENV + ".studenttrac.com/#/registration/21";
 
     // Locators
     @FindBy(how = How.ID, using = "submit")
@@ -25,12 +27,12 @@ public class LoginPage {
         PageFactory.initElements(selenium, this);
     }
 
-    public void clickLoginButton() {
-        loginBtn.click();
-    }
-
     public void clickCreateAccountButton() {
         createAccountBtn.click();
+    }
+
+    public void clickLoginButton() {
+        loginBtn.click();
     }
 
 }

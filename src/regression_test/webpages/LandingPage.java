@@ -6,12 +6,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import static generators.GeneralMethods.ENV;
+
 public class LandingPage {
     WebDriver selenium;
     //WebDriverWait wait = new WebDriverWait(selenium, 10);
 
     // Landing Page URL
-    private static String LANDING_PAGE = "https://stage.studenttrac.com/#/registration/student/landing";
+    private static String LANDING_PAGE = "https://" + ENV + ".studenttrac.com/#/registration/student/landing";
 
     // Locators
     @FindBy(how = How.ID, using = "getStarted")
