@@ -1,7 +1,6 @@
 package webpages;
 
 import generators.GeneralMethods;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,7 +17,7 @@ public class AccountCreationPage {
 
     // Home Page URL
     private static String ACCOUNT_CREATION_PAGE = "https://" + ENV +".studenttrac.com/#/registration/create/21";
-    static String time_Stamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+    public static String time_Stamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 
     // Locators
     @FindBy(how = How.ID, using = "createAccount")
@@ -49,9 +48,15 @@ public class AccountCreationPage {
         }
     }
 
-    public void scrollDownToElement() {
-        JavascriptExecutor jse = (JavascriptExecutor) selenium;
-        jse.executeScript("window.scrollBy(0,600)", "");
+    public void clickCreateAccountButton() throws Exception {
+        GeneralMethods general = new GeneralMethods(selenium);
+        general.scrollDownToElement();
+        createAccountBtn.click();
+        Thread.sleep(3000);
+    }
+
+    public boolean isCreateAccountButtonPresent() {
+        return createAccountBtn != null;
     }
 
     public void fillOutCreateAccountForm() {
@@ -65,14 +70,15 @@ public class AccountCreationPage {
         password_confirmation.sendKeys("edi");
     }
 
-    public void clickCreateAccountButton() throws Exception {
-        scrollDownToElement();
-        createAccountBtn.click();
-        Thread.sleep(3000);
-    }
-
-    public boolean isCreateAccountButtonPresent() {
-        return createAccountBtn != null;
+    public void fillOutCreateAccountFormConstructor(String FirstName, String LastName, String Email, String Phone, String Birthdate, String Username, String Password, String PasswordConfirmation) {
+        firstName.sendKeys(FirstName);
+        lastName.sendKeys(LastName);
+        email.sendKeys(Email);
+        phone.sendKeys(Phone);
+        birthdate.sendKeys(Birthdate);
+        username.sendKeys(Username);
+        password.sendKeys(Password);
+        password_confirmation.sendKeys(PasswordConfirmation);
     }
 
 }

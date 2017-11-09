@@ -1,5 +1,8 @@
 package tests;
 
+import generators.GeneralMethods;
+import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -9,12 +12,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import webpages.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertTrue;
 
 public class RegistrationTests {
     WebDriver selenium;
+    public static String time_Stamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 
     @Before
     public void setUp() throws Exception {
@@ -25,10 +31,10 @@ public class RegistrationTests {
         selenium.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-//    @After
-//    public void tearDown() throws Exception {
-//        selenium.quit();
-//    }
+    @After
+    public void tearDown() throws Exception {
+        selenium.quit();
+    }
 
     @Test
     public void startRegistration() throws Exception {
@@ -75,6 +81,38 @@ public class RegistrationTests {
         registration.fillOutMAConsent();
         registration.clickFinalizeNSubmitButton();
         registration.clickGotItButton();
+    }
+
+    @Test
+    public void createAccountFirstNameREQ() throws Exception {
+        // Step 1) Go to the login page and click create account
+        LoginPage login = new LoginPage(selenium);
+        login.clickCreateAccountButton();
+
+        // Step 2) Create an account
+        AccountCreationPage createAccount = new AccountCreationPage(selenium);
+        createAccount.fillOutCreateAccountFormConstructor("", "Test_" + time_Stamp.toString(), "cufomuhe@kekita.com","(333)333-3333","10/10/1998","Sel_Test_" + time_Stamp.toString(),"edi","edi");
+        createAccount.clickCreateAccountButton();
+
+        // Step 3) Verify FirstName REQ Error
+        GeneralMethods general = new GeneralMethods(selenium);
+        general.assertErrorDialogMessage("FirstName\nThe FirstName field is required.");
+    }
+
+    @Test
+    public void createAccountLastNameREQ() throws Exception {
+        // Step 1) Go to the login page and click create account
+        LoginPage login = new LoginPage(selenium);
+        login.clickCreateAccountButton();
+
+        // Step 2) Create an account
+        AccountCreationPage createAccount = new AccountCreationPage(selenium);
+        createAccount.fillOutCreateAccountFormConstructor("Selenium", "", "cufomuhe@kekita.com","(333)333-3333","10/10/1998","Sel_Test_" + time_Stamp.toString(),"edi","edi");
+        createAccount.clickCreateAccountButton();
+
+        // Step 3) Verify LastName REQ Error
+        GeneralMethods general = new GeneralMethods(selenium);
+        general.assertErrorDialogMessage("LastName\nThe LastName field is required.");
     }
 
     @Test
