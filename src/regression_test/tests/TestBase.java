@@ -1,11 +1,19 @@
 package tests;
 
+import objects.Browser;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+
 public class TestBase {
 
-    public static void Initialize(){
-
-
+    @BeforeClass
+    public void startUpTest()throws Exception{
+        Browser.initialize();
     }
 
-    public static void 
+    @AfterClass
+    public void endTest()throws Exception{
+        Browser.Close();
+
+    }
 }

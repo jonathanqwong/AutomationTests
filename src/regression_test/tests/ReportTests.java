@@ -1,5 +1,6 @@
 package tests;
 
+import objects.Browser;
 import objects.Report;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,14 +10,14 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
-public class ReportTests {
+public class ReportTests extends TestBase {
 
     WebDriver selenium;
     //TODO pull out of class to a general location
     String environment = "qa";
 
     @Before
-    public void setUp() throws Exception {
+    public void startUpTest() throws Exception {
         System.setProperty("webdriver.chrome.driver", "browser//chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
