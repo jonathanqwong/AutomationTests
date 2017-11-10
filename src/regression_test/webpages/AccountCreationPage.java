@@ -1,6 +1,7 @@
 package webpages;
 
 import generators.GeneralMethods;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,6 +39,8 @@ public class AccountCreationPage {
     WebElement password;
     @FindBy(how = How.ID, using = "input_11")
     WebElement password_confirmation;
+    @FindBy(how = How.XPATH, using = "/html/body/div[1]/div/div/form/div[6]/div[1]/div[5]/md-checkbox")
+    WebElement showPassword;
 
     // Constructor
     public AccountCreationPage(WebDriver selenium) {
@@ -55,8 +58,21 @@ public class AccountCreationPage {
         Thread.sleep(3000);
     }
 
-    public boolean isCreateAccountButtonPresent() {
-        return createAccountBtn != null;
+    public void clickShowPasswordCheckbox() throws Exception {
+        GeneralMethods general = new GeneralMethods(selenium);
+        general.scrollDownToElement();
+        showPassword.click();
+        Thread.sleep(3000);
+    }
+
+    public void assertCreateAccountButtonNotClickable(String message) {
+        GeneralMethods general = new GeneralMethods(selenium);
+        general.scrollDownToElement();
+
+        boolean buttonStatus = createAccountBtn.isEnabled();
+        if (buttonStatus == false) {
+            System.out.println(createAccountBtn + "is disabled/" + buttonStatus + " because '" + message + "'");
+        }
     }
 
     public void fillOutCreateAccountForm() {
@@ -78,6 +94,13 @@ public class AccountCreationPage {
         birthdate.sendKeys(Birthdate);
         username.sendKeys(Username);
         password.sendKeys(Password);
+        password_confirmation.sendKeys(PasswordConfirmation);
+    }
+
+    public void changeCreateAccountPasswordConstructor(String Password, String PasswordConfirmation) {
+        password.clear();
+        password.sendKeys(Password);
+        password_confirmation.clear();
         password_confirmation.sendKeys(PasswordConfirmation);
     }
 

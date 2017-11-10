@@ -1,9 +1,7 @@
 package generators;
 
 import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -13,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 //    2) Constructor
 //    3) Scrolling
 //    4) Error Dialog Assertion
+//    5) Toast Assertion
 
 //    TO-DO
 //    create test account using API
@@ -26,6 +25,8 @@ public class GeneralMethods {
 
     @FindBy(how = How.CLASS_NAME, using = "md-list-item-text")
     WebElement error_Dialog;
+    @FindBy(how = How.CLASS_NAME, using = "md-toast-content")
+    WebElement toast;
 
     // Constructor
     public GeneralMethods(WebDriver selenium) {
@@ -43,5 +44,17 @@ public class GeneralMethods {
         String errorDialog = error_Dialog.getText();
         System.out.println(errorDialog);
         Assert.assertEquals(expected_message, errorDialog);
+    }
+
+    public void assertToastMessage(String expected_message) {
+        String toastContent = toast.getText();
+        System.out.println(toastContent);
+        Assert.assertEquals(expected_message, toastContent);
+    }
+
+    public void assertPageTitle(String expected_title) {
+        String titleContent = selenium.getTitle();
+        System.out.println(titleContent);
+        Assert.assertEquals(expected_title, titleContent);
     }
 }
