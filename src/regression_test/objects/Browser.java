@@ -35,15 +35,23 @@ public class Browser {
     }
 
     /**
+     * Used to get reference to Browsers WebDriver.
+     *
+     * @return Browser's WebDriver
+     */
+    public static WebDriver getDriver(){
+       return seleniumWebDriver;
+    }
+
+    /**
      *  Close browser
      */
     public static void close(){
         seleniumWebDriver.close();
     }
 
-
     /**
-     * Used to Represent Testing Environments
+     * Used to Represent Testing Environment Options
      */
     public enum Enviroment {
         DEV,
