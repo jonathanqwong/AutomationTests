@@ -1,5 +1,6 @@
 package webpages;
 
+import objects.Browser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,6 +32,10 @@ public class LoginPage {
         PageFactory.initElements(selenium, this);
     }
 
+    public LoginPage(){
+
+    }
+
     public void clickCreateAccountButton() {
         createAccountBtn.click();
     }
@@ -42,6 +47,17 @@ public class LoginPage {
     public void inputLoginCredentials(String Username, String Password) {
         username.sendKeys(Username);
         password.sendKeys(Password);
+    }
+
+    /**
+     * Take us to the Login Page
+     */
+    public void goTo(){
+        Browser.goTo("");
+    }
+
+    public boolean IsAt(){
+       return Browser.Title().contains("");
     }
 
 }

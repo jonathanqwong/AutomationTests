@@ -2,6 +2,9 @@ package objects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * Purpose: To manage a browser and simulate actions a browser can do
@@ -24,6 +27,17 @@ public class Browser {
         goTo("");
     }
 
+    /**
+     * Set options for Webdriver
+     */
+    public static void setBrowserOptions(){
+        System.setProperty("webdriver.chrome.driver", "browser//chromedriver.exe");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--start-maximized");
+        seleniumWebDriver = new ChromeDriver(chromeOptions);
+        seleniumWebDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
 
     /**
      *  Web Driver navigates to url within baseUrl
@@ -35,12 +49,20 @@ public class Browser {
     }
 
     /**
+     * Gets title of page
+     * @return return title string
+     */
+    public static String Title(){
+        return seleniumWebDriver.getTitle();
+    }
+
+    /**
      * Used to get reference to Browsers WebDriver.
      *
      * @return Browser's WebDriver
      */
     public static WebDriver getDriver(){
-       return seleniumWebDriver;
+        return seleniumWebDriver;
     }
 
     /**
