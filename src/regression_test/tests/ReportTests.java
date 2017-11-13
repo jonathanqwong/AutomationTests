@@ -1,16 +1,31 @@
 package tests;
 
+import objects.Browser;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import webpages.Pages;
 
-public class ReportTests extends TestBase {
+public class ReportTests {
+    Browser myBrowser;
+
+    @Before
+    public void startUpTest()throws Exception{
+        myBrowser = new Browser();
+        myBrowser.initialize();
+    }
+
+    @After
+    public void endTest()throws Exception{
+        Browser.close();
+    }
 
     @Test
     public void canViewOnlineAssessmentDetailReport(){
         //login somehow
-        Pages.login().goTo();
-        Assert.assertTrue(Pages.login().IsAt());
+        //Pages.login().goTo();
+        //Assert.assertTrue(Pages.login().IsAt());
 
         //go to report page
 

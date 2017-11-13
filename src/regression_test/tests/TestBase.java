@@ -7,13 +7,13 @@ import org.junit.Before;
 public class TestBase {
 
     @Before
-    public static void startUpTest()throws Exception{
-        Browser.setBrowserOptions();
-        Browser.initialize();
+    public void startUpTest()throws Exception{
+        //Browser.setBrowserOptions();
+        //Browser.initialize();
     }
 
     @After
-    public static void endTest()throws Exception{
-        Browser.close();
+    public void endTest()throws Exception{
+        //Browser.close();
     }
 }

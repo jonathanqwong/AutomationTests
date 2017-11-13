@@ -23,14 +23,15 @@ public class Browser {
     /**
      * Used to Initialize browser
      */
-    public static void initialize(){
+    public void initialize(){
+        setBrowserOptions();
         goTo("");
     }
 
     /**
      * Set options for Webdriver
      */
-    public static void setBrowserOptions(){
+    private void setBrowserOptions(){
         System.setProperty("webdriver.chrome.driver", "browser//chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
