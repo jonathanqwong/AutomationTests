@@ -16,7 +16,7 @@ public class RegistrationTests {
     WebDriver selenium;
 
     @Before
-    public void setUp() throws Exception {
+    public void browserSetUp() throws Exception {
         System.setProperty("webdriver.chrome.driver", "browser//chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
@@ -24,10 +24,10 @@ public class RegistrationTests {
         selenium.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @After
-    public void tearDown() throws Exception {
-        selenium.quit();
-    }
+//    @After
+//    public void tearDown() throws Exception {
+//        selenium.quit();
+//    }
 
     @Test
     public void startRegistration() throws Exception {
@@ -282,6 +282,7 @@ public class RegistrationTests {
         LoginPage login = new LoginPage(selenium);
         login.inputLoginCredentials(general.username, general.password);
         login.clickLoginButton();
+        general.assertNavBarTitle("Registration");
     }
 
 }

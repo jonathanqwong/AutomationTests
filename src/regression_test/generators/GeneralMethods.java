@@ -1,21 +1,12 @@
 package generators;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
+import io.restassured.response.Response;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
-
-import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
-//import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.given;
 
 //    This Class was made for general variables, methods, or generators for preconditions
 //    1) Constant to specify environment
@@ -24,7 +15,7 @@ import java.util.*;
 //    4) Scrolling
 //    5) Error Dialog Assertion
 //    6) Toast Assertion
-//    7) Title Assertion
+//    7) Nav Bar Title Assertion
 //    8) Create Account Generator
 
 //    TO-DO
@@ -41,6 +32,8 @@ public class GeneralMethods {
     WebElement error_Dialog;
     @FindBy(how = How.CLASS_NAME, using = "md-toast-content")
     WebElement toast;
+    @FindBy(how = How.CLASS_NAME, using = "appTitle")
+    WebElement title;
 
     // Constructor
     public GeneralMethods(WebDriver selenium) {
@@ -56,19 +49,19 @@ public class GeneralMethods {
 
     public void assertErrorDialogMessage(String expected_message) {
         String errorDialog = error_Dialog.getText();
-        System.out.println(errorDialog);
+        System.out.println("Assert Error is:" + errorDialog);
         Assert.assertEquals(expected_message, errorDialog);
     }
 
     public void assertToastMessage(String expected_message) {
         String toastContent = toast.getText();
-        System.out.println(toastContent);
+        System.out.println("Assert Toast is:" + toastContent);
         Assert.assertEquals(expected_message, toastContent);
     }
 
-    public void assertPageTitle(String expected_title) {
-        String titleContent = selenium.getTitle();
-        System.out.println(titleContent);
+    public void assertNavBarTitle (String expected_title) {
+        String titleContent = title.getText();
+        System.out.println("Assert Title is:" + titleContent);
         Assert.assertEquals(expected_title, titleContent);
     }
 
@@ -84,54 +77,19 @@ public class GeneralMethods {
         person.put("RoleId", "2");
         person.put("ClientId", "21");
 
-//        given()
-//                .contentType("application/json")
-//                .body(person)
-//                .when().post("http://stage-authentication-srv.edudyn.com/account").then()
-//                .statusCode(200);
+        Response response =
+                given()
+                        .contentType("application/json")
+                        .body(person)
+                .when()
+                        .post("http://stage-authentication-srv.edudyn.com/account")
+                .then()
+                        .assertThat().statusCode(200)
+                .extract()
+                        .response();
 
-
-
-//        // Instantiate HttpClient
-//        HttpClient client = new DefaultHttpClient();
-//
-//        // Instantiate HttpPost with API URL
-//        HttpPost post = new HttpPost("http://qa-authentication-srv.edudyn.com/account");
-//
-//        // Create Request Body
-//        try {
-//            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
-//            nameValuePairs.add(new BasicNameValuePair("Username",   "Test99"));
-//            nameValuePairs.add(new BasicNameValuePair("Password",   password));
-//            nameValuePairs.add(new BasicNameValuePair("FirstName",  "Selenium"));
-//            nameValuePairs.add(new BasicNameValuePair("LastName",          TIME_STAMP));
-//            nameValuePairs.add(new BasicNameValuePair("Email",      "lodiguvac@ether123.net"));
-//            nameValuePairs.add(new BasicNameValuePair("Phone",      "(333)333-3333"));
-//            nameValuePairs.add(new BasicNameValuePair("DateOfBirth","10/11/1999"));
-//            nameValuePairs.add(new BasicNameValuePair("RoleId",     "2"));
-//            nameValuePairs.add(new BasicNameValuePair("ClientId",   "21"));
-//
-//            post.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-//            HttpResponse response = client.execute(post);
-//            BufferedReader rd = new BufferedReader(new InputStreamReader(
-//                    response.getEntity().getContent()));
-//
-//            System.out.println(nameValuePairs);
-//            System.out.println("Request Body:"  + nameValuePairs);
-//            System.out.println("Response Body:" + response);
-//
-//
-//
-//            String line = "";
-//            while ((line = rd.readLine()) != null) {
-//                System.out.println(line);
-//                if (line.startsWith("Auth=")) {
-//                    String key = line.substring(5);
-//                    // do something with the key
-//                }
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        String result = response.asString();
+        System.out.println("Request Body:" + person);
+        System.out.println("Response Body:" + result);
     }
 }
