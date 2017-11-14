@@ -1,44 +1,37 @@
 package tests;
+import objects.Browser;
 
-import objects.Report;
-import org.junit.Before;
+
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.util.concurrent.TimeUnit;
-
-public class ReportTests {
-
-    WebDriver selenium;
-    //TODO pull out of class to a general location
-    String environment = "qa";
-
-    @Before
-    public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "browser//chromedriver.exe");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--start-maximized");
-        selenium = new ChromeDriver(chromeOptions);
-        selenium.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
+public class ReportTests extends TestBase{
 
     @Test
     public void canViewOnlineAssessmentDetailReport(){
         //login somehow
+        //Pages.login().goTo();
+        //Assert.assertTrue(Pages.login().IsAt());
 
         //go to report page
 
         //check if link is there
 
         //click link
-        Report testReport = new Report( 10, "Curriculum Reports", "Online Assessment - Detail Report", "Returns the STudent's Test Assignment Test Information");
     }
 
     @Test
     public void canViewOnlineAssessmentSummaryReport(){
-
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Browser.goTo("#/registration/21");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
