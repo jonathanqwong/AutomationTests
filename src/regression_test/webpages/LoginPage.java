@@ -19,6 +19,10 @@ public class LoginPage {
     WebElement loginBtn;
     @FindBy(how = How.ID, using = "createAccount")
     WebElement createAccountBtn;
+    @FindBy(how = How.ID, using = "username")
+    WebElement username;
+    @FindBy(how = How.ID, using = "password")
+    WebElement password;
 
     // Constructor
     public LoginPage(WebDriver selenium) {
@@ -33,6 +37,11 @@ public class LoginPage {
 
     public void clickLoginButton() {
         loginBtn.click();
+    }
+
+    public void inputLoginCredentials(String Username, String Password) {
+        username.sendKeys(Username);
+        password.sendKeys(Password);
     }
 
 }

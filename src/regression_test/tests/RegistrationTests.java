@@ -8,15 +8,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import webpages.*;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import static generators.GeneralMethods.TIME_STAMP;
 
 public class RegistrationTests {
     WebDriver selenium;
-    public static String time_Stamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 
     @Before
     public void setUp() throws Exception {
@@ -34,7 +31,6 @@ public class RegistrationTests {
 
     @Test
     public void startRegistration() throws Exception {
-        GeneralMethods general = new GeneralMethods(selenium);
 
         // Step 1) Go to the login page and click create account
         LoginPage login = new LoginPage(selenium);
@@ -87,7 +83,7 @@ public class RegistrationTests {
 
         // Step 2) Create an account
         AccountCreationPage createAccount = new AccountCreationPage(selenium);
-        createAccount.fillOutCreateAccountFormConstructor("", "Test_" + time_Stamp.toString(), "cufomuhe@kekita.com","(333)333-3333","10/10/1998","Sel_Test_" + time_Stamp.toString(),"edi","edi");
+        createAccount.fillOutCreateAccountFormConstructor("", "Test_" + TIME_STAMP, "cufomuhe@kekita.com","(333)333-3333","10/10/1998","Sel_Test_" + TIME_STAMP,"edi","edi");
         createAccount.clickCreateAccountButton();
 
         // Step 3) Verify FirstName REQ Error
@@ -103,7 +99,7 @@ public class RegistrationTests {
 
         // Step 2) Create an account
         AccountCreationPage createAccount = new AccountCreationPage(selenium);
-        createAccount.fillOutCreateAccountFormConstructor("Selenium", "", "cufomuhe@kekita.com","(333)333-3333","10/10/1998","Sel_Test_" + time_Stamp.toString(),"edi","edi");
+        createAccount.fillOutCreateAccountFormConstructor("Selenium", "", "cufomuhe@kekita.com","(333)333-3333","10/10/1998","Sel_Test_" + TIME_STAMP,"edi","edi");
         createAccount.clickCreateAccountButton();
 
         // Step 3) Verify LastName REQ Error
@@ -119,7 +115,7 @@ public class RegistrationTests {
 
         // Step 2) Create an account
         AccountCreationPage createAccount = new AccountCreationPage(selenium);
-        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + time_Stamp.toString(), "","(333)333-3333","10/10/1998","Sel_Test_" + time_Stamp.toString(),"edi","edi");
+        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + TIME_STAMP, "","(333)333-3333","10/10/1998","Sel_Test_" + TIME_STAMP,"edi","edi");
         createAccount.clickCreateAccountButton();
 
         // Step 3) Verify Email REQ Error
@@ -135,7 +131,7 @@ public class RegistrationTests {
 
         // Step 2) Create an account
         AccountCreationPage createAccount = new AccountCreationPage(selenium);
-        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + time_Stamp.toString(), "cufomuhe@kekita","(333)333-3333","10/10/1998","Sel_Test_" + time_Stamp.toString(),"edi","edi");
+        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + TIME_STAMP, "cufomuhe@kekita","(333)333-3333","10/10/1998","Sel_Test_" + TIME_STAMP,"edi","edi");
         createAccount.clickCreateAccountButton();
 
         // Step 3) Verify Email Invalid Error
@@ -151,7 +147,7 @@ public class RegistrationTests {
 
         // Step 2) Create an account
         AccountCreationPage createAccount = new AccountCreationPage(selenium);
-        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + time_Stamp.toString(), "cufomuhe@kekita.com","","10/10/1998","Sel_Test_" + time_Stamp.toString(),"edi","edi");
+        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + TIME_STAMP, "cufomuhe@kekita.com","","10/10/1998","Sel_Test_" + TIME_STAMP,"edi","edi");
         createAccount.clickCreateAccountButton();
 
         // Step 3) Verify Email REQ Error
@@ -167,7 +163,7 @@ public class RegistrationTests {
 
         // Step 2) Create an account
         AccountCreationPage createAccount = new AccountCreationPage(selenium);
-        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + time_Stamp.toString(), "cufomuhe@kekita.com","(333)333-3333","10/10/1899","Sel_Test_" + time_Stamp.toString(),"edi","edi");
+        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + TIME_STAMP, "cufomuhe@kekita.com","(333)333-3333","10/10/1899","Sel_Test_" + TIME_STAMP,"edi","edi");
         createAccount.clickCreateAccountButton();
 
         // Step 3) Verify DOB Invalid Error
@@ -183,7 +179,7 @@ public class RegistrationTests {
 
         // Step 2) Create an account
         AccountCreationPage createAccount = new AccountCreationPage(selenium);
-        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + time_Stamp.toString(), "cufomuhe@kekita.com","(333)333-3333","10/10/2050","Sel_Test_" + time_Stamp.toString(),"edi","edi");
+        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + TIME_STAMP, "cufomuhe@kekita.com","(333)333-3333","10/10/2050","Sel_Test_" + TIME_STAMP,"edi","edi");
         createAccount.clickCreateAccountButton();
 
         // Step 3) Verify DOB Invalid Error
@@ -199,7 +195,7 @@ public class RegistrationTests {
 
         // Step 2) Create an account
         AccountCreationPage createAccount = new AccountCreationPage(selenium);
-        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + time_Stamp.toString(), "cufomuhe@kekita.com","(333)333-3333","10/10/2050","","edi","edi");
+        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + TIME_STAMP, "cufomuhe@kekita.com","(333)333-3333","10/10/2050","","edi","edi");
         createAccount.clickCreateAccountButton();
 
         // Step 3) Verify Username REQ Error
@@ -215,7 +211,7 @@ public class RegistrationTests {
 
         // Step 2) Create an account
         AccountCreationPage createAccount = new AccountCreationPage(selenium);
-        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + time_Stamp.toString(), "cufomuhe@kekita.com","(333)333-3333","10/10/1998","Jonathan","edi","edi");
+        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + TIME_STAMP, "cufomuhe@kekita.com","(333)333-3333","10/10/1998","Jonathan","edi","edi");
         createAccount.clickCreateAccountButton();
 
         // Step 3) Verify Username Not Unique Error
@@ -242,37 +238,50 @@ public class RegistrationTests {
         LoginPage login = new LoginPage(selenium);
         login.clickCreateAccountButton();
 
-        // Step 2) Password does not contain lower case requirement
+        // Step 2a) Password does not contain lower case requirement
         AccountCreationPage createAccount = new AccountCreationPage(selenium);
-        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + time_Stamp.toString(), "cufomuhe@kekita.com","(333)333-3333","10/10/1998","Sel_Test_" + time_Stamp.toString(),"EDI","EDI");
+        createAccount.fillOutCreateAccountFormConstructor("Selenium", "Test_" + TIME_STAMP, "cufomuhe@kekita.com","(333)333-3333","10/10/1998","Sel_Test_" + TIME_STAMP,"EDI","EDI");
         createAccount.clickShowPasswordCheckbox();
 
-        // Step 3) Verify Password Requirement Error (Password does not contain a lowercase)
+        // Step 3a) Verify Password Requirement Error (Password does not contain a lowercase)
         createAccount.assertCreateAccountButtonNotClickable("Password does not contain a lowercase");
 
-        // Step 2) Password does not contain at least 3 characters
+        // Step 2b) Password does not contain at least 3 characters
         createAccount.changeCreateAccountPasswordConstructor("ed","ed");
 
-        // Step 3) Verify Password Requirement Error (Password is not 3 characters long)
+        // Step 3b) Verify Password Requirement Error (Password is not 3 characters long)
         createAccount.assertCreateAccountButtonNotClickable("Password is not 3 characters long");
 
-        // Step 2) Password contains more than 50 characters
+        // Step 2c) Password contains more than 50 characters
         createAccount.changeCreateAccountPasswordConstructor("Over 50 Characters Over 50 Characters Over 50 Characters","Over 50 Characters Over 50 Characters Over 50 Characters");
 
-        // Step 3) Verify Password Requirement Error (Password contains more than 50 characters)
+        // Step 3c) Verify Password Requirement Error (Password contains more than 50 characters)
         createAccount.assertCreateAccountButtonNotClickable("Password is more than 50 characters long");
 
-        // Step 2) Password contains username
-        createAccount.changeCreateAccountPasswordConstructor("Sel_Test_" + time_Stamp.toString(), "Sel_Test_" + time_Stamp.toString());
+        // Step 2d) Password contains username
+        createAccount.changeCreateAccountPasswordConstructor("Sel_Test_" + TIME_STAMP, "Sel_Test_" + TIME_STAMP);
 
-        // Step 3) Verify Password Requirement Error (Password contains username)
+        // Step 3d) Verify Password Requirement Error (Password contains username)
         createAccount.assertCreateAccountButtonNotClickable("Password contains username");
 
-        // Step 2) Password does not match
-        createAccount.changeCreateAccountPasswordConstructor("Sel_Test_" + time_Stamp.toString(), "Sel_Test_" + time_Stamp.toString());
+        // Step 2e) Password does not match
+        createAccount.changeCreateAccountPasswordConstructor("Sel_Test_" + TIME_STAMP, "Does_Not_Matach_" + TIME_STAMP);
 
-        // Step 3) Verify Password Requirement Error (Password does not match)
+        // Step 3e) Verify Password Requirement Error (Password does not match)
         createAccount.assertCreateAccountButtonNotClickable("Password does not match");
+    }
+
+    @Test
+    public void associateGuardian() throws Exception {
+
+        // Step 1) Generate new test account with API
+        GeneralMethods general = new GeneralMethods(selenium);
+        general.createAccountGenerator();
+
+        // Step 1) Go to the login page and click create account
+        LoginPage login = new LoginPage(selenium);
+        login.inputLoginCredentials(general.username, general.password);
+        login.clickLoginButton();
     }
 
 }

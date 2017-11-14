@@ -1,24 +1,20 @@
 package webpages;
 
 import generators.GeneralMethods;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import static generators.GeneralMethods.ENV;
+import static generators.GeneralMethods.TIME_STAMP;
 
 public class AccountCreationPage {
     WebDriver selenium;
 
     // Home Page URL
     private static String ACCOUNT_CREATION_PAGE = "https://" + ENV +".studenttrac.com/#/registration/create/21";
-    public static String time_Stamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 
     // Locators
     @FindBy(how = How.ID, using = "createAccount")
@@ -77,11 +73,11 @@ public class AccountCreationPage {
 
     public void fillOutCreateAccountForm() {
         firstName.sendKeys("Selenium");
-        lastName.sendKeys("Test_" + time_Stamp.toString());
+        lastName.sendKeys("Test_" + TIME_STAMP);
         email.sendKeys("cufomuhe@kekita.com");
         phone.sendKeys("(333)333-3333");
         birthdate.sendKeys("10/10/1998");
-        username.sendKeys("Sel_Test_" + time_Stamp.toString());
+        username.sendKeys("Sel_Test_" + TIME_STAMP);
         password.sendKeys("edi");
         password_confirmation.sendKeys("edi");
     }

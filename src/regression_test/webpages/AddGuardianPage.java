@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import static generators.GeneralMethods.TIME_STAMP;
+
 public class AddGuardianPage {
     WebDriver selenium;
 
@@ -62,13 +64,12 @@ public class AddGuardianPage {
 
     public void fillOutGuardianInfo() {
         guardianFirstName.sendKeys("Dad");
-        guardianLastName.sendKeys("Test_" + AccountCreationPage.time_Stamp.toString());
+        guardianLastName.sendKeys("Test_" + TIME_STAMP);
         guardianEmail.sendKeys("cufomuhe@kekita.com");
         guardianPhone.sendKeys("(333)333-3333");
         relationshipSelect.click();
         relationshipId.click();
         guardianDateOfBirth.sendKeys("10/10/1970");
     }
-
 
 }
