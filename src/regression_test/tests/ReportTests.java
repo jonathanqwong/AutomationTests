@@ -1,25 +1,10 @@
 package tests;
-
 import objects.Browser;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
+
+
 import org.junit.Test;
-import webpages.Pages;
 
-public class ReportTests {
-    Browser myBrowser;
-
-    @Before
-    public void startUpTest()throws Exception{
-        myBrowser = new Browser();
-        myBrowser.initialize();
-    }
-
-    @After
-    public void endTest()throws Exception{
-        Browser.close();
-    }
+public class ReportTests extends TestBase{
 
     @Test
     public void canViewOnlineAssessmentDetailReport(){
@@ -36,7 +21,17 @@ public class ReportTests {
 
     @Test
     public void canViewOnlineAssessmentSummaryReport(){
-
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Browser.goTo("#/registration/21");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test

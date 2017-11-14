@@ -13,17 +13,16 @@ import java.util.concurrent.TimeUnit;
  * @version 1.7
  * @since   2017-11-09
  */
-public class Browser {
-
+public final class Browser {
 
     public static Enviroment testEnviroment = Enviroment.QA;
     private static String baseUrl = "http://" + testEnviroment + "." + "studenttrac.com";
-    private static WebDriver seleniumWebDriver = new ChromeDriver();
+    private static WebDriver seleniumWebDriver;
 
     /**
      * Used to Initialize browser
      */
-    public void initialize(){
+    public static void initialize(){
         setBrowserOptions();
         goTo("");
     }
@@ -31,7 +30,7 @@ public class Browser {
     /**
      * Set options for Webdriver
      */
-    private void setBrowserOptions(){
+    private static void setBrowserOptions(){
         System.setProperty("webdriver.chrome.driver", "browser//chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
@@ -82,6 +81,7 @@ public class Browser {
         STAGE,
         DEMO
     }
+
 }
 
 
