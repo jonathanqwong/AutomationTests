@@ -1,14 +1,21 @@
 package webpages;
+import objects.Browser;
 import org.openqa.selenium.WebDriver;
 
 public class ReportPage {
 
-    // Registration Form Page URL
-    private static String REPORT_PAGE = "/#/reports";
-
+    public String reportTitle = "Reports";
 
     public void goTo(){
-        
+        Pages.topNavigation().reports();
+    }
+
+    public void viewReport(){
+
+    }
+
+    public boolean isAt(){
+        return  Browser.title().contains(reportTitle);
     }
 
 

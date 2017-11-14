@@ -46,6 +46,13 @@ public class Pages {
         return page;
     }
 
+    public static TopNavigationPage topNavigation(){
+        TopNavigationPage page = new TopNavigationPage();
+        PageFactory.initElements(Browser.getDriver(), page );
+        return page;
+    }
+
+
     public static RegistrationFormPage registrationForm(){
         RegistrationFormPage page = new RegistrationFormPage();
         PageFactory.initElements(Browser.getDriver(), page );

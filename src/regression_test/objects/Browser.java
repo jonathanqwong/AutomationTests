@@ -58,7 +58,9 @@ public final class Browser {
      * Gets title of page
      * @return return title string
      */
-    public static String Title(){ return selenium.getTitle(); }
+    public static String title(){
+        return seleniumWebDriver.getTitle();
+    }
 
     /**
      * Used to get reference to Browsers WebDriver.
