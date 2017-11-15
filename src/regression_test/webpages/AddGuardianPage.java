@@ -35,6 +35,10 @@ public class AddGuardianPage {
     WebElement relationshipId;
     @FindBy(how = How.ID, using = "input_10")
     WebElement guardianDateOfBirth;
+    @FindBy(how = How.ID, using = "input_11")
+    WebElement guardianPrimary;
+    @FindBy(how = How.ID, using = "input_12")
+    WebElement guardianEmergency;
 
     // Constructor
     public AddGuardianPage(WebDriver selenium) throws Exception {
@@ -70,6 +74,26 @@ public class AddGuardianPage {
         relationshipSelect.click();
         relationshipId.click();
         guardianDateOfBirth.sendKeys("10/10/1970");
+    }
+
+    public void fillOutGuardianInfoConstructor(String GuardianFirstName, String GuardianLastName, String GuardianEmail, String GuardianPhone, String GuardianDateOfBirth) {
+        guardianFirstName.sendKeys(GuardianFirstName);
+        guardianLastName.sendKeys(GuardianLastName);
+        guardianEmail.sendKeys(GuardianEmail);
+        guardianPhone.sendKeys(GuardianPhone);
+        relationshipSelect.click();
+        relationshipId.click();
+        guardianDateOfBirth.sendKeys(GuardianDateOfBirth);
+    }
+
+    public void clickPrimaryCheckbox() throws Exception {
+        guardianPrimary.click();
+        Thread.sleep(3500);
+    }
+
+    public void clickEmergencyCheckbox() throws Exception {
+        guardianEmergency.click();
+        Thread.sleep(3500);
     }
 
 }

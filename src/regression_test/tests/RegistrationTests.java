@@ -24,10 +24,10 @@ public class RegistrationTests {
         selenium.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-//    @After
-//    public void tearDown() throws Exception {
-//        selenium.quit();
-//    }
+    @After
+    public void tearDown() throws Exception {
+        selenium.quit();
+    }
 
     @Test
     public void startRegistration() throws Exception {
@@ -283,6 +283,145 @@ public class RegistrationTests {
         login.inputLoginCredentials(general.username, general.password);
         login.clickLoginButton();
         general.assertNavBarTitle("Registration");
+    }
+
+    @Test
+    public void associateGuardianFirstNameREQException() throws Exception {
+
+        // Step 1) Generate new test account with API
+        GeneralMethods general = new GeneralMethods(selenium);
+        general.createAccountGenerator();
+
+        // Step 1) Go to the login page and click create account
+        LoginPage login = new LoginPage(selenium);
+        login.inputLoginCredentials(general.username, general.password);
+        login.clickLoginButton();
+        general.assertNavBarTitle("Registration");
+
+        AddGuardianPage guardian = new AddGuardianPage(selenium);
+        guardian.clickAddGuardianButton();
+        guardian.fillOutGuardianInfoConstructor("", "Test_" + TIME_STAMP,"cufomuhe@kekita.com", "(333)333-3333", "10/10/1970" );
+        guardian.clickSaveButton();
+        guardian.clickDoneButton();
+        guardian.clickPrimaryCheckbox();
+        guardian.clickEmergencyCheckbox();
+        general.assertRedUnderlineErrorMessage("Required.");
+    }
+
+    @Test
+    public void associateGuardianLastNameREQException() throws Exception {
+
+        // Step 1) Generate new test account with API
+        GeneralMethods general = new GeneralMethods(selenium);
+        general.createAccountGenerator();
+
+        // Step 1) Go to the login page and click create account
+        LoginPage login = new LoginPage(selenium);
+        login.inputLoginCredentials(general.username, general.password);
+        login.clickLoginButton();
+        general.assertNavBarTitle("Registration");
+
+        AddGuardianPage guardian = new AddGuardianPage(selenium);
+        guardian.clickAddGuardianButton();
+        guardian.fillOutGuardianInfoConstructor("Dad", "","cufomuhe@kekita.com", "(333)333-3333", "10/10/1970" );
+        guardian.clickSaveButton();
+        guardian.clickDoneButton();
+        guardian.clickPrimaryCheckbox();
+        guardian.clickEmergencyCheckbox();
+        general.assertErrorDialogMessage("LastName\nThe LastName field is required.");
+
+    }
+
+    @Test
+    public void associateGuardianEmailInvalidException() throws Exception {
+
+        // Step 1) Generate new test account with API
+        GeneralMethods general = new GeneralMethods(selenium);
+        general.createAccountGenerator();
+
+        // Step 1) Go to the login page and click create account
+        LoginPage login = new LoginPage(selenium);
+        login.inputLoginCredentials(general.username, general.password);
+        login.clickLoginButton();
+        general.assertNavBarTitle("Registration");
+
+        AddGuardianPage guardian = new AddGuardianPage(selenium);
+        guardian.clickAddGuardianButton();
+        guardian.fillOutGuardianInfoConstructor("Dad", "Test_" + TIME_STAMP,"cufomuhe@", "(333)333-3333", "10/10/1970" );
+        guardian.clickSaveButton();
+        guardian.clickDoneButton();
+        guardian.clickPrimaryCheckbox();
+        guardian.clickEmergencyCheckbox();
+        general.assertErrorDialogMessage("Email\nThe Email field is not a valid e-mail address.");
+    }
+
+    @Test
+    public void associateGuardianPhoneInvalidException() throws Exception {
+
+        // Step 1) Generate new test account with API
+        GeneralMethods general = new GeneralMethods(selenium);
+        general.createAccountGenerator();
+
+        // Step 1) Go to the login page and click create account
+        LoginPage login = new LoginPage(selenium);
+        login.inputLoginCredentials(general.username, general.password);
+        login.clickLoginButton();
+        general.assertNavBarTitle("Registration");
+
+        AddGuardianPage guardian = new AddGuardianPage(selenium);
+        guardian.clickAddGuardianButton();
+        guardian.fillOutGuardianInfoConstructor("Dad", "Test_" + TIME_STAMP,"cufomuhe@kekita.com", "", "10/10/1970" );
+        guardian.clickSaveButton();
+        guardian.clickDoneButton();
+        guardian.clickPrimaryCheckbox();
+        guardian.clickEmergencyCheckbox();
+        general.assertErrorDialogMessage("PhoneNumber\nThe PhoneNumber field is required.");
+    }
+
+    @Test
+    public void associateGuardianDOBBefore1900InvalidException() throws Exception {
+
+        // Step 1) Generate new test account with API
+        GeneralMethods general = new GeneralMethods(selenium);
+        general.createAccountGenerator();
+
+        // Step 1) Go to the login page and click create account
+        LoginPage login = new LoginPage(selenium);
+        login.inputLoginCredentials(general.username, general.password);
+        login.clickLoginButton();
+        general.assertNavBarTitle("Registration");
+
+        AddGuardianPage guardian = new AddGuardianPage(selenium);
+        guardian.clickAddGuardianButton();
+        guardian.fillOutGuardianInfoConstructor("Dad", "Test_" + TIME_STAMP,"cufomuhe@kekita.com", "(333)333-3333", "10/10/1899" );
+        guardian.clickSaveButton();
+        guardian.clickDoneButton();
+        guardian.clickPrimaryCheckbox();
+        guardian.clickEmergencyCheckbox();
+        general.assertErrorDialogMessage("DateOfBirth\nInvalid Date of Birth");
+    }
+
+    @Test
+    public void associateGuardianDOBFutureInvalidException() throws Exception {
+
+        // Step 1) Generate new test account with API
+        GeneralMethods general = new GeneralMethods(selenium);
+        general.createAccountGenerator();
+
+        // Step 1) Go to the login page and click create account
+        LoginPage login = new LoginPage(selenium);
+        login.inputLoginCredentials(general.username, general.password);
+        login.clickLoginButton();
+        general.assertNavBarTitle("Registration");
+
+        AddGuardianPage guardian = new AddGuardianPage(selenium);
+        guardian.clickAddGuardianButton();
+        guardian.fillOutGuardianInfoConstructor("Dad", "Test_" + TIME_STAMP,"cufomuhe@kekita.com", "(333)333-3333", "10/10/2050" );
+        guardian.clickSaveButton();
+        guardian.clickDoneButton();
+        guardian.clickPrimaryCheckbox();
+        guardian.clickEmergencyCheckbox();
+        general.assertErrorDialogMessage("DateOfBirth\nInvalid Date of Birth");
     }
 
 }

@@ -8,23 +8,30 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import static io.restassured.RestAssured.given;
 
-//    This Class was made for general variables, methods, or generators for preconditions
-//    1) Constant to specify environment
-//    2) Constant to create username
-//    3) Constructor
-//    4) Scrolling
-//    5) Error Dialog Assertion
-//    6) Toast Assertion
-//    7) Nav Bar Title Assertion
-//    8) Create Account Generator
+/**
+    This Class was made for general variables, methods, or generators for preconditions
+    1) Constant to specify environment
+    2) Constant to create username
+    3) Constant to specify temporary email address
+    4) Constructor
+    5) Scrolling
+    6) Error Dialog Assertion
+    7) Toast Assertion
+    8) Nav Bar Title Assertion
+    9) Nav Bar Title Assertion
 
-//    TO-DO
-//    implicit and explicit waits (conditions, elements)
+    // TO-DO
+    // implicit and explicit waits (conditions, elements)
+
+    API Calls will be separated into comment sections for the service that it is in (we can reorganize this if it gets huge)
+    Authentication Service,Authorization Service, Address Service, Calendar Service, Client Service, Application Service, DigitalFile Service, Assessment Service, Curriculum Service, Person Service
+**/
 
 public class GeneralMethods {
     WebDriver selenium;
     public static final String ENV = "stage";
     public static final String TIME_STAMP = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+    public static final String TEMP_EMAIL = "";
     public static String username = "Sel_Test_" + TIME_STAMP;
     public static String password = "edi";
 
@@ -34,6 +41,8 @@ public class GeneralMethods {
     WebElement toast;
     @FindBy(how = How.CLASS_NAME, using = "appTitle")
     WebElement title;
+    @FindBy(how = How.CLASS_NAME, using = "md-input-message-animation")
+    WebElement redUnderlineError;
 
     // Constructor
     public GeneralMethods(WebDriver selenium) {
@@ -49,22 +58,29 @@ public class GeneralMethods {
 
     public void assertErrorDialogMessage(String expected_message) {
         String errorDialog = error_Dialog.getText();
-        System.out.println("Assert Error is:" + errorDialog);
+        System.out.println("Assert Error is: " + errorDialog);
         Assert.assertEquals(expected_message, errorDialog);
     }
 
     public void assertToastMessage(String expected_message) {
         String toastContent = toast.getText();
-        System.out.println("Assert Toast is:" + toastContent);
+        System.out.println("Assert Toast is: " + toastContent);
         Assert.assertEquals(expected_message, toastContent);
     }
 
     public void assertNavBarTitle (String expected_title) {
         String titleContent = title.getText();
-        System.out.println("Assert Title is:" + titleContent);
+        System.out.println("Assert Title is: " + titleContent);
         Assert.assertEquals(expected_title, titleContent);
     }
 
+    public void assertRedUnderlineErrorMessage (String expected_title) {
+        String inputError = redUnderlineError.getText();
+        System.out.println("Assert Red Underline Error is: " + inputError);
+        Assert.assertEquals(expected_title, inputError);
+    }
+
+    /** ======================= Authentication Service ======================= **/
     public void createAccountGenerator(){
         Map<String,String> person = new HashMap();
         person.put("Username",  username);
@@ -92,4 +108,14 @@ public class GeneralMethods {
         System.out.println("Request Body:" + person);
         System.out.println("Response Body:" + result);
     }
+
+    /** ======================= Authorization Service  ======================= **/
+    /** ======================= Address Service        ======================= **/
+    /** ======================= Calendar Service       ======================= **/
+    /** ======================= Client Service         ======================= **/
+    /** ======================= Application Service    ======================= **/
+    /** ======================= DigitalFile Service    ======================= **/
+    /** ======================= Assessment Service     ======================= **/
+    /** ======================= Curriculum Service     ======================= **/
+    /** ======================= Person Service         ======================= **/
 }
