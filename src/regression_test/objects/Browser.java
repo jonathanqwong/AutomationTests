@@ -19,7 +19,7 @@ import java.util.function.Function;
 
 public final class Browser {
 
-    public static Environment testEnviroment = Environment.QA;
+    public static Environment testEnviroment = Environment.STAGE;
     public static int pageWaitTime = 60;
     private static String baseUrl = "http://" + testEnviroment + "." + "studenttrac.com";
     private static WebDriver selenium;
