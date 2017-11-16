@@ -1,34 +1,24 @@
 package webpages;
 
-import org.openqa.selenium.WebDriver;
+import objects.Browser;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
 
 public class EnrollmentPage {
-    WebDriver selenium;
-
-    // Select Enrollment Page URL
-    private static String ENROLLMENT_PAGE = null;
 
     // Locators
     @FindBy(how = How.XPATH, using = "//*[@id=\"StudentEnrollmentsController\"]/div/md-content/div[3]/div/md-list/md-list-item/div[1]/button")
     WebElement registerBtn;
 
-    // Constructor
-    public EnrollmentPage(WebDriver selenium) throws Exception{
-        this.selenium = selenium;
-        PageFactory.initElements(selenium, this);
-        ENROLLMENT_PAGE = selenium.getCurrentUrl();
-        if (!"Enrollments".equalsIgnoreCase(this.selenium.getTitle())){
-            selenium.get(ENROLLMENT_PAGE);
-            Thread.sleep(2000);
-        }
+    public void getEnrollmentPage() throws Exception {
+        // Add Guardian Page URL (EX: https://qa.studenttrac.com/#/registration/student/#/guardians)
+        Thread.sleep(5000);
+        Browser.getURL();
     }
 
     public void clickRegisterButton() throws Exception {
+        Thread.sleep(3000);
         registerBtn.click();
-        Thread.sleep(6000);
     }
 }

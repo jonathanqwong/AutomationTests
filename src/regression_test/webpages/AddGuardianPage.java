@@ -1,18 +1,12 @@
 package webpages;
 
-import org.openqa.selenium.WebDriver;
+import objects.Browser;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
-
-import static generators.GeneralMethods.TIME_STAMP;
+import static generators.CreateAccountGenerator.TIME_STAMP;
 
 public class AddGuardianPage {
-    WebDriver selenium;
-
-    // Add Guardian Page URL (EX: https://qa.studenttrac.com/#/registration/student/#/guardians)
-    private static String GUARDIAN_PAGE = null;
 
     // Locators
     @FindBy(how = How.CLASS_NAME, using = "addGuardian")
@@ -35,35 +29,30 @@ public class AddGuardianPage {
     WebElement relationshipId;
     @FindBy(how = How.ID, using = "input_10")
     WebElement guardianDateOfBirth;
-    @FindBy(how = How.ID, using = "input_11")
+    @FindBy(how = How.NAME, using = "IsPrimary")
     WebElement guardianPrimary;
-    @FindBy(how = How.ID, using = "input_12")
+    @FindBy(how = How.NAME, using = "IsEmergency")
     WebElement guardianEmergency;
 
-    // Constructor
-    public AddGuardianPage(WebDriver selenium) throws Exception {
-        this.selenium = selenium;
-        PageFactory.initElements(selenium, this);
-        if (!"Parent / Legal Guardians / Emergency Contacts".equalsIgnoreCase(this.selenium.getTitle())){
-            GUARDIAN_PAGE = selenium.getCurrentUrl();
-            selenium.get(GUARDIAN_PAGE);
-            Thread.sleep(2000);
-        }
+    public void getAddGuardianPage() throws Exception {
+        // Add Guardian Page URL (EX: https://qa.studenttrac.com/#/registration/student/#/guardians)
+        Thread.sleep(2000);
+        Browser.getURL();
     }
 
     public void clickAddGuardianButton() throws Exception {
-        addGuardianBtn.click();
         Thread.sleep(2000);
+        addGuardianBtn.click();
     }
 
     public void clickSaveButton() throws Exception {
         saveBtn.click();
-        Thread.sleep(4000);
+        Thread.sleep(5000);
     }
 
     public void clickDoneButton() throws Exception {
         doneBtn.click();
-        Thread.sleep(3500);
+        Thread.sleep(5000);
     }
 
     public void fillOutGuardianInfo() {
@@ -88,12 +77,12 @@ public class AddGuardianPage {
 
     public void clickPrimaryCheckbox() throws Exception {
         guardianPrimary.click();
-        Thread.sleep(3500);
+        Thread.sleep(1000);
     }
 
     public void clickEmergencyCheckbox() throws Exception {
         guardianEmergency.click();
-        Thread.sleep(3500);
+        Thread.sleep(1000);
     }
 
 }

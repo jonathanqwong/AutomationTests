@@ -1,19 +1,15 @@
 package webpages;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+import objects.Browser;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
+
+import static objects.Browser.selenium;
 
 public class RegistrationFormPage {
-    WebDriver selenium;
-
-    // Registration Form Page URL
-    private static String REGISTRATION_FORM_PAGE = null;
 
     // Locators
     @FindBy(how = How.CLASS_NAME, using = "instanceSaveBtn")
@@ -182,21 +178,10 @@ public class RegistrationFormPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox")
     WebElement MAAgreement;
 
-    // Constructor
-    public RegistrationFormPage(WebDriver selenium) throws Exception {
-        this.selenium = selenium;
-        PageFactory.initElements(selenium, this);
-        REGISTRATION_FORM_PAGE = selenium.getCurrentUrl();
-        if (!"Registration".equalsIgnoreCase(this.selenium.getTitle())){
-            Thread.sleep(2000);
-            selenium.get(REGISTRATION_FORM_PAGE);
-            Thread.sleep(5000);
-        }
-    }
-
-    public void scrollDownToElement() {
-        JavascriptExecutor jse = (JavascriptExecutor)selenium;
-        jse.executeScript("window.scrollBy(0,600)", "");
+    public void getRegistrationFormsPage() throws Exception {
+        // Add Guardian Page URL (EX: https://qa.studenttrac.com/#/registration/student/#/guardians)
+        Thread.sleep(5000);
+        Browser.getURL();
     }
 
     public void signSignature() {
@@ -236,7 +221,7 @@ public class RegistrationFormPage {
     public void fillOutStudentApplicationForm() throws Exception {
 
         // Student Information Tabular
-        scrollDownToElement();
+        Browser.scrollDownToElement();
         gender.click();
         birthStateSelect.click();
         birthStateOption.click();
@@ -244,7 +229,7 @@ public class RegistrationFormPage {
         Thread.sleep(2000);
 
         // Contact Tabular
-        scrollDownToElement();
+        Browser.scrollDownToElement();
         addAddressWidgetBtn.click();
         Thread.sleep(2000);
         addressLabel.sendKeys("Home");
@@ -257,7 +242,7 @@ public class RegistrationFormPage {
         Thread.sleep(2000);
         looksGoodBtn.click();
         Thread.sleep(4000);
-        scrollDownToElement();
+        Browser.scrollDownToElement();
         studentNighttimeResidency.click();
         SaveNContinueBtn.click();
         Thread.sleep(2000);
@@ -304,7 +289,7 @@ public class RegistrationFormPage {
     public void fillOutHouseHoldInfoForm() throws Exception {
 
         // Parents/Guardians/Emergency Contact
-        scrollDownToElement();
+        Browser.scrollDownToElement();
         addAddressWidgetBtn.click();
         Thread.sleep(2000);
         addressLabel.sendKeys("Home");
@@ -319,7 +304,7 @@ public class RegistrationFormPage {
         Thread.sleep(2000);
         addEmailWidgetBtn.click();
         Thread.sleep(2000);
-        scrollDownToElement();
+        Browser.scrollDownToElement();
         SaveNContinueBtn.click();
         Thread.sleep(2000);
 
@@ -390,7 +375,7 @@ public class RegistrationFormPage {
     }
 
     public void fillOutPhotographicConsent() throws Exception {
-        scrollDownToElement();
+        Browser.scrollDownToElement();
         photographicConsent.click();
         signSignature();
         studentSignatureNameInPhotographicConsent.sendKeys("Test Signature ");
@@ -400,7 +385,7 @@ public class RegistrationFormPage {
     }
 
     public void fillOutInternetAccessConsent() throws Exception {
-        scrollDownToElement();
+        Browser.scrollDownToElement();
         internetAccessConsent.click();
         signSignature();
         studentSignatureNameInternetAccessPolicy.sendKeys("Test Signature   ");
@@ -410,7 +395,7 @@ public class RegistrationFormPage {
     }
 
     public void fillOutPhysicalEducationConsent() throws Exception {
-        scrollDownToElement();
+        Browser.scrollDownToElement();
         physicalEducationConsent.click();
         signSignature();
         studentSignatureNamePhysicalEducationConsent.sendKeys(" Test Signature");
@@ -420,7 +405,7 @@ public class RegistrationFormPage {
     }
 
     public void fillOutTransportationConsent() throws Exception {
-        scrollDownToElement();
+        Browser.scrollDownToElement();
         transportationConsent.click();
         signSignature();
         studentSignatureNameTransportationConsent.sendKeys("Test Signature");
@@ -430,7 +415,7 @@ public class RegistrationFormPage {
     }
 
     public void fillOutAffidavitConsent() throws Exception {
-        scrollDownToElement();
+        Browser.scrollDownToElement();
         Thread.sleep(3000);
         affidavitConsent.click();
         signSignature();
@@ -442,7 +427,7 @@ public class RegistrationFormPage {
 
     public void fillOutMAConsent() throws Exception {
 //        MAInput.sendKeys("Dad");
-        scrollDownToElement();
+        Browser.scrollDownToElement();
         Thread.sleep(3000);
         MAAgreement.click();
         signSignature();

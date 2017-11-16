@@ -1,20 +1,14 @@
 package webpages;
 
-import generators.GeneralMethods;
-import org.openqa.selenium.WebDriver;
+import objects.Browser;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
-
-import static generators.GeneralMethods.ENV;
-import static generators.GeneralMethods.TIME_STAMP;
+import static generators.CreateAccountGenerator.TIME_STAMP;
 
 public class AccountCreationPage {
-    WebDriver selenium;
-
     // Home Page URL
-    private static String ACCOUNT_CREATION_PAGE = "https://" + ENV +".studenttrac.com/#/registration/create/21";
+    public static String ACCOUNT_CREATION_PAGE = "/registration/create/21";
 
     // Locators
     @FindBy(how = How.ID, using = "createAccount")
@@ -38,33 +32,20 @@ public class AccountCreationPage {
     @FindBy(how = How.XPATH, using = "/html/body/div[1]/div/div/form/div[6]/div[1]/div[5]/md-checkbox")
     WebElement showPassword;
 
-    // Constructor
-    public AccountCreationPage(WebDriver selenium) {
-        this.selenium = selenium;
-        PageFactory.initElements(selenium, this);
-        if (!"CreateAccount".equalsIgnoreCase(this.selenium.getTitle())){
-            selenium.get(ACCOUNT_CREATION_PAGE);
-        }
-    }
-
     public void clickCreateAccountButton() throws Exception {
-        GeneralMethods general = new GeneralMethods(selenium);
-        general.scrollDownToElement();
+        Browser.scrollDownToElement();
         createAccountBtn.click();
         Thread.sleep(3000);
     }
 
     public void clickShowPasswordCheckbox() throws Exception {
-        GeneralMethods general = new GeneralMethods(selenium);
-        general.scrollDownToElement();
+        Browser.scrollDownToElement();
         showPassword.click();
         Thread.sleep(3000);
     }
 
     public void assertCreateAccountButtonNotClickable(String message) {
-        GeneralMethods general = new GeneralMethods(selenium);
-        general.scrollDownToElement();
-
+        Browser.scrollDownToElement();
         boolean buttonStatus = createAccountBtn.isEnabled();
         if (buttonStatus == false) {
             System.out.println(createAccountBtn + "is disabled/" + buttonStatus + " because '" + message + "'");

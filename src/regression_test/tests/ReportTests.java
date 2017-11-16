@@ -20,7 +20,7 @@ public class ReportTests extends TestBase{
     }
 
     @Test
-    public void canViewOnlineAssessmentSummaryReport(){
+    public void canViewOnlineAssessmentSummaryReport() throws Exception {
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
