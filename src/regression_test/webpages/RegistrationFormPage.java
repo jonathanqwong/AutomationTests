@@ -7,7 +7,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import static objects.Browser.selenium;
 
 public class RegistrationFormPage {
 
@@ -185,7 +184,7 @@ public class RegistrationFormPage {
     }
 
     public void signSignature() {
-        Actions builder = new Actions(selenium);
+        Actions builder = new Actions(Browser.getDriver());
         Action SignSignature = builder.clickAndHold(signatureWidget)
                 .moveByOffset(-100, -100)
                 .moveByOffset(20, 20)
@@ -197,7 +196,7 @@ public class RegistrationFormPage {
     }
 
     public void signGuardianSignature() {
-        Actions builder = new Actions(selenium);
+        Actions builder = new Actions(Browser.getDriver());
         Action SignGuardianSignature = builder.clickAndHold(signatureWidget)
                 .moveByOffset(-200, -200)
                 .moveByOffset(150, 150)

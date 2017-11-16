@@ -3,14 +3,24 @@ import objects.Browser;
 
 
 import org.junit.Test;
+import webpages.Pages;
+
+import static org.junit.Assert.assertTrue;
 
 public class ReportTests extends TestBase{
 
     @Test
-    public void canViewOnlineAssessmentDetailReport(){
+    public void canViewReportPage(){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         //login somehow
-        //Pages.login().goTo();
-        //Assert.assertTrue(Pages.login().IsAt());
+        Pages.login().inputLoginCredentials( "Ricardo", "EDI12");
+        Pages.login().clickLoginButton();
+        Pages.reports().goTo();
+        //assertTrue(Pages.report().isAt());
 
         //go to report page
 
@@ -27,11 +37,6 @@ public class ReportTests extends TestBase{
             e.printStackTrace();
         }
         Browser.goTo("#/registration/21");
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     @Test

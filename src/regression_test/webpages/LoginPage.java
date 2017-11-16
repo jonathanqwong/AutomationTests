@@ -20,7 +20,7 @@ public class LoginPage {
     WebElement password;
 
     public void clickCreateAccountButton() {
-        createAccountBtn.click();
+         createAccountBtn.click();
     }
 
     public void clickLoginButton() {
