@@ -2,10 +2,13 @@ package objects;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 /**
  * Purpose: To manage a browser and simulate actions a browser can do
@@ -16,9 +19,11 @@ import java.util.concurrent.TimeUnit;
 
 public final class Browser {
 
-    public static Environment ENV = Environment.STAGE;
-    private static String baseUrl = "http://" + ENV + "." + "studenttrac.com/#";
-    public static WebDriver selenium;
+    public static Environment testEnviroment = Environment.STAGE;
+    public static int pageWaitTime = 60;
+    private static String baseUrl = "http://" + testEnviroment + "." + "studenttrac.com";
+    private static WebDriver selenium;
+
 
     /**
      * Used to Initialize browser
@@ -58,7 +63,9 @@ public final class Browser {
      * Gets title of page
      * @return return title string
      */
-    public static String Title(){ return selenium.getTitle(); }
+    public static String title(){
+        return selenium.getTitle();
+    }
 
     /**
      * Used to get reference to Browsers WebDriver.
@@ -101,6 +108,18 @@ public final class Browser {
         selenium.get(url);
         System.out.println(url);
     }
+//    public static void waitForPageLoad(WebElement element) {
+//        WebDriverWait wait = new WebDriverWait(seleniumWebDriver, pageWaitTime);
+//
+//        Predicate<WebDriver> pageLoaded = new Predicate<WebDriver>() {
+//            @Override
+//            public boolean apply(WebDriver input) {
+//                return ((JavascriptExecutor) input).executeScript("return document.readyState").equals("complete");
+//            }
+//
+//        };
+//        wait.until((Function<? super WebDriver, Object>) pageLoaded);
+//    }
 }
 
 
