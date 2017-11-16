@@ -1,6 +1,5 @@
 package objects;
 
-<<<<<<< HEAD
 import com.google.common.base.Function;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,17 +8,10 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
-=======
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
->>>>>>> develop
 
 /**
  * Purpose: To manage a browser and simulate actions a browser can do
@@ -30,18 +22,10 @@ import java.util.function.Function;
 
 public final class Browser {
 
-<<<<<<< HEAD
     public static Environment ENV = Environment.STAGE;
     private static String baseUrl = "http://" + ENV + "." + "studenttrac.com/#";
     public static WebDriver selenium;
     private static FluentWait wait;
-=======
-    public static Environment testEnviroment = Environment.STAGE;
-    public static int pageWaitTime = 60;
-    private static String baseUrl = "http://" + testEnviroment + "." + "studenttrac.com";
-    private static WebDriver selenium;
-
->>>>>>> develop
 
     /**
      * Used to Initialize browser
@@ -127,7 +111,6 @@ public final class Browser {
         Thread.sleep(4000);
         System.out.println(url);
     }
-<<<<<<< HEAD
 
     /**
      * Fluent Wait - Each FluentWait instance defines the maximum amount of time to wait for a condition,
@@ -148,7 +131,7 @@ public final class Browser {
             }
         });
     }
-=======
+
 //    public static void waitForPageLoad(WebElement element) {
 //        WebDriverWait wait = new WebDriverWait(seleniumWebDriver, pageWaitTime);
 //
@@ -161,7 +144,7 @@ public final class Browser {
 //        };
 //        wait.until((Function<? super WebDriver, Object>) pageLoaded);
 //    }
->>>>>>> develop
+
 }
 
 
