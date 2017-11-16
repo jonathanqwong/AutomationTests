@@ -22,8 +22,12 @@ public class Pages {
         return page;
     }
 
-    public static ReportPage reports(){
+    public static ReportPage reports() {
         ReportPage page = new ReportPage();
+        PageFactory.initElements(Browser.getDriver(), page);
+        return page;
+    }
+
     public static AddGuardianPage addGuardian(){
         AddGuardianPage page = new AddGuardianPage();
         PageFactory.initElements(Browser.getDriver(), page );

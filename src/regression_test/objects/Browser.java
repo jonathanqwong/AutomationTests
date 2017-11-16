@@ -19,10 +19,10 @@ import java.util.function.Function;
 
 public final class Browser {
 
-    public static Enviroment testEnviroment = Enviroment.QA;
+    public static Environment testEnviroment = Environment.QA;
     public static int pageWaitTime = 60;
     private static String baseUrl = "http://" + testEnviroment + "." + "studenttrac.com";
-    private static WebDriver seleniumWebDriver;
+    private static WebDriver selenium;
 
 
     /**
@@ -64,7 +64,7 @@ public final class Browser {
      * @return return title string
      */
     public static String title(){
-        return seleniumWebDriver.getTitle();
+        return selenium.getTitle();
     }
 
     /**
@@ -108,18 +108,18 @@ public final class Browser {
         selenium.get(url);
         System.out.println(url);
     }
-    public static void waitForPageLoad(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(seleniumWebDriver, pageWaitTime);
-
-        Predicate<WebDriver> pageLoaded = new Predicate<WebDriver>() {
-            @Override
-            public boolean apply(WebDriver input) {
-                return ((JavascriptExecutor) input).executeScript("return document.readyState").equals("complete");
-            }
-
-        };
-        wait.until((Function<? super WebDriver, Object>) pageLoaded);
-    }
+//    public static void waitForPageLoad(WebElement element) {
+//        WebDriverWait wait = new WebDriverWait(seleniumWebDriver, pageWaitTime);
+//
+//        Predicate<WebDriver> pageLoaded = new Predicate<WebDriver>() {
+//            @Override
+//            public boolean apply(WebDriver input) {
+//                return ((JavascriptExecutor) input).executeScript("return document.readyState").equals("complete");
+//            }
+//
+//        };
+//        wait.until((Function<? super WebDriver, Object>) pageLoaded);
+//    }
 }
 
 
