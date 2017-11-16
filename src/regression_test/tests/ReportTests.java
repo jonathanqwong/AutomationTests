@@ -19,12 +19,7 @@ public class ReportTests extends TestBase{
         //login somehow
         Pages.login().inputLoginCredentials( "Ricardo", "EDI12");
         Pages.login().clickLoginButton();
-        try {
-            Thread.sleep(6000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        Pages.report().goTo();
+        Pages.reports().goTo();
         //assertTrue(Pages.report().isAt());
 
         //go to report page
