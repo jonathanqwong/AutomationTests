@@ -53,8 +53,6 @@ public class GeneralMethods {
 
     /**
      * API Calls will be separated into comment sections for the service that it is in (we can reorganize this if it gets huge)
-     * Authentication Service,Authorization Service, Address Service, Calendar Service, Client Service,
-     * Application Service, DigitalFile Service, Assessment Service, Curriculum Service, Person Service
      **/
 
     /** ======================= Authentication Service ======================= **/
