@@ -26,7 +26,6 @@ public class RegistrationTests extends TestBase {
         System.out.println("Student Account Creation Confirmed");
 
         // Step 3) Validate the account is created on Landing Page
-        Browser.goTo(LANDING_PAGE);
         Pages.landing().clickLetsGetStartButton();
         System.out.println("Landing Page Confirmed");
 
@@ -334,7 +333,7 @@ public class RegistrationTests extends TestBase {
         Pages.addGuardian().clickEmergencyCheckbox();
         Pages.addGuardian().clickSaveButton();
         Pages.general().assertErrorDialogMessage("");
-        //general.assertErrorDialogMessage("Email\nThe Email field is not a valid e-mail address."); --> Empty
+        //Pages.general().assertErrorDialogMessage("Email\nThe Email field is not a valid e-mail address.");
     }
 
     @Test

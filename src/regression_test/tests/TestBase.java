@@ -16,8 +16,8 @@ public class TestBase {
         Browser.initialize();
     }
 
-    @After
-    public void endTest()throws Exception{
-        Browser.close();
-    }
+//    @After
+//    public void endTest()throws Exception{
+//        Browser.close();
+//    }
 }
