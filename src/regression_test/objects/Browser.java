@@ -127,7 +127,7 @@ public final class Browser {
 
         WebElement elementToWaitFor = wait.until(new Function<WebDriver, WebElement>() {
             public WebElement apply(WebDriver driver) {
-                return driver.findElement(By.id(""));
+                return driver.findElement(By.id(element));
             }
         });
     }
