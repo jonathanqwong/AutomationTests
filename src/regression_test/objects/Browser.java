@@ -27,6 +27,8 @@ public final class Browser {
     public static Environment ENV = Environment.STAGE;
     private static String baseUrl = "http://" + ENV + "." + "studenttrac.com/#";
     public static WebDriver selenium;
+    public static int maxWaitTime = 30;
+    public static int pollingTime = 5;
     private static FluentWait wait;
 
     /**
@@ -124,8 +126,8 @@ public final class Browser {
     public static void waitForElementWithID(String element) {
 
         Wait<WebDriver> wait = new FluentWait(selenium)
-                .withTimeout(30, SECONDS)
-                .pollingEvery(5, SECONDS)
+                .withTimeout(maxWaitTime, SECONDS)
+                .pollingEvery(pollingTime, SECONDS)
                 .ignoring(NoSuchElementException.class);
 
         WebElement elementToWaitFor = wait.until(new Function<WebDriver, WebElement>() {
@@ -138,8 +140,8 @@ public final class Browser {
     public static void waitForElementWithCLASSNAME(String element) {
 
         Wait<WebDriver> wait = new FluentWait(selenium)
-                .withTimeout(30, SECONDS)
-                .pollingEvery(5, SECONDS)
+                .withTimeout(maxWaitTime, SECONDS)
+                .pollingEvery(pollingTime, SECONDS)
                 .ignoring(NoSuchElementException.class);
 
         WebElement elementToWaitFor = wait.until(new Function<WebDriver, WebElement>() {
@@ -150,8 +152,8 @@ public final class Browser {
     public static void waitForElementWithXPATH(String element) {
 
         Wait<WebDriver> wait = new FluentWait(selenium)
-                .withTimeout(30, SECONDS)
-                .pollingEvery(5, SECONDS)
+                .withTimeout(maxWaitTime, SECONDS)
+                .pollingEvery(pollingTime, SECONDS)
                 .ignoring(NoSuchElementException.class);
 
         WebElement elementToWaitFor = wait.until(new Function<WebDriver, WebElement>() {
@@ -164,8 +166,8 @@ public final class Browser {
     public static void waitForElementWithNAME(String element) {
 
         Wait<WebDriver> wait = new FluentWait(selenium)
-                .withTimeout(30, SECONDS)
-                .pollingEvery(5, SECONDS)
+                .withTimeout(maxWaitTime, SECONDS)
+                .pollingEvery(pollingTime, SECONDS)
                 .ignoring(NoSuchElementException.class);
 
         WebElement elementToWaitFor = wait.until(new Function<WebDriver, WebElement>() {
@@ -178,38 +180,24 @@ public final class Browser {
      * @param element
      */
     public static void waitUntilElementWithIDVisible(String element) {
-        WebDriverWait wait = new WebDriverWait(selenium, 10);
+        WebDriverWait wait = new WebDriverWait(selenium, maxWaitTime);
         WebElement elementToWaitFor = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(element)));
     }
 
     public static void waitUntilElmentWithCLASSNAMEVisible(String element) {
-        WebDriverWait wait = new WebDriverWait(selenium, 10);
+        WebDriverWait wait = new WebDriverWait(selenium, maxWaitTime);
         WebElement elementToWaitFor = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(element)));
     }
 
     public static void waitUntilElementWithXPATHVisible(String element) {
-        WebDriverWait wait = new WebDriverWait(selenium, 10);
+        WebDriverWait wait = new WebDriverWait(selenium, maxWaitTime);
         WebElement elementToWaitFor = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element)));
     }
 
     public static void waitUntilElementWithNameVisible(String element) {
-        WebDriverWait wait = new WebDriverWait(selenium, 10);
+        WebDriverWait wait = new WebDriverWait(selenium, maxWaitTime);
         WebElement elementToWaitFor = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(element)));
     }
-
-
-//    public static void waitForPageLoad(WebElement element) {
-//        WebDriverWait wait = new WebDriverWait(seleniumWebDriver, pageWaitTime);
-//
-//        Predicate<WebDriver> pageLoaded = new Predicate<WebDriver>() {
-//            @Override
-//            public boolean apply(WebDriver input) {
-//                return ((JavascriptExecutor) input).executeScript("return document.readyState").equals("complete");
-//            }
-//
-//        };
-//        wait.until((Function<? super WebDriver, Object>) pageLoaded);
-//    }
 
 }
 

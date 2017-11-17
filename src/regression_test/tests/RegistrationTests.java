@@ -333,7 +333,7 @@ public class RegistrationTests extends TestBase {
         Pages.addGuardian().clickEmergencyCheckbox();
         Pages.addGuardian().clickSaveButton();
         Pages.general().assertErrorDialogMessage("");
-        //general.assertErrorDialogMessage("Email\nThe Email field is not a valid e-mail address."); --> Empty
+        //Pages.general().assertErrorDialogMessage("Email\nThe Email field is not a valid e-mail address.");
     }
 
     @Test
