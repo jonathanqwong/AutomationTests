@@ -13,12 +13,11 @@ public class EnrollmentPage {
 
     public void getEnrollmentPage() throws Exception {
         // Add Guardian Page URL (EX: https://qa.studenttrac.com/#/registration/student/#/guardians)
-        Thread.sleep(5000);
         Browser.getURL();
     }
 
     public void clickRegisterButton() throws Exception {
-        Thread.sleep(3000);
+        Browser.waitForElementWithXPATH("//*[@id=\"StudentEnrollmentsController\"]/div/md-content/div[3]/div/md-list/md-list-item/div[1]/button");
         registerBtn.click();
     }
 }
