@@ -36,23 +36,23 @@ public class AddGuardianPage {
 
     public void getAddGuardianPage() throws Exception {
         // Add Guardian Page URL (EX: https://qa.studenttrac.com/#/registration/student/#/guardians)
-        Thread.sleep(2000);
         Browser.getURL();
     }
 
-    public void clickAddGuardianButton() throws Exception {
-        Thread.sleep(2000);
+    public void clickAddGuardianButton() {
+        Browser.waitForElementWithCLASSNAME("addGuardian");
         addGuardianBtn.click();
     }
 
-    public void clickSaveButton() throws Exception {
+    public void clickSaveButton() {
+        Browser.waitForElementWithCLASSNAME("save");
         saveBtn.click();
-        Thread.sleep(5000);
     }
 
     public void clickDoneButton() throws Exception {
-        doneBtn.click();
         Thread.sleep(5000);
+        Browser.waitForElementWithXPATH("//*[@id='guardiansList']/div[3]/div[2]/button");
+        doneBtn.click();
     }
 
     public void fillOutGuardianInfo() {

@@ -1,5 +1,6 @@
 package webpages;
 
+import objects.Browser;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -20,10 +21,12 @@ public class LoginPage {
     WebElement password;
 
     public void clickCreateAccountButton() {
-         createAccountBtn.click();
+        Browser.waitForElementWithID("createAccount");
+        createAccountBtn.click();
     }
 
     public void clickLoginButton() {
+        Browser.waitForElementWithID("submit");
         loginBtn.click();
     }
 
