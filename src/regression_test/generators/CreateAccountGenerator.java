@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
-import static objects.Browser.testEnviroment;
+import static objects.Browser.ENV;
 
 public class CreateAccountGenerator {
 
@@ -34,7 +34,7 @@ public class CreateAccountGenerator {
                         .contentType("application/json")
                         .body(person)
                         .when()
-                        .post("http://" + testEnviroment + "-authentication-srv.edudyn.com/account")
+                        .post("http://" + ENV + "-authentication-srv.edudyn.com/account")
                         .then()
                         .assertThat().statusCode(200)
                         .extract()
