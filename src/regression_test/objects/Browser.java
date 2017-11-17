@@ -1,11 +1,17 @@
 package objects;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+import com.google.common.base.Function;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 
-import java.util.concurrent.TimeUnit;
+import static java.util.concurrent.TimeUnit.SECONDS;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 
 /**
  * Purpose: To manage a browser and simulate actions a browser can do
@@ -19,6 +25,7 @@ public final class Browser {
     public static Environment ENV = Environment.STAGE;
     private static String baseUrl = "http://" + ENV + "." + "studenttrac.com/#";
     public static WebDriver selenium;
+    private static FluentWait wait;
 
     /**
      * Used to Initialize browser
@@ -40,16 +47,16 @@ public final class Browser {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
         selenium = new ChromeDriver(chromeOptions);
-        selenium.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        selenium.manage().timeouts().implicitlyWait(10, SECONDS);
     }
 
     /**
      *  Web Driver navigates to url within baseUrl
-     *  @param url  the url you want to visit
+     *  @param url the url you want to visit
      */
     public static void goTo( String url ) throws Exception {
         // Added a temporary sleep so browser loads.
-        Thread.sleep(3000);
+        Thread.sleep(1500);
         selenium.get( baseUrl + url );
         System.out.println(baseUrl + url);
     }
@@ -58,7 +65,9 @@ public final class Browser {
      * Gets title of page
      * @return return title string
      */
-    public static String Title(){ return selenium.getTitle(); }
+    public static String title(){
+        return selenium.getTitle();
+    }
 
     /**
      * Used to get reference to Browsers WebDriver.
@@ -99,8 +108,43 @@ public final class Browser {
         // Added a temporary sleep so browser loads.
         Thread.sleep(2000);
         selenium.get(url);
+        Thread.sleep(4000);
         System.out.println(url);
     }
+
+    /**
+     * Fluent Wait - Each FluentWait instance defines the maximum amount of time to wait for a condition,
+     * as well as the frequency with which to check the condition. Furthermore,
+     * the user may configure the wait to ignore specific types of exceptions whilst waiting,
+     * such as NoSuchElementExceptions when searching for an element on the page.
+     */
+    public static void waitFor(String element) {
+
+        Wait<WebDriver> wait = new FluentWait(selenium)
+                .withTimeout(30, SECONDS)
+                .pollingEvery(5, SECONDS)
+                .ignoring(NoSuchElementException.class);
+
+        WebElement elementToWaitFor = wait.until(new Function<WebDriver, WebElement>() {
+            public WebElement apply(WebDriver driver) {
+                return driver.findElement(By.id(""));
+            }
+        });
+    }
+
+//    public static void waitForPageLoad(WebElement element) {
+//        WebDriverWait wait = new WebDriverWait(seleniumWebDriver, pageWaitTime);
+//
+//        Predicate<WebDriver> pageLoaded = new Predicate<WebDriver>() {
+//            @Override
+//            public boolean apply(WebDriver input) {
+//                return ((JavascriptExecutor) input).executeScript("return document.readyState").equals("complete");
+//            }
+//
+//        };
+//        wait.until((Function<? super WebDriver, Object>) pageLoaded);
+//    }
+
 }
 
 
