@@ -65,6 +65,17 @@ public final class Browser {
         Thread.sleep(3000);
         System.out.println(baseUrl + url);
     }
+    /**
+     * GET URL of dynamic pages you might not know i.e. reg forms
+     */
+    public static void getURL() throws Exception {
+        // Added a temporary sleep so browser loads.
+        Thread.sleep(3000);
+        String url = selenium.getCurrentUrl();
+        selenium.get(url);
+        Thread.sleep(3000);
+        System.out.println(url);
+    }
 
     /**
      * Gets title of page
@@ -106,24 +117,12 @@ public final class Browser {
     }
 
     /**
-     * GET URL of dynamic pages you might not know i.e. reg forms
-     */
-    public static void getURL() throws Exception {
-        // Added a temporary sleep so browser loads.
-        Thread.sleep(3000);
-        String url = selenium.getCurrentUrl();
-        selenium.get(url);
-        Thread.sleep(3000);
-        System.out.println(url);
-    }
-
-    /**
      * Fluent Wait - Each FluentWait instance defines the maximum amount of time to wait for a condition,
      * as well as the frequency with which to check the condition. Furthermore,
      * the user may configure the wait to ignore specific types of exceptions whilst waiting,
      * such as NoSuchElementExceptions when searching for an element on the page.
      */
-    public static void waitForElementWithID(String element) {
+    public static void waitForElement( By locateElement ) {
 
         Wait<WebDriver> wait = new FluentWait(selenium)
                 .withTimeout(maxWaitTime, SECONDS)
@@ -131,72 +130,17 @@ public final class Browser {
                 .ignoring(NoSuchElementException.class);
 
         WebElement elementToWaitFor = wait.until(new Function<WebDriver, WebElement>() {
-            public WebElement apply(WebDriver driver) {
-                return driver.findElement(By.id(element));
-            }
-        });
-    }
-
-    public static void waitForElementWithCLASSNAME(String element) {
-
-        Wait<WebDriver> wait = new FluentWait(selenium)
-                .withTimeout(maxWaitTime, SECONDS)
-                .pollingEvery(pollingTime, SECONDS)
-                .ignoring(NoSuchElementException.class);
-
-        WebElement elementToWaitFor = wait.until(new Function<WebDriver, WebElement>() {
-            public WebElement apply(WebDriver driver) { return driver.findElement(By.className(element)); }
-        });
-    }
-
-    public static void waitForElementWithXPATH(String element) {
-
-        Wait<WebDriver> wait = new FluentWait(selenium)
-                .withTimeout(maxWaitTime, SECONDS)
-                .pollingEvery(pollingTime, SECONDS)
-                .ignoring(NoSuchElementException.class);
-
-        WebElement elementToWaitFor = wait.until(new Function<WebDriver, WebElement>() {
-            public WebElement apply(WebDriver driver) {
-                return driver.findElement(By.xpath(element));
-            }
-        });
-    }
-
-    public static void waitForElementWithNAME(String element) {
-
-        Wait<WebDriver> wait = new FluentWait(selenium)
-                .withTimeout(maxWaitTime, SECONDS)
-                .pollingEvery(pollingTime, SECONDS)
-                .ignoring(NoSuchElementException.class);
-
-        WebElement elementToWaitFor = wait.until(new Function<WebDriver, WebElement>() {
-            public WebElement apply(WebDriver driver) { return driver.findElement(By.name(element)); }
+            public WebElement apply(WebDriver driver) { return driver.findElement(locateElement); }
         });
     }
 
     /**
      * Explciit Wait allows you to define to wait for a certain condition to occur before proceeding
-     * @param element
+     * @param locateElement
      */
-    public static void waitUntilElementWithIDVisible(String element) {
+    public static void waitUntilElementIsVisible( By locateElement ){
         WebDriverWait wait = new WebDriverWait(selenium, maxWaitTime);
-        WebElement elementToWaitFor = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(element)));
-    }
-
-    public static void waitUntilElmentWithCLASSNAMEVisible(String element) {
-        WebDriverWait wait = new WebDriverWait(selenium, maxWaitTime);
-        WebElement elementToWaitFor = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(element)));
-    }
-
-    public static void waitUntilElementWithXPATHVisible(String element) {
-        WebDriverWait wait = new WebDriverWait(selenium, maxWaitTime);
-        WebElement elementToWaitFor = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element)));
-    }
-
-    public static void waitUntilElementWithNameVisible(String element) {
-        WebDriverWait wait = new WebDriverWait(selenium, maxWaitTime);
-        WebElement elementToWaitFor = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(element)));
+        WebElement elementToWaitFor = wait.until(ExpectedConditions.visibilityOfElementLocated(locateElement));
     }
 
 }

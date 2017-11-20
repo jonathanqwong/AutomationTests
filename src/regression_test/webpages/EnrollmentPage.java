@@ -1,6 +1,7 @@
 package webpages;
 
 import objects.Browser;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -17,7 +18,7 @@ public class EnrollmentPage {
     }
 
     public void clickRegisterButton() throws Exception {
-        Browser.waitForElementWithXPATH("//*[@id=\"StudentEnrollmentsController\"]/div/md-content/div[3]/div/md-list/md-list-item/div[1]/button");
+        Browser.waitForElement(By.xpath("//*[@id=\"StudentEnrollmentsController\"]/div/md-content/div[3]/div/md-list/md-list-item/div[1]/button"));
         registerBtn.click();
     }
 }
