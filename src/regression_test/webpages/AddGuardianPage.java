@@ -1,6 +1,7 @@
 package webpages;
 
 import objects.Browser;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -40,18 +41,18 @@ public class AddGuardianPage {
     }
 
     public void clickAddGuardianButton() {
-        Browser.waitForElementWithCLASSNAME("addGuardian");
+        Browser.waitForElement( By.className("addGuardian"));
         addGuardianBtn.click();
     }
 
     public void clickSaveButton() {
-        Browser.waitForElementWithCLASSNAME("save");
+        Browser.waitForElement( By.className("save"));
         saveBtn.click();
     }
 
     public void clickDoneButton() throws Exception {
         Thread.sleep(5000);
-        Browser.waitForElementWithXPATH("//*[@id='guardiansList']/div[3]/div[2]/button");
+        Browser.waitForElement( By.xpath("//*[@id='guardiansList']/div[3]/div[2]/button"));
         doneBtn.click();
     }
 

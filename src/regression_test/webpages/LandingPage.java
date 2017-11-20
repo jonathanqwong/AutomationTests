@@ -1,6 +1,7 @@
 package webpages;
 
 import objects.Browser;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -15,8 +16,8 @@ public class LandingPage {
     WebElement getStartedBtn;
 
     public void clickLetsGetStartButton() throws Exception {
-        Browser.waitUntilElementWithIDVisible("getStarted");
-        Browser.waitForElementWithID("getStarted");
+        Browser.waitUntilElementIsVisible(By.id("getStarted"));
+        Browser.waitForElement( By.id("getStarted"));
         getStartedBtn.click();
     }
 
