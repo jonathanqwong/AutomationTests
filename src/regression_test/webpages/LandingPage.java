@@ -1,11 +1,12 @@
 package webpages;
 
+import objects.Browser;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class LandingPage {
-    //WebDriverWait wait = new WebDriverWait(selenium, 10);
 
     // Landing Page URL
     public static String LANDING_PAGE = "/registration/student/landing";
@@ -15,10 +16,9 @@ public class LandingPage {
     WebElement getStartedBtn;
 
     public void clickLetsGetStartButton() throws Exception {
-        //wait.until(ExpectedConditions.elementToBeClickable(By.id("getStarted")));
-        Thread.sleep(2000);
+        Browser.waitUntilElementIsVisible(By.id("getStarted"));
+        Browser.waitForElement( By.id("getStarted"));
         getStartedBtn.click();
-
     }
 
 }

@@ -1,6 +1,7 @@
 package webpages;
 
 import objects.Browser;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
@@ -17,6 +18,8 @@ public class RegistrationFormPage {
     WebElement finalizeNSubmitBtn;
     @FindBy(how = How.ID, using = "backToMainUrl")
     WebElement gotItBtn;
+    @FindBy(how = How.CLASS_NAME, using = "tabularBlock")
+    WebElement formContainers;
 
     // Widgets
     @FindBy(how = How.CLASS_NAME, using = "addAddress")
@@ -179,7 +182,8 @@ public class RegistrationFormPage {
 
     public void getRegistrationFormsPage() throws Exception {
         // Add Guardian Page URL (EX: https://qa.studenttrac.com/#/registration/student/#/guardians)
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
+        Browser.waitUntilElementIsVisible( By.className( "tabularBlock"));
         Browser.getURL();
     }
 
@@ -207,233 +211,249 @@ public class RegistrationFormPage {
         SignGuardianSignature.perform();
     }
 
-    public void clickFinalizeNSubmitButton() throws Exception {
-        finalizeNSubmitBtn.click();
-        Thread.sleep(3000);
+    public void clickSaveNContinueButton() throws Exception {
+        Browser.waitForElement( By.className("instanceSaveBtn"));
+        SaveNContinueBtn.click();
+        Thread.sleep(2000);
     }
 
-    public void clickGotItButton() throws Exception {
+    public void clickFinalizeNSubmitButton() {
+        Browser.waitForElement( By.className("finalize-submit-btn"));
+        finalizeNSubmitBtn.click();
+    }
+
+    public void clickGotItButton() {
+        Browser.waitForElement( By.id("backToMainUrl"));
         gotItBtn.click();
-        Thread.sleep(3000);
     }
 
     public void fillOutStudentApplicationForm() throws Exception {
 
         // Student Information Tabular
         Browser.scrollDownToElement();
+        Browser.waitForElement( By.id("radio_16"));
         gender.click();
         birthStateSelect.click();
         birthStateOption.click();
-        SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        clickSaveNContinueButton();
 
         // Contact Tabular
         Browser.scrollDownToElement();
+        Browser.waitForElement( By.className("addAddress"));
         addAddressWidgetBtn.click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
+        Browser.waitUntilElementIsVisible(By.name("Title"));
+        Browser.waitForElement( By.name("Title"));
         addressLabel.sendKeys("Home");
         addressInput.sendKeys("3400 E Foothill Blvd.");
         addressCity.sendKeys("Pasadena");
+        Browser.waitForElement( By.xpath("//*[@id=\"dialogContent_72\"]/div/div/md-input-container[2]/select/option[6]"));
         addressStateSelect.click();
         studentAddressStateOption.click();
         addressPostalCode.sendKeys("91107");
         validateBtn.click();
-        Thread.sleep(2000);
+        Browser.waitForElement( By.xpath("/html/body/div[4]/md-dialog/form/md-dialog-actions/button[2]"));
         looksGoodBtn.click();
-        Thread.sleep(4000);
+        Thread.sleep(3000);
         Browser.scrollDownToElement();
+        Browser.waitUntilElementIsVisible( By.id("radio_20"));
+        Browser.waitForElement( By.id("radio_20"));
         studentNighttimeResidency.click();
-        SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        clickSaveNContinueButton();
 
         // Education Tabular
+        Browser.waitForElement( By.id("radio_32"));
         languageOtherThanEnglishAtHome.click();
         homeLanguageSelect.click();
         homeLanguageOption.click();
-        Thread.sleep(1000);
+        Browser.waitForElement( By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td[1]/div/div/magic-field/div/div/div/div/md-input-container/select/option[2]"));
         firstLanguageSelect.click();
         firstLanguageOption.click();
-        Thread.sleep(1000);
+        Browser.waitForElement(By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td[2]/div/div/magic-field/div/div/div/div/md-input-container/select/option[2]"));
         preferredLanguageSelect.click();
         preferredLanguageOption.click();
-        Thread.sleep(1000);
+        Browser.waitForElement(By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[3]/td[1]/div/div/magic-field/div/div/div/div/md-input-container/select/option[2]"));
         parentLanguageSelect.click();
         parentLanguageOption.click();
-        Thread.sleep(1000);
+        Browser.waitForElement( By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[3]/td[2]/div/div/magic-field/div/div/div/div/md-input-container/select"));
         preferredCommunicationLanguageSelect.click();
         preferredCommunicationLanguageOption.click();
-        Thread.sleep(1000);
-        SaveNContinueBtn.click();
-        Thread.sleep(1000);
+        clickSaveNContinueButton();
 
         // Previous School Tabular
+        Browser.waitForElement( By.id("radio_38"));
         previousSchool.click();
         lastSchoolAttended.sendKeys("Home School");
-        SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        clickSaveNContinueButton();
 
         // Other Information (skip)
-        SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        Browser.waitForElement( By.className("instanceSaveBtn"));
+        clickSaveNContinueButton();
 
         // Signature Tabular
+        Browser.waitForElement( By.className("canvas"));
         signSignature();
         signatureNameInStudentApplication.sendKeys("Test Signature");
         saveSignature.click();
-        Thread.sleep(3000);
-        SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        Browser.waitForElement( By.className("instanceSaveBtn"));
+        clickSaveNContinueButton();
     }
 
     public void fillOutHouseHoldInfoForm() throws Exception {
 
         // Parents/Guardians/Emergency Contact
         Browser.scrollDownToElement();
+        Browser.waitForElement( By.className("addAddress"));
         addAddressWidgetBtn.click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
+        Browser.waitUntilElementIsVisible( By.name("Title"));
+        Browser.waitForElement( By.name("Title"));
         addressLabel.sendKeys("Home");
         addressInput.sendKeys("3400 E Foothill Blvd.");
         addressCity.sendKeys("Pasadena");
+        Browser.waitForElement( By.xpath("//*[@id=\"dialogContent_199\"]/div/div/md-input-container[2]/select/option[6]"));
         addressStateSelect.click();
         guardianAddressStateOption.click();
         addressPostalCode.sendKeys("91107");
         validateBtn.click();
-        Thread.sleep(2000);
+        Browser.waitForElement( By.xpath("/html/body/div[4]/md-dialog/form/md-dialog-actions/button[2]"));
         looksGoodBtn.click();
-        Thread.sleep(2000);
-        addEmailWidgetBtn.click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         Browser.scrollDownToElement();
-        SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        Browser.waitUntilElementIsVisible( By.className("addEmail"));
+        Browser.waitForElement( By.className("addEmail"));
+        addEmailWidgetBtn.click();
+        Browser.waitForElement( By.name("Title"));
+        emailLabel.sendKeys("Main");
+        emailInput.sendKeys("test@edudyn.com");
+        Browser.scrollDownToElement();
+        clickSaveNContinueButton();
 
         // Survey
-        SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        Browser.waitForElement( By.className("instanceSaveBtn"));
+        clickSaveNContinueButton();
 
         // Parent/Guardian Profile
+        Browser.waitForElement( By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr/td[1]/div/div/magic-field/div/div/div/div/md-input-container/select"));
         guardianEducationLevelSelect.click();
         guardianEducationLevelOption.click();
-        Thread.sleep(1000);
+        Browser.waitForElement( By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr/td[2]/div/div/magic-field/div/div/div/md-input-container/div/div[1]/md-checkbox/div[1]"));
         guardianEducationMilitaryStatus.click();
-        SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        clickSaveNContinueButton();
 
         // Guardian Signature
 //        signSignature();
 //        guardianSignatureNameInHouseholdInfo.sendKeys("Guardian Test Signature");
 //        saveSignature.click();
 //        Thread.sleep(3000);
-//        SaveNContinueBtn.click();
+//        clickSaveNContinueButton();
 //        Thread.sleep(2000);
     }
 
     public void fillOutEmergencyHealthForm() throws Exception {
         // Release Authorization
+        Browser.waitForElement( By.id("radio_241"));
         releaseQuestion1.click();
+        Browser.scrollDownToElement();
         releaseQuestion2.click();
-        SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        clickSaveNContinueButton();
 
         // Health Information
+        Browser.waitForElement( By.id("radio_247"));
         healthQuestion1.click();
-        SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        clickSaveNContinueButton();
 
         // Medication
-        SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        Browser.waitForElement( By.className("instanceSaveBtn"));
+        clickSaveNContinueButton();
 
         // Medical Authorization
+        Browser.waitForElement( By.id("radio_275"));
         medicalQuestion1.click();
-        SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        clickSaveNContinueButton();
 
         // Emergency Treatment Authorization
+        Browser.waitForElement( By.xpath("//*[@id=\"tabular_section_4\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]"));
         medicalQuestion2.click();
         medicalQuestion3.click();
-        SaveNContinueBtn.click();
-        Thread.sleep(2000);
+        clickSaveNContinueButton();
 
         // Student Signature
+        Browser.waitForElement( By.className("canvas"));
         studentSignatureNameInEmergencyHealth.sendKeys("Test Signature");
         signSignature();
         saveSignature.click();
-        Thread.sleep(3000);
-        SaveNContinueBtn.click();
-        Thread.sleep(3000);
+        Browser.waitForElement( By.className("instanceSaveBtn"));
+        clickSaveNContinueButton();
 
         // Guardian Signature
 //        guardianSignatureNameInEmergencyHealth.sendKeys("Guardian Test Signature");
 //        signGuardianSignature();
 //        Thread.sleep(3000);
 //        saveSignature.click();
-        Thread.sleep(3000);
-        SaveNContinueBtn.click();
-        Thread.sleep(3000);
+        Browser.waitForElement( By.className("instanceSaveBtn"));
+        clickSaveNContinueButton();
     }
 
     public void fillOutPhotographicConsent() throws Exception {
         Browser.scrollDownToElement();
+        Browser.waitForElement( By.id("radio_301"));
         photographicConsent.click();
         signSignature();
         studentSignatureNameInPhotographicConsent.sendKeys("Test Signature ");
         saveSignature.click();
-        SaveNContinueBtn.click();
-        Thread.sleep(3000);
+        clickSaveNContinueButton();
     }
 
     public void fillOutInternetAccessConsent() throws Exception {
         Browser.scrollDownToElement();
+        Browser.waitForElement( By.xpath("//*[@id=\"instanceBody\"]/form-section[2]/div/div/div/div[2]/form-grid/div/table/tbody/tr/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]"));
         internetAccessConsent.click();
         signSignature();
         studentSignatureNameInternetAccessPolicy.sendKeys("Test Signature   ");
         saveSignature.click();
-        SaveNContinueBtn.click();
-        Thread.sleep(3000);
+        clickSaveNContinueButton();
     }
 
     public void fillOutPhysicalEducationConsent() throws Exception {
         Browser.scrollDownToElement();
+        Browser.waitForElement( By.id("radio_325"));
         physicalEducationConsent.click();
         signSignature();
         studentSignatureNamePhysicalEducationConsent.sendKeys(" Test Signature");
         saveSignature.click();
-        SaveNContinueBtn.click();
-        Thread.sleep(3000);
+        clickSaveNContinueButton();
     }
 
     public void fillOutTransportationConsent() throws Exception {
         Browser.scrollDownToElement();
+        Browser.waitForElement( By.id("radio_339"));
         transportationConsent.click();
         signSignature();
         studentSignatureNameTransportationConsent.sendKeys("Test Signature");
         saveSignature.click();
-        SaveNContinueBtn.click();
-        Thread.sleep(3000);
+        clickSaveNContinueButton();
     }
 
     public void fillOutAffidavitConsent() throws Exception {
         Browser.scrollDownToElement();
-        Thread.sleep(3000);
+        Browser.waitForElement( By.xpath("//*[@id=\"instanceBody\"]/form-section[1]/div/div/div/div[2]/form-grid[3]/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]"));
         affidavitConsent.click();
         signSignature();
         studentSignatureNameAffidavitConsent.sendKeys("Test Signature  ");
         saveSignature.click();
-        SaveNContinueBtn.click();
-        Thread.sleep(3000);
+        clickSaveNContinueButton();
     }
 
     public void fillOutMAConsent() throws Exception {
 //        MAInput.sendKeys("Dad");
         Browser.scrollDownToElement();
-        Thread.sleep(3000);
+        Browser.waitForElement( By.xpath("//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox"));
         MAAgreement.click();
         signSignature();
         studentSignatureNameMA.sendKeys("Test Signature");
         saveSignature.click();
-        SaveNContinueBtn.click();
-        Thread.sleep(3000);
+        clickSaveNContinueButton();
     }
 
 }

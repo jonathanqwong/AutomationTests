@@ -1,6 +1,7 @@
 package webpages;
 
 import objects.Browser;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -36,23 +37,23 @@ public class AddGuardianPage {
 
     public void getAddGuardianPage() throws Exception {
         // Add Guardian Page URL (EX: https://qa.studenttrac.com/#/registration/student/#/guardians)
-        Thread.sleep(2000);
         Browser.getURL();
     }
 
-    public void clickAddGuardianButton() throws Exception {
-        Thread.sleep(2000);
+    public void clickAddGuardianButton() {
+        Browser.waitForElement( By.className("addGuardian"));
         addGuardianBtn.click();
     }
 
-    public void clickSaveButton() throws Exception {
+    public void clickSaveButton() {
+        Browser.waitForElement( By.className("save"));
         saveBtn.click();
-        Thread.sleep(5000);
     }
 
     public void clickDoneButton() throws Exception {
-        doneBtn.click();
         Thread.sleep(5000);
+        Browser.waitForElement( By.xpath("//*[@id='guardiansList']/div[3]/div[2]/button"));
+        doneBtn.click();
     }
 
     public void fillOutGuardianInfo() {

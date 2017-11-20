@@ -1,6 +1,7 @@
 package webpages;
 
 import objects.Browser;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -13,12 +14,11 @@ public class EnrollmentPage {
 
     public void getEnrollmentPage() throws Exception {
         // Add Guardian Page URL (EX: https://qa.studenttrac.com/#/registration/student/#/guardians)
-        Thread.sleep(5000);
         Browser.getURL();
     }
 
     public void clickRegisterButton() throws Exception {
-        Thread.sleep(3000);
+        Browser.waitForElement(By.xpath("//*[@id=\"StudentEnrollmentsController\"]/div/md-content/div[3]/div/md-list/md-list-item/div[1]/button"));
         registerBtn.click();
     }
 }

@@ -1,6 +1,7 @@
 package webpages;
 
 import objects.Browser;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -32,16 +33,16 @@ public class AccountCreationPage {
     @FindBy(how = How.XPATH, using = "/html/body/div[1]/div/div/form/div[6]/div[1]/div[5]/md-checkbox")
     WebElement showPassword;
 
-    public void clickCreateAccountButton() throws Exception {
+    public void clickCreateAccountButton() {
         Browser.scrollDownToElement();
+        Browser.waitForElement(By.id("createAccount"));
         createAccountBtn.click();
-        Thread.sleep(3000);
     }
 
-    public void clickShowPasswordCheckbox() throws Exception {
+    public void clickShowPasswordCheckbox() {
         Browser.scrollDownToElement();
+        Browser.waitForElement( By.xpath("/html/body/div[1]/div/div/form/div[6]/div[1]/div[5]/md-checkbox"));
         showPassword.click();
-        Thread.sleep(3000);
     }
 
     public void assertCreateAccountButtonNotClickable(String message) {
