@@ -52,7 +52,7 @@ public class TopNavigationPage {
 
     public void clickStudentInfoButton() {
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[2]"));
-        home.click();
+        studentInfo.click();
     }
 
     public void clickGuidesButton() {
@@ -62,37 +62,37 @@ public class TopNavigationPage {
 
     public void clickExtAsmtButton() {
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[4]"));
-        guides.click();
+        extAsmt.click();
     }
 
     public void clickStudentFilesButton() {
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[5]"));
-        guides.click();
+        studentFiles.click();
     }
 
     public void clickCalendarButton() {
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[6]"));
-        guides.click();
+        calendar.click();
     }
 
     public void clickReportsButton() {
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[7]"));
-        guides.click();
+        reports.click();
     }
 
     public void clickHistoryButton() {
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[8]"));
-        guides.click();
+        history.click();
     }
 
     public void clickRegistrationButton() {
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[9]"));
-        guides.click();
+        registration.click();
     }
 
     public void clickClassroomButton() {
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[10]"));
-        guides.click();
+        classroom.click();
     }
 
     public void reports(){
