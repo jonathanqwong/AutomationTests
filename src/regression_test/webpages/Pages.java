@@ -6,7 +6,7 @@ import objects.Browser;
 import org.openqa.selenium.support.PageFactory;
 
 /**
-  * Purpose: Page class allows access to all web pages and their functions and selenium web driver elements
+  * Purpose: Page class allows access to all web pages, their functions, and selenium web driver elements through PageFactory
  **/
 
 public class Pages {
@@ -22,20 +22,32 @@ public class Pages {
         return page;
     }
 
-    public static ReportPage reports() {
-        ReportPage page = new ReportPage();
-        PageFactory.initElements(Browser.getDriver(), page);
-        return page;
-    }
-
     public static AddGuardianPage addGuardian(){
         AddGuardianPage page = new AddGuardianPage();
         PageFactory.initElements(Browser.getDriver(), page );
         return page;
     }
 
+    public static CreateAccountGenerator createAccount(){
+        CreateAccountGenerator page = new CreateAccountGenerator();
+        PageFactory.initElements(Browser.getDriver(), page );
+        return page;
+    }
+
     public static EnrollmentPage enrollment (){
         EnrollmentPage page = new EnrollmentPage();
+        PageFactory.initElements(Browser.getDriver(), page );
+        return page;
+    }
+
+    public static GeneralMethods general(){
+        GeneralMethods page = new GeneralMethods();
+        PageFactory.initElements(Browser.getDriver(), page );
+        return page;
+    }
+
+    public static GuidesPage guides (){
+        GuidesPage page = new GuidesPage();
         PageFactory.initElements(Browser.getDriver(), page );
         return page;
     }
@@ -52,12 +64,17 @@ public class Pages {
         return page;
     }
 
-    public static TopNavigationPage topNavigation(){
-        TopNavigationPage page = new TopNavigationPage();
+    public static ReportPage report(){
+        ReportPage page = new ReportPage();
         PageFactory.initElements(Browser.getDriver(), page );
         return page;
     }
 
+    public static ReportPage reports() {
+        ReportPage page = new ReportPage();
+        PageFactory.initElements(Browser.getDriver(), page);
+        return page;
+    }
 
     public static RegistrationFormPage registrationForm(){
         RegistrationFormPage page = new RegistrationFormPage();
@@ -65,21 +82,10 @@ public class Pages {
         return page;
     }
 
-    public static ReportPage report(){
-        ReportPage page = new ReportPage();
+    public static TopNavigationPage topNavigation(){
+        TopNavigationPage page = new TopNavigationPage();
         PageFactory.initElements(Browser.getDriver(), page );
         return page;
     }
 
-    public static GeneralMethods general(){
-        GeneralMethods page = new GeneralMethods();
-        PageFactory.initElements(Browser.getDriver(), page );
-        return page;
-    }
-
-    public static CreateAccountGenerator createAccount(){
-        CreateAccountGenerator page = new CreateAccountGenerator();
-        PageFactory.initElements(Browser.getDriver(), page );
-        return page;
-    }
 }
