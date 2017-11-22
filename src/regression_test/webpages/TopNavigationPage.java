@@ -10,25 +10,27 @@ public class TopNavigationPage {
 
     @FindBy(how = How.CLASS_NAME, using = "")
     WebElement topNavigationToggleLink;
-    @FindBy(how = How.CLASS_NAME, using = "md-icon-button")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"header-bar\"]/div/span/button")
     WebElement hamburger;
-    @FindBy(how = How.LINK_TEXT, using = "Home")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[1]")
     WebElement home;
-    @FindBy(how = How.LINK_TEXT, using = "Student Info.")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[2]")
     WebElement studentInfo;
-    @FindBy(how = How.LINK_TEXT, using = "Guides")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[3]")
     WebElement guides;
-    @FindBy(how = How.LINK_TEXT, using = "Ext. Asmt.")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[4]")
     WebElement extAsmt;
-    @FindBy(how = How.LINK_TEXT, using = "Calendar")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[5]")
+    WebElement studentFiles;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[6]")
     WebElement calendar;
-    @FindBy(how = How.LINK_TEXT, using = "Reports")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[7]")
     WebElement reports;
-    @FindBy(how = How.LINK_TEXT, using = "History")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[8]")
     WebElement history;
-    @FindBy(how = How.LINK_TEXT, using = "Registration")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[9]")
     WebElement registration;
-    @FindBy(how = How.LINK_TEXT, using = "Classroom")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[10]")
     WebElement classroom;
 
     @FindBy(how = How.CLASS_NAME, using = "")
@@ -39,17 +41,57 @@ public class TopNavigationPage {
     }
 
     public void clickHamburgerButton() {
-        Browser.waitUntilElementIsVisible(By. className("md-icon-button"));
+        Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"header-bar\"]/div/span/button"));
         hamburger.click();
     }
 
     public void clickHomeButton() {
-        Browser.waitUntilElementIsVisible(By.linkText("Home"));
+        Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[1]"));
+        home.click();
+    }
+
+    public void clickStudentInfoButton() {
+        Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[2]"));
         home.click();
     }
 
     public void clickGuidesButton() {
-        Browser.waitUntilElementIsVisible(By.linkText("Guides"));
+        Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[3]"));
+        guides.click();
+    }
+
+    public void clickExtAsmtButton() {
+        Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[4]"));
+        guides.click();
+    }
+
+    public void clickStudentFilesButton() {
+        Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[5]"));
+        guides.click();
+    }
+
+    public void clickCalendarButton() {
+        Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[6]"));
+        guides.click();
+    }
+
+    public void clickReportsButton() {
+        Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[7]"));
+        guides.click();
+    }
+
+    public void clickHistoryButton() {
+        Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[8]"));
+        guides.click();
+    }
+
+    public void clickRegistrationButton() {
+        Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[9]"));
+        guides.click();
+    }
+
+    public void clickClassroomButton() {
+        Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[10]"));
         guides.click();
     }
 
