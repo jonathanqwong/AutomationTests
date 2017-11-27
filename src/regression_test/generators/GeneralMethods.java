@@ -6,15 +6,12 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 
 /**
- * Purpose - Made for general variables, methods, or generators for preconditions
+ * Purpose - Made for general variables and methods
  * Overview:
  * 1) Error Dialog Assertion
  * 2) Toast Assertion
  * 3) Nav Bar Title Assertion
  * 4) RedLine Error Assertion
-
- // TO-DO
- // implicit and explicit waits (conditions, elements)
 **/
 
 public class GeneralMethods {
@@ -55,10 +52,6 @@ public class GeneralMethods {
         System.out.println("Assert Red Underline Error is: " + inputError);
         Assert.assertEquals(expected_title, inputError);
     }
-
-    /**
-     * API Calls will be separated into comment sections for the service that it is in (we can reorganize this if it gets huge)
-     **/
 
     /** ======================= Authentication Service ======================= **/
     /** ======================= Authorization Service  ======================= **/

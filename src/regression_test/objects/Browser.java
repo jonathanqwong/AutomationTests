@@ -17,9 +17,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Purpose: To manage a browser and simulate actions a browser can do
- * @author  Ricardo Montes
- * @version 1.7
- * @since   2017-11-09
  */
 
 public final class Browser {
