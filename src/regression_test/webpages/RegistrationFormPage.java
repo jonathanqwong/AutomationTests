@@ -84,99 +84,99 @@ public class RegistrationFormPage {
 //    WebElement guardianSignatureNameMA;
 
     // Student Info
-    @FindBy(how = How.ID, using = "radio_16")
+    @FindBy(how = How.ID, using = "radio_29")
     WebElement gender;
-    @FindBy(how = How.XPATH, using = "//*[@id=\'tabular_section_0\']/form-section/div/div/div/div[2]/form-grid[2]/div/table/tbody/tr[5]/td[2]/div/div/magic-field/div/div/div/div/md-input-container/select")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_0\"]/form-section/div/div/div/div[2]/form-grid[2]/div/table/tbody/tr[5]/td[2]/div/div/magic-field/div/div/div/div/div/md-input-container/select")
     WebElement birthStateSelect;
-    @FindBy(how = How.XPATH, using = "//*[@id=\'tabular_section_0\']/form-section/div/div/div/div[2]/form-grid[2]/div/table/tbody/tr[5]/td[2]/div/div/magic-field/div/div/div/div/md-input-container/select/option[7]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_0\"]/form-section/div/div/div/div[2]/form-grid[2]/div/table/tbody/tr[5]/td[2]/div/div/magic-field/div/div/div/div/div/md-input-container/select/option[7]")
     WebElement birthStateOption;
 
     // Contact
-    @FindBy(how = How.XPATH, using = "//*[@id=\"dialogContent_72\"]/div/div/md-input-container[2]/select/option[6]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"dialogContent_68\"]/div/div/md-input-container[2]/select/option[6]")
     WebElement studentAddressStateOption;
-    @FindBy(how = How.ID, using = "radio_20")
+    @FindBy(how = How.ID, using = "radio_32")
     WebElement studentNighttimeResidency;
 
     // Language
-    @FindBy(how = How.ID, using = "radio_32")
+    @FindBy(how = How.ID, using = "radio_42")
     WebElement languageOtherThanEnglishAtHome;
-    @FindBy(how = How.XPATH, using = "//*[@id=\'tabular_section_2\']/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[1]/td[2]/div/div/magic-field/div/div/div/div/md-input-container/select")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[1]/td[2]/div/div/magic-field/div/div/div/div/div/md-input-container/select")
     WebElement homeLanguageSelect;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[1]/td[2]/div/div/magic-field/div/div/div/div/md-input-container/select/option[2]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[1]/td[2]/div/div/magic-field/div/div/div/div/div/md-input-container/select/option[2]")
     WebElement homeLanguageOption;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td[1]/div/div/magic-field/div/div/div/div/md-input-container/select")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td[1]/div/div/magic-field/div/div/div/div/div/md-input-container/select")
     WebElement firstLanguageSelect;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td[1]/div/div/magic-field/div/div/div/div/md-input-container/select/option[2]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td[1]/div/div/magic-field/div/div/div/div/div/md-input-container/select/option[2]")
     WebElement firstLanguageOption;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td[2]/div/div/magic-field/div/div/div/div/md-input-container/select")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td[2]/div/div/magic-field/div/div/div/div/div/md-input-container/select")
     WebElement preferredLanguageSelect;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td[2]/div/div/magic-field/div/div/div/div/md-input-container/select/option[2]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td[2]/div/div/magic-field/div/div/div/div/div/md-input-container/select/option[2]")
     WebElement preferredLanguageOption;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[3]/td[1]/div/div/magic-field/div/div/div/div/md-input-container/select")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[3]/td[1]/div/div/magic-field/div/div/div/div/div/md-input-container/select")
     WebElement parentLanguageSelect;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[3]/td[1]/div/div/magic-field/div/div/div/div/md-input-container/select/option[2]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[3]/td[1]/div/div/magic-field/div/div/div/div/div/md-input-container/select/option[2]")
     WebElement parentLanguageOption;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[3]/td[2]/div/div/magic-field/div/div/div/div/md-input-container/select")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[3]/td[2]/div/div/magic-field/div/div/div/div/div/md-input-container/select")
     WebElement preferredCommunicationLanguageSelect;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[3]/td[2]/div/div/magic-field/div/div/div/div/md-input-container/select/option[2]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[3]/td[2]/div/div/magic-field/div/div/div/div/div/md-input-container/select/option[2]")
     WebElement preferredCommunicationLanguageOption;
 
     // Education
-    @FindBy(how = How.ID, using = "radio_38")
+    @FindBy(how = How.ID, using = "radio_46")
     WebElement previousSchool;
-    @FindBy(how = How.ID, using = "input_39")
+    @FindBy(how = How.ID, using = "input_20")
     WebElement lastSchoolAttended;
 
     // Guardian Contact Info
-    @FindBy(how = How.XPATH, using = "//*[@id=\"dialogContent_199\"]/div/div/md-input-container[2]/select/option[6]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"dialogContent_197\"]/div/div/md-input-container[2]/select/option[6]")
     WebElement guardianAddressStateOption;
 
     // Parent Guardian Profile
-    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr/td[1]/div/div/magic-field/div/div/div/div/md-input-container/select")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr/td[1]/div/div/magic-field/div/div/div/div/div/md-input-container/select")
     WebElement guardianEducationLevelSelect;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr/td[1]/div/div/magic-field/div/div/div/div/md-input-container/select/option[3]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr/td[1]/div/div/magic-field/div/div/div/div/div/md-input-container/select/option[2]")
     WebElement guardianEducationLevelOption;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr/td[2]/div/div/magic-field/div/div/div/md-input-container/div/div[1]/md-checkbox/div[1]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr/td[2]/div/div/magic-field/div/div/div/div/md-input-container/div/div[1]/md-checkbox/div[1]")
     WebElement guardianEducationMilitaryStatus;
 
     // Emergency/Health
-    @FindBy(how = How.ID, using = "radio_241")
+    @FindBy(how = How.ID, using = "radio_238")
     WebElement releaseQuestion1;
-    @FindBy(how = How.ID, using = "radio_242")
+    @FindBy(how = How.ID, using = "radio_240")
     WebElement releaseQuestion2;
-    @FindBy(how = How.ID, using = "radio_247")
+    @FindBy(how = How.ID, using = "radio_245")
     WebElement healthQuestion1;
-    @FindBy(how = How.ID, using = "radio_275")
+    @FindBy(how = How.ID, using = "radio_271")
     WebElement medicalQuestion1;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_4\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_4\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/div/md-input-container/div/div/md-checkbox/div[1]")
     WebElement medicalQuestion2;
-    @FindBy(how = How.ID, using = "radio_278")
+    @FindBy(how = How.ID, using = "radio_274")
     WebElement medicalQuestion3;
 
     // Photographic Consent
-    @FindBy(how = How.ID, using = "radio_301")
+    @FindBy(how = How.ID, using = "radio_300")
     WebElement photographicConsent;
 
     // Internet Access
-    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[2]/div/div/div/div[2]/form-grid/div/table/tbody/tr/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[2]/div/div/div/div[2]/form-grid/div/table/tbody/tr/td/div/div/magic-field/div/div/div/div/md-input-container/div/div/md-checkbox/div[1]")
     WebElement internetAccessConsent;
 
     // Physical Education
-    @FindBy(how = How.ID, using = "radio_325")
+    @FindBy(how = How.ID, using = "radio_324")
     WebElement physicalEducationConsent;
 
     // Transportation Consent
-    @FindBy(how = How.ID, using = "radio_339")
+    @FindBy(how = How.ID, using = "radio_337")
     WebElement transportationConsent;
 
     // Affidavit of Non-Attendance
-    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[1]/div/div/div/div[2]/form-grid[3]/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[1]/div/div/div/div[2]/form-grid[3]/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/div/md-input-container/div/div/md-checkbox")
     WebElement affidavitConsent;
 
     // Master Agreement
-    @FindBy(how = How.ID, using = "input_385")
+    @FindBy(how = How.ID, using = "input_383")
     WebElement MAInput;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/div/md-input-container/div/div/md-checkbox/div[1]")
     WebElement MAAgreement;
 
     public void getRegistrationFormsPage() throws Exception {
@@ -230,7 +230,7 @@ public class RegistrationFormPage {
 
         // Student Information Tabular
         Browser.scrollDownToElement();
-        Browser.waitForElement( By.id("radio_16"));
+        Browser.waitUntilElementIsVisible(By.id("radio_29"));
         gender.click();
         birthStateSelect.click();
         birthStateOption.click();
@@ -238,7 +238,7 @@ public class RegistrationFormPage {
 
         // Contact Tabular
         Browser.scrollDownToElement();
-        Browser.waitForElement( By.className("addAddress"));
+        Browser.waitUntilElementIsVisible(By.className("addAddress"));
         addAddressWidgetBtn.click();
         Thread.sleep(3000);
         Browser.waitUntilElementIsVisible(By.name("Title"));
@@ -246,7 +246,7 @@ public class RegistrationFormPage {
         addressLabel.sendKeys("Home");
         addressInput.sendKeys("3400 E Foothill Blvd.");
         addressCity.sendKeys("Pasadena");
-        Browser.waitForElement( By.xpath("//*[@id=\"dialogContent_72\"]/div/div/md-input-container[2]/select/option[6]"));
+        Browser.waitForElement( By.xpath("//*[@id=\"dialogContent_68\"]/div/div/md-input-container[2]/select/option[6]"));
         addressStateSelect.click();
         studentAddressStateOption.click();
         addressPostalCode.sendKeys("91107");
@@ -255,42 +255,42 @@ public class RegistrationFormPage {
         looksGoodBtn.click();
         Thread.sleep(3000);
         Browser.scrollDownToElement();
-        Browser.waitUntilElementIsVisible( By.id("radio_20"));
-        Browser.waitForElement( By.id("radio_20"));
+        Browser.waitUntilElementIsVisible( By.id("radio_32"));
+        Browser.waitForElement( By.id("radio_32"));
         studentNighttimeResidency.click();
         clickSaveNContinueButton();
 
         // Education Tabular
-        Browser.waitForElement( By.id("radio_32"));
+        Browser.waitUntilElementIsVisible( By.id("radio_42"));
         languageOtherThanEnglishAtHome.click();
         homeLanguageSelect.click();
         homeLanguageOption.click();
-        Browser.waitForElement( By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td[1]/div/div/magic-field/div/div/div/div/md-input-container/select/option[2]"));
+        Browser.waitForElement( By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td[1]/div/div/magic-field/div/div/div/div/div/md-input-container/select/option[2]"));
         firstLanguageSelect.click();
         firstLanguageOption.click();
-        Browser.waitForElement(By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td[2]/div/div/magic-field/div/div/div/div/md-input-container/select/option[2]"));
+        Browser.waitForElement(By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td[2]/div/div/magic-field/div/div/div/div/div/md-input-container/select/option[2]"));
         preferredLanguageSelect.click();
         preferredLanguageOption.click();
-        Browser.waitForElement(By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[3]/td[1]/div/div/magic-field/div/div/div/div/md-input-container/select/option[2]"));
+        Browser.waitForElement(By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[3]/td[1]/div/div/magic-field/div/div/div/div/div/md-input-container/select/option[2]"));
         parentLanguageSelect.click();
         parentLanguageOption.click();
-        Browser.waitForElement( By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[3]/td[2]/div/div/magic-field/div/div/div/div/md-input-container/select"));
+        Browser.waitForElement( By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[3]/td[2]/div/div/magic-field/div/div/div/div/div/md-input-container/select/option[2]"));
         preferredCommunicationLanguageSelect.click();
         preferredCommunicationLanguageOption.click();
         clickSaveNContinueButton();
 
         // Previous School Tabular
-        Browser.waitForElement( By.id("radio_38"));
+        Browser.waitUntilElementIsVisible( By.id("radio_46"));
         previousSchool.click();
         lastSchoolAttended.sendKeys("Home School");
         clickSaveNContinueButton();
 
         // Other Information (skip)
-        Browser.waitForElement( By.className("instanceSaveBtn"));
+        Browser.waitUntilElementIsVisible( By.className("instanceSaveBtn"));
         clickSaveNContinueButton();
 
         // Signature Tabular
-        Browser.waitForElement( By.className("canvas"));
+        Browser.waitUntilElementIsVisible( By.className("canvas"));
         signSignature();
         signatureNameInStudentApplication.sendKeys("Test Signature");
         saveSignature.click();
@@ -302,7 +302,7 @@ public class RegistrationFormPage {
 
         // Parents/Guardians/Emergency Contact
         Browser.scrollDownToElement();
-        Browser.waitForElement( By.className("addAddress"));
+        Browser.waitUntilElementIsVisible( By.className("addAddress"));
         addAddressWidgetBtn.click();
         Thread.sleep(3000);
         Browser.waitUntilElementIsVisible( By.name("Title"));
@@ -310,7 +310,7 @@ public class RegistrationFormPage {
         addressLabel.sendKeys("Home");
         addressInput.sendKeys("3400 E Foothill Blvd.");
         addressCity.sendKeys("Pasadena");
-        Browser.waitForElement( By.xpath("//*[@id=\"dialogContent_199\"]/div/div/md-input-container[2]/select/option[6]"));
+        Browser.waitForElement( By.xpath("//*[@id=\"dialogContent_197\"]/div/div/md-input-container[2]/select/option[6]"));
         addressStateSelect.click();
         guardianAddressStateOption.click();
         addressPostalCode.sendKeys("91107");
@@ -329,14 +329,14 @@ public class RegistrationFormPage {
         clickSaveNContinueButton();
 
         // Survey
-        Browser.waitForElement( By.className("instanceSaveBtn"));
+        Browser.waitUntilElementIsVisible( By.className("instanceSaveBtn"));
         clickSaveNContinueButton();
 
         // Parent/Guardian Profile
-        Browser.waitForElement( By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr/td[1]/div/div/magic-field/div/div/div/div/md-input-container/select"));
+        Browser.waitUntilElementIsVisible( By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr/td[1]/div/div/magic-field/div/div/div/div/div/md-input-container/select"));
         guardianEducationLevelSelect.click();
         guardianEducationLevelOption.click();
-        Browser.waitForElement( By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr/td[2]/div/div/magic-field/div/div/div/md-input-container/div/div[1]/md-checkbox/div[1]"));
+        Browser.waitForElement( By.xpath("//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr/td[2]/div/div/magic-field/div/div/div/div/md-input-container/div/div[1]/md-checkbox/div[1]"));
         guardianEducationMilitaryStatus.click();
         clickSaveNContinueButton();
 
@@ -351,38 +351,38 @@ public class RegistrationFormPage {
 
     public void fillOutEmergencyHealthForm() throws Exception {
         // Release Authorization
-        Browser.waitForElement( By.id("radio_241"));
+        Browser.waitUntilElementIsVisible( By.id("radio_238"));
         releaseQuestion1.click();
         Browser.scrollDownToElement();
         releaseQuestion2.click();
         clickSaveNContinueButton();
 
         // Health Information
-        Browser.waitForElement( By.id("radio_247"));
+        Browser.waitUntilElementIsVisible( By.id("radio_245"));
         healthQuestion1.click();
         clickSaveNContinueButton();
 
         // Medication
-        Browser.waitForElement( By.className("instanceSaveBtn"));
+        Browser.waitUntilElementIsVisible( By.className("instanceSaveBtn"));
         clickSaveNContinueButton();
 
         // Medical Authorization
-        Browser.waitForElement( By.id("radio_275"));
+        Browser.waitUntilElementIsVisible( By.id("radio_271"));
         medicalQuestion1.click();
         clickSaveNContinueButton();
 
         // Emergency Treatment Authorization
-        Browser.waitForElement( By.xpath("//*[@id=\"tabular_section_4\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]"));
+        Browser.waitUntilElementIsVisible( By.xpath("//*[@id=\"tabular_section_4\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/div/md-input-container/div/div/md-checkbox/div[1]"));
         medicalQuestion2.click();
         medicalQuestion3.click();
         clickSaveNContinueButton();
 
         // Student Signature
-        Browser.waitForElement( By.className("canvas"));
-        studentSignatureNameInEmergencyHealth.sendKeys("Test Signature");
+        Browser.waitUntilElementIsVisible( By.className("canvas"));
         signSignature();
+        studentSignatureNameInEmergencyHealth.sendKeys("Test Signature");
         saveSignature.click();
-        Browser.waitForElement( By.className("instanceSaveBtn"));
+        Browser.waitUntilElementIsVisible( By.className("instanceSaveBtn"));
         clickSaveNContinueButton();
 
         // Guardian Signature
@@ -390,13 +390,13 @@ public class RegistrationFormPage {
 //        signGuardianSignature();
 //        Thread.sleep(3000);
 //        saveSignature.click();
-        Browser.waitForElement( By.className("instanceSaveBtn"));
+        Browser.waitUntilElementIsVisible( By.className("instanceSaveBtn"));
         clickSaveNContinueButton();
     }
 
     public void fillOutPhotographicConsent() throws Exception {
         Browser.scrollDownToElement();
-        Browser.waitForElement( By.id("radio_301"));
+        Browser.waitUntilElementIsVisible( By.id("radio_300"));
         photographicConsent.click();
         signSignature();
         studentSignatureNameInPhotographicConsent.sendKeys("Test Signature ");
@@ -406,7 +406,7 @@ public class RegistrationFormPage {
 
     public void fillOutInternetAccessConsent() throws Exception {
         Browser.scrollDownToElement();
-        Browser.waitForElement( By.xpath("//*[@id=\"instanceBody\"]/form-section[2]/div/div/div/div[2]/form-grid/div/table/tbody/tr/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]"));
+        Browser.waitUntilElementIsVisible( By.xpath("//*[@id=\"instanceBody\"]/form-section[2]/div/div/div/div[2]/form-grid/div/table/tbody/tr/td/div/div/magic-field/div/div/div/div/md-input-container/div/div/md-checkbox/div[1]"));
         internetAccessConsent.click();
         signSignature();
         studentSignatureNameInternetAccessPolicy.sendKeys("Test Signature   ");
@@ -416,7 +416,7 @@ public class RegistrationFormPage {
 
     public void fillOutPhysicalEducationConsent() throws Exception {
         Browser.scrollDownToElement();
-        Browser.waitForElement( By.id("radio_325"));
+        Browser.waitUntilElementIsVisible( By.id("radio_324"));
         physicalEducationConsent.click();
         signSignature();
         studentSignatureNamePhysicalEducationConsent.sendKeys(" Test Signature");
@@ -426,7 +426,7 @@ public class RegistrationFormPage {
 
     public void fillOutTransportationConsent() throws Exception {
         Browser.scrollDownToElement();
-        Browser.waitForElement( By.id("radio_339"));
+        Browser.waitUntilElementIsVisible( By.id("radio_337"));
         transportationConsent.click();
         signSignature();
         studentSignatureNameTransportationConsent.sendKeys("Test Signature");
@@ -436,7 +436,7 @@ public class RegistrationFormPage {
 
     public void fillOutAffidavitConsent() throws Exception {
         Browser.scrollDownToElement();
-        Browser.waitForElement( By.xpath("//*[@id=\"instanceBody\"]/form-section[1]/div/div/div/div[2]/form-grid[3]/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox/div[1]"));
+        Browser.waitUntilElementIsVisible( By.xpath("//*[@id=\"instanceBody\"]/form-section[1]/div/div/div/div[2]/form-grid[3]/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/div/md-input-container/div/div/md-checkbox"));
         affidavitConsent.click();
         signSignature();
         studentSignatureNameAffidavitConsent.sendKeys("Test Signature  ");
@@ -447,7 +447,7 @@ public class RegistrationFormPage {
     public void fillOutMAConsent() throws Exception {
 //        MAInput.sendKeys("Dad");
         Browser.scrollDownToElement();
-        Browser.waitForElement( By.xpath("//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/md-input-container/div/div/md-checkbox"));
+        Browser.waitUntilElementIsVisible( By.xpath("//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/div/md-input-container/div/div/md-checkbox/div[1]"));
         MAAgreement.click();
         signSignature();
         studentSignatureNameMA.sendKeys("Test Signature");
