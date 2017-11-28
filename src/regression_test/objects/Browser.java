@@ -95,6 +95,16 @@ public final class Browser {
         selenium.close();
     }
 
+
+    /**
+     * Used to see if an element exist
+     * @param locator used to find element
+     * @return boolean
+     */
+    public static boolean Exists( By locator ){
+        return selenium.findElements( locator ).size() != 0;
+    }
+
     /**
      * Used to Represent Testing Environment Options
      */

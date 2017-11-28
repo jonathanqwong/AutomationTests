@@ -7,7 +7,7 @@ public class ReportPage {
     public String reportTitle = "Reports";
 
     public void goTo(){
-        Pages.topNavigation().reports();
+        Pages.topNavigation().clickReportsButton();
     }
 
     public void viewReport(){

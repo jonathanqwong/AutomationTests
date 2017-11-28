@@ -8,8 +8,6 @@ import org.openqa.selenium.support.How;
 
 public class TopNavigationPage {
 
-    @FindBy(how = How.CLASS_NAME, using = "")
-    WebElement topNavigationToggleLink;
     @FindBy(how = How.XPATH, using = "//*[@id=\"header-bar\"]/div/span/button")
     WebElement hamburger;
     @FindBy(how = How.XPATH, using = "//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[1]")
@@ -33,12 +31,6 @@ public class TopNavigationPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[10]")
     WebElement classroom;
 
-    @FindBy(how = How.CLASS_NAME, using = "")
-    WebElement reportLink;
-
-    public void topNavigation(){
-        topNavigationToggleLink.click();
-    }
 
     public void clickHamburgerButton() {
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"header-bar\"]/div/span/button"));
@@ -76,6 +68,7 @@ public class TopNavigationPage {
     }
 
     public void clickReportsButton() {
+        OpenSideNav();
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[7]"));
         reports.click();
     }
@@ -95,9 +88,10 @@ public class TopNavigationPage {
         classroom.click();
     }
 
-    public void reports(){
-        reportLink.click();
+    public void OpenSideNav(){
+        if( Browser.Exists(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content)")) == false ) {
+            clickHamburgerButton();
+        }
     }
-
 
 }

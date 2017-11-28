@@ -11,16 +11,11 @@ public class ReportTests extends TestBase{
 
     @Test
     public void canViewReportPage(){
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        //login somehow
+
         Pages.login().inputLoginCredentials( "Ricardo", "EDI12");
         Pages.login().clickLoginButton();
         Pages.reports().goTo();
-        //assertTrue(Pages.report().isAt());
+        assertTrue(Pages.report().isAt());
 
         //go to report page
 
