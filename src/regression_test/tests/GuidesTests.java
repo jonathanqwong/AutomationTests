@@ -5,6 +5,10 @@ import webpages.*;
 
 public class GuidesTests extends TestBase {
 
+    /**
+     * Simple Guide Validations
+     * @throws Exception
+     */
     @Test
     public void testGuidesFunction() throws Exception {
         
@@ -15,7 +19,10 @@ public class GuidesTests extends TestBase {
         // Step 2) Navigate to Guides App
         Pages.topNavigation().clickHamburgerButton();
         Pages.topNavigation().clickGuidesButton();
-        Pages.topNavigation().clickHomeButton();
+
+        // Step 3)
+
+
     }
 
 

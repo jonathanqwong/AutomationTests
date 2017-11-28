@@ -16,19 +16,19 @@ public class AddGuardianPage {
     WebElement saveBtn;
     @FindBy(how = How.XPATH, using = "//*[@id='guardiansList']/div[3]/div[2]/button")
     WebElement doneBtn;
-    @FindBy(how = How.ID, using = "input_4")
+    @FindBy(how = How.ID, using = "input_3")
     WebElement guardianFirstName;
-    @FindBy(how = How.ID, using = "input_5")
+    @FindBy(how = How.ID, using = "input_4")
     WebElement guardianLastName;
-    @FindBy(how = How.ID, using = "input_6")
+    @FindBy(how = How.ID, using = "input_5")
     WebElement guardianEmail;
-    @FindBy(how = How.ID, using = "input_7")
+    @FindBy(how = How.ID, using = "input_6")
     WebElement guardianPhone;
-    @FindBy(how = How.XPATH, using = "//*[@id=\'select_8\']")
+    @FindBy(how = How.XPATH, using = "//*[@id=\'select_7\']")
     WebElement relationshipSelect;
-    @FindBy(how = How.XPATH, using = "//*[@id=\'select_option_14\']")
+    @FindBy(how = How.XPATH, using = "//*[@id=\'select_option_13\']")
     WebElement relationshipId;
-    @FindBy(how = How.ID, using = "input_10")
+    @FindBy(how = How.ID, using = "input_9")
     WebElement guardianDateOfBirth;
     @FindBy(how = How.NAME, using = "IsPrimary")
     WebElement guardianPrimary;
