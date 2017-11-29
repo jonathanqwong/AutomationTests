@@ -77,7 +77,6 @@ public class TopNavigationPage {
         openSideNav();
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[7]"));
         reports.click();
-        Browser.waitUntilUrlMatches( ReportPage.baseReportUrl );
     }
 
     public void clickHistoryButton() {
