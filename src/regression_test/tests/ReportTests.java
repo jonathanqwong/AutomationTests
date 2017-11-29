@@ -11,27 +11,14 @@ public class ReportTests extends TestBase{
 
     @Test
     public void canViewReportPage(){
-
         Pages.login().inputLoginCredentials( "Ricardo", "EDI12");
         Pages.login().clickLoginButton();
         Pages.reports().goTo();
-        assertTrue(Pages.report().isAt());
-
-        //go to report page
-
-        //check if link is there
-
-        //click link
     }
 
     @Test
-    public void canViewOnlineAssessmentSummaryReport() throws Exception {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        Browser.goTo("#/registration/21");
+    public void canViewOnlineAssessmentSummaryReport(){
+
     }
 
     @Test

@@ -38,58 +38,82 @@ public class TopNavigationPage {
     }
 
     public void clickHomeButton() {
+        openSideNav();
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[1]"));
         home.click();
     }
 
     public void clickStudentInfoButton() {
+        openSideNav();
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[2]"));
         studentInfo.click();
     }
 
     public void clickGuidesButton() {
+        openSideNav();
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[3]"));
         guides.click();
     }
 
     public void clickExtAsmtButton() {
+        openSideNav();
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[4]"));
         extAsmt.click();
     }
 
     public void clickStudentFilesButton() {
+        openSideNav();
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[5]"));
         studentFiles.click();
     }
 
     public void clickCalendarButton() {
+        openSideNav();
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[6]"));
         calendar.click();
     }
 
     public void clickReportsButton() {
-        OpenSideNav();
+        openSideNav();
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[7]"));
         reports.click();
+        Browser.waitUntilUrlMatches( ReportPage.baseReportUrl );
     }
 
     public void clickHistoryButton() {
+        openSideNav();
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[8]"));
         history.click();
     }
 
     public void clickRegistrationButton() {
+        openSideNav();
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[9]"));
         registration.click();
     }
 
     public void clickClassroomButton() {
+        openSideNav();
         Browser.waitUntilElementIsVisible(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content/md-list/md-list-item[10]"));
         classroom.click();
     }
 
-    public void OpenSideNav(){
-        if( Browser.Exists(By.xpath("//*[@id=\"applications\"]/div[1]/md-sidenav/md-content)")) == false ) {
+    /**
+     * Will open side navigation if its not already opened
+     */
+    //TODO this may not work if there are 2 classes on same page with class name "expand"
+    public void openSideNav(){
+        if( Browser.exists( By.className( "expand")) == false ){
+            clickHamburgerButton();
+        }
+    }
+
+    /**
+     * Will close side navigation if its not already closed
+     */
+    //TODO this may not work if there are 2 classes on same page with class name "expand"
+    public void closeSideNav(){
+        if( Browser.exists( By.className( "expand"))){
             clickHamburgerButton();
         }
     }
