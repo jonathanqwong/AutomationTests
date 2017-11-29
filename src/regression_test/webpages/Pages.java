@@ -64,12 +64,6 @@ public class Pages {
         return page;
     }
 
-    public static ReportPage report(){
-        ReportPage page = new ReportPage();
-        PageFactory.initElements(Browser.getDriver(), page );
-        return page;
-    }
-
     public static ReportPage reports() {
         ReportPage page = new ReportPage();
         PageFactory.initElements(Browser.getDriver(), page);

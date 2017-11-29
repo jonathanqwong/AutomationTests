@@ -1,21 +1,22 @@
 package webpages;
 import objects.Browser;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 public class ReportPage {
 
-    public String reportTitle = "Reports";
+    public static String baseReportUrl = Browser.getBaseUrl() + "/reports";
 
     public void goTo(){
-        Pages.topNavigation().reports();
+        Pages.topNavigation().clickReportsButton();
     }
 
     public void viewReport(){
 
     }
 
-    public boolean isAt(){
-        return  Browser.title().contains(reportTitle);
+    public void isAt(){
+        Assert.assertEquals(Browser.selenium.getCurrentUrl(), baseReportUrl);
     }
 
 
