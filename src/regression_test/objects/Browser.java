@@ -21,8 +21,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public final class Browser {
 
-    public static Environment ENV = Environment.STAGE;
-    private static String baseUrl = "http://" + ENV + "." + "studenttrac.com/#";
+    public static Environment ENV = Environment.QA;
+    public static Domain DOMAIN = Domain.EDUDYN;
+    private static String baseUrl = "https://" + ENV.toString().toLowerCase() + "." + "studenttrac.com/#";
     public static WebDriver selenium;
     public static int maxWaitTime = 30;
     public static int pollingTime = 5;
@@ -62,6 +63,15 @@ public final class Browser {
         Thread.sleep(3000);
         System.out.println(baseUrl + url);
     }
+
+    /**
+     * Refresh Browser
+     */
+    public static void refreshPage() throws Exception {
+        Thread.sleep(5000);
+        selenium.navigate().refresh();
+    }
+
     /**
      * GET URL of dynamic pages you might not know i.e. reg forms
      */
@@ -75,11 +85,11 @@ public final class Browser {
     }
 
     /**
-     * Gets title of page
+     * Gets base url page
      * @return return title string
      */
-    public static String title(){
-        return selenium.getTitle();
+    public static String getBaseUrl(){
+        return baseUrl;
     }
 
     /**
@@ -96,6 +106,16 @@ public final class Browser {
     }
 
     /**
+     * Used to see if an element exist
+     * @param locator used to find element
+     * @return boolean
+     */
+    public static boolean exists( By locator ){
+        System.out.println(selenium.findElements( locator ).size() != 0);
+        return selenium.findElements( locator ).size() != 0;
+    }
+
+    /**
      * Used to Represent Testing Environment Options
      */
     public enum Environment {
@@ -103,6 +123,14 @@ public final class Browser {
         QA,
         STAGE,
         DEMO
+    }
+
+    /**
+     * Used to Represent Testing Service Domain Names Options
+     */
+    public enum Domain {
+        EDUDYN,
+        STUDENTTRAC
     }
 
     /**
@@ -140,6 +168,18 @@ public final class Browser {
         WebElement elementToWaitFor = wait.until(ExpectedConditions.visibilityOfElementLocated(locateElement));
     }
 
-}
+    /**
+     * Will wait until the url matches desired url before proceeding
+     */
+    public static void waitUntilUrlMatches( String urlToBe ){
+        new WebDriverWait(selenium, maxWaitTime).until(ExpectedConditions.urlMatches(urlToBe));
+    }
 
+    /**
+     * Will wait until the url contains fragment string desired before proceeding
+     */
+    public static void waitUntilUrlContains( String urlFragment ){
+        new WebDriverWait(selenium, maxWaitTime).until(ExpectedConditions.urlContains(urlFragment));
+    }
+}
 

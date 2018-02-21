@@ -12,6 +12,10 @@ import static webpages.AccountCreationPage.ACCOUNT_CREATION_PAGE;
 
 public class RegistrationTests extends TestBase {
 
+    // To - Do
+    // Test Language Change with ofl/ofy forms
+    // Test Groups and Programs in the enrollment page
+
     @Test
     public void startRegistration() throws Exception {
 
@@ -26,6 +30,7 @@ public class RegistrationTests extends TestBase {
         System.out.println("Student Account Creation Confirmed");
 
         // Step 3) Validate the account is created on Landing Page
+        Browser.goTo(LANDING_PAGE);
         Pages.landing().clickLetsGetStartButton();
         System.out.println("Landing Page Confirmed");
 

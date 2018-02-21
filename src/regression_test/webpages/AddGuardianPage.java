@@ -16,19 +16,19 @@ public class AddGuardianPage {
     WebElement saveBtn;
     @FindBy(how = How.XPATH, using = "//*[@id='guardiansList']/div[3]/div[2]/button")
     WebElement doneBtn;
-    @FindBy(how = How.ID, using = "input_3")
+    @FindBy(how = How.NAME, using = "FirstName")
     WebElement guardianFirstName;
-    @FindBy(how = How.ID, using = "input_4")
+    @FindBy(how = How.NAME, using = "LastName")
     WebElement guardianLastName;
-    @FindBy(how = How.ID, using = "input_5")
+    @FindBy(how = How.NAME, using = "Email")
     WebElement guardianEmail;
-    @FindBy(how = How.ID, using = "input_6")
+    @FindBy(how = How.NAME, using = "PhoneNumber")
     WebElement guardianPhone;
-    @FindBy(how = How.XPATH, using = "//*[@id=\'select_7\']")
+    @FindBy(how = How.NAME, using = "Relationship.RelationshipId")
     WebElement relationshipSelect;
-    @FindBy(how = How.XPATH, using = "//*[@id=\'select_option_13\']")
+    @FindBy(how = How.XPATH, using = "//*[@id=\'select_option_14\']")
     WebElement relationshipId;
-    @FindBy(how = How.ID, using = "input_9")
+    @FindBy(how = How.ID, using = "input_10")
     WebElement guardianDateOfBirth;
     @FindBy(how = How.NAME, using = "IsPrimary")
     WebElement guardianPrimary;
@@ -41,7 +41,7 @@ public class AddGuardianPage {
     }
 
     public void clickAddGuardianButton() {
-        Browser.waitForElement( By.className("addGuardian"));
+        Browser.waitForElement( By.id("DataTables_Table_0"));
         addGuardianBtn.click();
     }
 
@@ -73,7 +73,7 @@ public class AddGuardianPage {
         guardianPhone.sendKeys(GuardianPhone);
         relationshipSelect.click();
         relationshipId.click();
-        guardianDateOfBirth.sendKeys(GuardianDateOfBirth);
+        //guardianDateOfBirth.sendKeys(GuardianDateOfBirth);
     }
 
     public void clickPrimaryCheckbox() throws Exception {

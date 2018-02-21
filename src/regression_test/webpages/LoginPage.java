@@ -32,6 +32,7 @@ public class LoginPage {
     }
 
     public void inputLoginCredentials(String Username, String Password) {
+        Browser.waitUntilElementIsVisible(By.id("username"));
         username.sendKeys(Username);
         password.sendKeys(Password);
     }

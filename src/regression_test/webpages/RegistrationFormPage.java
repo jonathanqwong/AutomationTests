@@ -10,6 +10,8 @@ import org.openqa.selenium.support.How;
 
 public class RegistrationFormPage {
 
+    WebElement selenium;
+
     // Locators
     @FindBy(how = How.CLASS_NAME, using = "instanceSaveBtn")
     WebElement SaveNContinueBtn;
@@ -33,9 +35,9 @@ public class RegistrationFormPage {
     WebElement addressStateSelect;
     @FindBy(how = How.NAME, using = "PostalCode")
     WebElement addressPostalCode;
-    @FindBy(how = How.XPATH, using = "/html/body/div[4]/md-dialog/form/md-dialog-actions/button")
+    @FindBy(how = How.XPATH, using = "/html/body/div[5]/md-dialog/form/md-dialog-actions/button")
     WebElement validateBtn;
-    @FindBy(how = How.XPATH, using = "/html/body/div[4]/md-dialog/form/md-dialog-actions/button[2]")
+    @FindBy(how = How.XPATH, using = "/html/body/div[5]/md-dialog/form/md-dialog-actions/button[2]")
     WebElement looksGoodBtn;
     @FindBy(how = How.CLASS_NAME, using = "addEmail")
     WebElement addEmailWidgetBtn;
@@ -84,7 +86,7 @@ public class RegistrationFormPage {
 //    WebElement guardianSignatureNameMA;
 
     // Student Info
-    @FindBy(how = How.ID, using = "radio_29")
+    @FindBy(how = How.ID, using = "radio_38")
     WebElement gender;
     @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_0\"]/form-section/div/div/div/div[2]/form-grid[2]/div/table/tbody/tr[5]/td[2]/div/div/magic-field/div/div/div/div/div/md-input-container/select")
     WebElement birthStateSelect;
@@ -92,13 +94,13 @@ public class RegistrationFormPage {
     WebElement birthStateOption;
 
     // Contact
-    @FindBy(how = How.XPATH, using = "//*[@id=\"dialogContent_68\"]/div/div/md-input-container[2]/select/option[6]")
-    WebElement studentAddressStateOption;
-    @FindBy(how = How.ID, using = "radio_32")
+    //@FindBy(how = How.XPATH, using = "//*[@id=\"dialogContent_77\"]/div/div/md-input-container[2]/select/option[6]")
+    //WebElement studentAddressStateOption;
+    @FindBy(how = How.ID, using = "radio_42")
     WebElement studentNighttimeResidency;
 
     // Language
-    @FindBy(how = How.ID, using = "radio_42")
+    @FindBy(how = How.ID, using = "radio_51")
     WebElement languageOtherThanEnglishAtHome;
     @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[1]/td[2]/div/div/magic-field/div/div/div/div/div/md-input-container/select")
     WebElement homeLanguageSelect;
@@ -122,14 +124,14 @@ public class RegistrationFormPage {
     WebElement preferredCommunicationLanguageOption;
 
     // Education
-    @FindBy(how = How.ID, using = "radio_46")
+    @FindBy(how = How.ID, using = "radio_55")
     WebElement previousSchool;
-    @FindBy(how = How.ID, using = "input_20")
+    @FindBy(how = How.ID, using = "input_29")
     WebElement lastSchoolAttended;
 
     // Guardian Contact Info
-    @FindBy(how = How.XPATH, using = "//*[@id=\"dialogContent_197\"]/div/div/md-input-container[2]/select/option[6]")
-    WebElement guardianAddressStateOption;
+    //@FindBy(how = How.XPATH, using = "//*[@id=\"dialogContent_206\"]/div/div/md-input-container[2]/select/option[6]")
+    //WebElement guardianAddressStateOption;
 
     // Parent Guardian Profile
     @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_2\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr/td[1]/div/div/magic-field/div/div/div/div/div/md-input-container/select")
@@ -140,21 +142,21 @@ public class RegistrationFormPage {
     WebElement guardianEducationMilitaryStatus;
 
     // Emergency/Health
-    @FindBy(how = How.ID, using = "radio_238")
+    @FindBy(how = How.ID, using = "radio_247")
     WebElement releaseQuestion1;
-    @FindBy(how = How.ID, using = "radio_240")
+    @FindBy(how = How.ID, using = "radio_249")
     WebElement releaseQuestion2;
-    @FindBy(how = How.ID, using = "radio_245")
+    @FindBy(how = How.ID, using = "radio_255")
     WebElement healthQuestion1;
-    @FindBy(how = How.ID, using = "radio_271")
+    @FindBy(how = How.ID, using = "radio_280")
     WebElement medicalQuestion1;
     @FindBy(how = How.XPATH, using = "//*[@id=\"tabular_section_4\"]/form-section/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/div/md-input-container/div/div/md-checkbox/div[1]")
     WebElement medicalQuestion2;
-    @FindBy(how = How.ID, using = "radio_274")
+    @FindBy(how = How.ID, using = "radio_283")
     WebElement medicalQuestion3;
 
     // Photographic Consent
-    @FindBy(how = How.ID, using = "radio_300")
+    @FindBy(how = How.ID, using = "radio_308")
     WebElement photographicConsent;
 
     // Internet Access
@@ -162,11 +164,11 @@ public class RegistrationFormPage {
     WebElement internetAccessConsent;
 
     // Physical Education
-    @FindBy(how = How.ID, using = "radio_324")
+    @FindBy(how = How.ID, using = "radio_332")
     WebElement physicalEducationConsent;
 
     // Transportation Consent
-    @FindBy(how = How.ID, using = "radio_337")
+    @FindBy(how = How.ID, using = "radio_345")
     WebElement transportationConsent;
 
     // Affidavit of Non-Attendance
@@ -181,7 +183,7 @@ public class RegistrationFormPage {
 
     public void getRegistrationFormsPage() throws Exception {
         // Add Guardian Page URL (EX: https://qa.studenttrac.com/#/registration/student/#/guardians)
-//        Thread.sleep(5000);
+        Thread.sleep(3000);
         Browser.waitUntilElementIsVisible( By.className( "tabularBlock"));
         Browser.getURL();
     }
@@ -230,7 +232,7 @@ public class RegistrationFormPage {
 
         // Student Information Tabular
         Browser.scrollDownToElement();
-        Browser.waitUntilElementIsVisible(By.id("radio_29"));
+        Browser.waitUntilElementIsVisible(By.id("radio_39"));
         gender.click();
         birthStateSelect.click();
         birthStateOption.click();
@@ -246,22 +248,20 @@ public class RegistrationFormPage {
         addressLabel.sendKeys("Home");
         addressInput.sendKeys("3400 E Foothill Blvd.");
         addressCity.sendKeys("Pasadena");
-        Browser.waitForElement( By.xpath("//*[@id=\"dialogContent_68\"]/div/div/md-input-container[2]/select/option[6]"));
-        addressStateSelect.click();
-        studentAddressStateOption.click();
+        Pages.general().selectOptionInDropDown(addressStateSelect, "California");
         addressPostalCode.sendKeys("91107");
         validateBtn.click();
-        Browser.waitForElement( By.xpath("/html/body/div[4]/md-dialog/form/md-dialog-actions/button[2]"));
+        Browser.waitForElement( By.xpath("/html/body/div[5]/md-dialog/form/md-dialog-actions/button[2]"));
         looksGoodBtn.click();
         Thread.sleep(3000);
         Browser.scrollDownToElement();
-        Browser.waitUntilElementIsVisible( By.id("radio_32"));
-        Browser.waitForElement( By.id("radio_32"));
+        Browser.waitUntilElementIsVisible( By.id("radio_42"));
+        Browser.waitForElement( By.id("radio_42"));
         studentNighttimeResidency.click();
         clickSaveNContinueButton();
 
         // Education Tabular
-        Browser.waitUntilElementIsVisible( By.id("radio_42"));
+        Browser.waitUntilElementIsVisible( By.id("radio_51"));
         languageOtherThanEnglishAtHome.click();
         homeLanguageSelect.click();
         homeLanguageOption.click();
@@ -280,7 +280,7 @@ public class RegistrationFormPage {
         clickSaveNContinueButton();
 
         // Previous School Tabular
-        Browser.waitUntilElementIsVisible( By.id("radio_46"));
+        Browser.waitUntilElementIsVisible( By.id("radio_55"));
         previousSchool.click();
         lastSchoolAttended.sendKeys("Home School");
         clickSaveNContinueButton();
@@ -310,12 +310,10 @@ public class RegistrationFormPage {
         addressLabel.sendKeys("Home");
         addressInput.sendKeys("3400 E Foothill Blvd.");
         addressCity.sendKeys("Pasadena");
-        Browser.waitForElement( By.xpath("//*[@id=\"dialogContent_197\"]/div/div/md-input-container[2]/select/option[6]"));
-        addressStateSelect.click();
-        guardianAddressStateOption.click();
+        Pages.general().selectOptionInDropDown(addressStateSelect, "California");
         addressPostalCode.sendKeys("91107");
         validateBtn.click();
-        Browser.waitForElement( By.xpath("/html/body/div[4]/md-dialog/form/md-dialog-actions/button[2]"));
+        Browser.waitForElement( By.xpath("/html/body/div[5]/md-dialog/form/md-dialog-actions/button[2]"));
         looksGoodBtn.click();
         Thread.sleep(3000);
         Browser.scrollDownToElement();
@@ -351,14 +349,14 @@ public class RegistrationFormPage {
 
     public void fillOutEmergencyHealthForm() throws Exception {
         // Release Authorization
-        Browser.waitUntilElementIsVisible( By.id("radio_238"));
+        Browser.waitUntilElementIsVisible( By.id("radio_247"));
         releaseQuestion1.click();
         Browser.scrollDownToElement();
         releaseQuestion2.click();
         clickSaveNContinueButton();
 
         // Health Information
-        Browser.waitUntilElementIsVisible( By.id("radio_245"));
+        Browser.waitUntilElementIsVisible( By.id("radio_255"));
         healthQuestion1.click();
         clickSaveNContinueButton();
 
@@ -367,7 +365,7 @@ public class RegistrationFormPage {
         clickSaveNContinueButton();
 
         // Medical Authorization
-        Browser.waitUntilElementIsVisible( By.id("radio_271"));
+        Browser.waitUntilElementIsVisible( By.id("radio_280"));
         medicalQuestion1.click();
         clickSaveNContinueButton();
 
@@ -396,7 +394,7 @@ public class RegistrationFormPage {
 
     public void fillOutPhotographicConsent() throws Exception {
         Browser.scrollDownToElement();
-        Browser.waitUntilElementIsVisible( By.id("radio_300"));
+        Browser.waitUntilElementIsVisible( By.id("radio_308"));
         photographicConsent.click();
         signSignature();
         studentSignatureNameInPhotographicConsent.sendKeys("Test Signature ");
@@ -416,7 +414,7 @@ public class RegistrationFormPage {
 
     public void fillOutPhysicalEducationConsent() throws Exception {
         Browser.scrollDownToElement();
-        Browser.waitUntilElementIsVisible( By.id("radio_324"));
+        Browser.waitUntilElementIsVisible( By.id("radio_332"));
         physicalEducationConsent.click();
         signSignature();
         studentSignatureNamePhysicalEducationConsent.sendKeys(" Test Signature");
@@ -426,7 +424,7 @@ public class RegistrationFormPage {
 
     public void fillOutTransportationConsent() throws Exception {
         Browser.scrollDownToElement();
-        Browser.waitUntilElementIsVisible( By.id("radio_337"));
+        Browser.waitUntilElementIsVisible( By.id("radio_345"));
         transportationConsent.click();
         signSignature();
         studentSignatureNameTransportationConsent.sendKeys("Test Signature");
@@ -445,7 +443,7 @@ public class RegistrationFormPage {
     }
 
     public void fillOutMAConsent() throws Exception {
-//        MAInput.sendKeys("Dad");
+        //MAInput.sendKeys("Dad");
         Browser.scrollDownToElement();
         Browser.waitUntilElementIsVisible( By.xpath("//*[@id=\"instanceBody\"]/form-section[3]/div/div/div/div[2]/form-grid/div/table/tbody/tr[2]/td/div/div/magic-field/div/div/div/div/md-input-container/div/div/md-checkbox/div[1]"));
         MAAgreement.click();

@@ -54,7 +54,9 @@ public class GuidesPage {
     @FindBy(how = How.CLASS_NAME, using = "guide-print-button")
     WebElement printSingleBtn;
 
-    // Slot Button and Options
+    // External Course Buttons and Options
+
+    // Slot Buttons and Options
     @FindBy(how = How.CLASS_NAME, using = "menu-trigger")
     WebElement threeDotsBtn;
     @FindBy(how = How.XPATH, using = "//*[@id=\"menu_container_209\"]/md-menu-content/md-menu-item[1]/button")

@@ -10,98 +10,90 @@ import static org.junit.Assert.assertTrue;
 public class ReportTests extends TestBase{
 
     @Test
-    public void canViewReportPage(){
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        //login somehow
+    public void viewReportPage(){
         Pages.login().inputLoginCredentials( "Ricardo", "EDI12");
         Pages.login().clickLoginButton();
         Pages.reports().goTo();
-        //assertTrue(Pages.report().isAt());
-
-        //go to report page
-
-        //check if link is there
-
-        //click link
+        Pages.reports().isAt();
     }
 
     @Test
-    public void canViewOnlineAssessmentSummaryReport() throws Exception {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        Browser.goTo("#/registration/21");
+    public void viewOnlineAssessmentDetailReport() throws InterruptedException {
+        viewReportPage();
+        Pages.reports().clickCurriculumReports();
+        Pages.reports().clickOnlineAssessmentDetailReport();
     }
 
+//    @Test
+//    public void viewOnlineAssessmentSummaryReport(){
+//        Pages.reports().clickCurriculumReports();
+//    }
+//
+//    @Test
+//    public void viewFolderLabels(){
+//
+//    }
+//
+//    @Test
+//    public void viewHomeLanguageSurvey(){
+//
+//    }
+//
+//    @Test
+//    public void viewTruancyLetter(){
+//
+//    }
+//
+//    @Test
+//    public void viewWithdrawal(){
+//
+//    }
+//
+//    @Test
+//    public void view20andOlderReport(){
+//
+//    }
+//
+//    @Test
+//    public void viewApexAddandDelete(){
+//
+//    }
+//
+//    @Test
+//    public void viewCumulativeStudentRoster() {
+//
+//    }
+//
+//    @Test
+//    public void viewDigitalRegistration(){
+//
+//    }
+//
+//    @Test
+//    public void viewELT(){
+//
+//    }
+//
+//    @Test
+//    public void viewUtilization(){
+//
+//    }
+//
+//    @Test
+//    public void viewRCE(){
+//
+//    }
+//
+//    @Test
+//    public void viewRWA(){
+//
+//    }
+
     @Test
-    public void canViewFolderLabels(){
-
-    }
-
-    @Test
-    public void canViewHomeLanguageSurvey(){
-
-    }
-
-    @Test
-    public void canViewTruancyLetter(){
-
-    }
-
-    @Test
-    public void canViewWithdrawal(){
-
-    }
-
-    @Test
-    public void canView20andOlderReport(){
-
-    }
-
-    @Test
-    public void canViewApexAddandDelete(){
-
-    }
-
-    @Test
-    public void canViewCumulativeStudentRoster() {
-
-    }
-
-    @Test
-    public void canViewDigitalRegistration(){
-
-    }
-
-    @Test
-    public void canViewELT(){
-
-    }
-
-    @Test
-    public void canViewUtilization(){
-
-    }
-
-    @Test
-    public void canViewRCE(){
-
-    }
-
-    @Test
-    public void canViewRWA(){
-
-    }
-
-    @Test
-    public void canViewTranscriptOfRecord(){
-
+    public void viewTranscriptOfRecord(){
+        viewReportPage();
+        Pages.reports().clickStudentReports();
+        Pages.reports().clickTranscriptOfRecord();
     }
 
 }
